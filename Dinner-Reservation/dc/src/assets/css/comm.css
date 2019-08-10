@@ -1,0 +1,24 @@
+/* 公共样式 */
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+/* 背景颜色 */
+.bg{
+    background: #fafafa;
+}
+/* 字体相关样式 */
+.font_family{
+    font-size: 16px;
+    color: #717171;
+    font-family: 微软雅黑,宋体,arial;
+}
+/* 字体颜色 */
+.font_price{
+    color: #fe434e;
+}
