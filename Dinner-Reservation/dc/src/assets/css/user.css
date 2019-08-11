@@ -1,37 +1,90 @@
 /* 设置顶部背景样式 */
-.top{
-    width: 100%;
-    height:180px;
-    background-image: url("../img/mine/mine.jpg");
-}
-/* 设置用户头像上传样式 */
-.user{
-    width: 61px;
-    height: 61px;
-    border-radius: 50%;
-    background-color: azure;
-    background-image: url("../img/mine/header.png");
-    background-size:100%; 
-    margin-top:100px;
-    margin-left: 15px;
-    display: inline-block;
+.my_bgcolor{
+    background: #ddd;
+  }
+  .top{
+      width: 100%;
+      height:180px;
+      background-image: url("../../img/mine/mine.jpg");
+      position: relative;
+  }
+  /* 设置用户头像上传样式 */
+  .user{
+      width: 61px;
+      height: 61px;
+      border-radius: 50%;
+      background-color: azure;
+      background-image: url("../../img/mine/header.png");
+      background-size:100%; 
+      margin-top:100px;
+      margin-left: 15px;
+      display: inline-block;
+       }
+     .login{
+         position: absolute;
+         font-size:15px;
+         color: aliceblue;
+         left:89px;
+         top: 128px;
      }
-   .login{
-       display: inline-block;
-       font-size:15px;
-       color: aliceblue;
-       margin-bottom: 20px;
-   }
-   .install{
+     .install{
+         width:40px;
+         height:40px;
+         background-image: url("../../img/mine/shezhi.png");
+         background-size:100%; 
+         float:right;
+         margin-top:14px;
+         margin-right: 15px;
+     }
+     .order img{
+         width: 25px;
+         height: 25px;
+     }
+     .nav{
+         display: flex;
+         justify-content: space-around;
+         background: #ddd;
+         margin: 0;
+         padding:10px;
+         margin-bottom: 5px;
+     }
+     /* 设置导航栏ul为弹性布局 */
+     .nav_middle{
+         display: flex;
+         justify-content:flex-start;
+         flex-wrap: wrap;
+         background: #ddd;
+         padding-top: 20px;
+         margin-bottom: 7px;
+     }
+     /* 设置中间导航栏的每个li之间的间距 */
+     .nav_middle li{
+         margin-left:40px;
+         margin-right:20px;
+         margin-bottom: 20px;
+     }
+     /* 设置我的积分，我的优惠..导航栏图片尺寸 */
+     .my_prefer img{
        width:40px;
        height:40px;
-       background-image: url("../img/mine/shezhi.png");
-       background-size:100%; 
-       float:right;
-       margin-top:14px;
-       margin-right: 15px;
-   }
-   .order img{
-       width: 40px;
-       height: 40px;
-   }
+     }
+     /* 推荐餐厅样式设置 */
+     .Recommend_img img{
+       width:80px;
+       height:60px;
+     }
+     .Recommend_img+input{
+         width: 70px;
+         height: 26px;
+         line-height: 29px!important;
+         font-size: 12px;
+         border-radius: 15px;
+         padding: 0 35px 0 16px;
+         border: 1px solid rgba(248, 16, 16, 0.986);
+         background: 0 0;
+         box-sizing: border-box;
+         color: red;
+     }
+     .recom_title{
+       text-align: center;
+     }

@@ -1,0 +1,34 @@
+.login_title{
+    height: 35px;
+    margin-bottom:10px; 
+    text-align: center;
+    padding-top:10px; 
+    background: #fff;
+}
+.login_title img{
+    float: left;
+}
+.uname{
+    background: url(../../img/mine/user.png) no-repeat;
+    /* background-size:100%;  */
+}
+.upwd{
+    background: url(../../img/mine/upwd.png) no-repeat;
+    /* background-size:100%;  */
+}
+input{
+    width:100%;
+    height:35px;
+    padding: 6px 0 3px 45px;
+    border:0;  
+    background: #fff !important;
+    margin-bottom: 5px;
+}
+.point{
+    display: flex;
+    justify-content: space-between;
+}
+.point a{
+    font-size:15px;
+    color:rgba(35, 231, 117, 0.993);
+}
