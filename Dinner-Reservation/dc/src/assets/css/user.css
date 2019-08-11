@@ -1,0 +1,37 @@
+/* 设置顶部背景样式 */
+.top{
+    width: 100%;
+    height:180px;
+    background-image: url("../img/mine/mine.jpg");
+}
+/* 设置用户头像上传样式 */
+.user{
+    width: 61px;
+    height: 61px;
+    border-radius: 50%;
+    background-color: azure;
+    background-image: url("../img/mine/header.png");
+    background-size:100%; 
+    margin-top:100px;
+    margin-left: 15px;
+    display: inline-block;
+     }
+   .login{
+       display: inline-block;
+       font-size:15px;
+       color: aliceblue;
+       margin-bottom: 20px;
+   }
+   .install{
+       width:40px;
+       height:40px;
+       background-image: url("../img/mine/shezhi.png");
+       background-size:100%; 
+       float:right;
+       margin-top:14px;
+       margin-right: 15px;
+   }
+   .order img{
+       width: 40px;
+       height: 40px;
+   }
