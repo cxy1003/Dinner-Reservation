@@ -15,6 +15,9 @@
       margin-left:10px;
       margin-top:10px;
   }
+  .font_mine{
+    font-size:14px;
+}
   /* 设置顶部背景样式 */
   .top{
       width: 100%;
