@@ -22,3 +22,30 @@ a:hover{
 .font_price{
     color:red;
 }
+/* 字体大小 */
+.font_span{
+    font-size: 12px;
+}
+/* 公共外边距 */
+.mr{
+    margin-right:20px; 
+}
+.mb{
+    margin-bottom: 10px;
+}
+.mt{
+    margin-top:10px;
+}
+.t_b_padding{
+    padding: 5px 0;
+}
+.l_r_padding{
+    padding: 0 5px;
+}
+/* 上下边框 */
+.bt{
+    border-top: 1px solid #eee;
+}
+.bb{
+    border-bottom: 1px solid #eee;
+}
