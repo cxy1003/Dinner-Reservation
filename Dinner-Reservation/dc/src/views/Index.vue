@@ -18,10 +18,20 @@
         </div>          
     </div>
     <!--餐厅预订 -->
-    <div class="perplot">
-            <img src="../img/indexs/preplot.png" alt="">
+    <ul class="perplot">
+       <li class="perplot-list">
+            &nbsp;&nbsp;&nbsp;&nbsp;<img class="perplot-img"  src="../img/indexs/preplot1.png" alt="">
             <p class="font">餐厅预订</p>
-    </div>
+        </li>
+         <li class="perplot-list">
+            &nbsp;<img  class="perplot-img" src="../img/indexs/preplot2.png" alt="">
+            <p class="font">电话预定</p>
+        </li>
+         <li class="perplot-list">
+            &nbsp;<img  class="perplot-img" src="../img/indexs/preplot.png" alt="">
+            <p class="font">小秘预订</p>
+       </li>
+    </ul>
      <!--推荐餐厅  -->
     <div class="recommend">
         <!-- 前面 -->
