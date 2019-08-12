@@ -1,6 +1,8 @@
 .my_bgcolor{
-    background: #fff !important;
-    margin-bottom:3px; 
+    background: rgba(175, 165, 165, 0.349) !important;
+}
+.main_bgcolor{
+    background: red ;
 }
 .login_title{
     height: 35px;
@@ -38,4 +40,23 @@ input+span{
 .point a{
     font-size:15px;
     color:rgba(80,175,82);
+}
+
+/* ################################## */
+/* 个人信息样式 */
+/* 绑定信息图片大小 */
+.personal_headImg{
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top:0;
+}
+
+.personal_img{
+   width: 100%;
+   height: 20px;
+   background-image: url(../../img/mine/dianhua.png) no-repeat;
+   background-size: 25px;
+}
+.personal_infor mt-cell{
+    border-bottom: 1px solid red
 }

@@ -8,6 +8,7 @@ import Install from './views/Install'
 import Mine from './views/Mine'
 import Reguser from './views/Reguser'
 import Notfound from './views/Notfound'
+import Personal from './views/Personal'
 Vue.use(Router)
 
 export default new Router({
@@ -20,7 +21,6 @@ export default new Router({
     {path:"/reguser",component:Reguser},
     // {path:"/carousel",component:Carousel},
     {path:"*",component:Notfound},
-    
-    
+    {path:"/personal",component:Personal}, 
   ]
 })
