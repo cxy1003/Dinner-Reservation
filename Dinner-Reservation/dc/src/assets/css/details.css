@@ -1,0 +1,179 @@
+
+/* 导航部分 */
+.d_bar{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #fafafa;
+    z-index: 1;
+    position: fixed;
+    top:0; 
+}
+.d_bar .d_img{
+    margin-right:115px; 
+}
+.d_size{
+    font-size: 18px;
+    color:  #717171;
+    margin-right:110px; 
+}
+.d_bar img{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    padding-left:3px; 
+}
+/* .d_bar::after{
+    content: "";
+    display: block;
+    clear: both;
+} */
+.d_bar div{
+    justify-content: space-between; 
+}
+.details{
+    border-top:1px solid #eee;
+    margin: 40px 5px 0;
+    z-index: 0;
+}
+/* 图片部分 */
+.details .details_img{
+    width:100%;
+    height: 260px;
+    /* margin: 0 auto; */
+    /* border: 1px solid #00f; */
+    
+}
+.details .details_img img{
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+    vertical-align: baseline;
+}
+/* 店家详情 */
+.d_title{
+    border-bottom: 1px solid #eee;
+}
+.d_title>div{
+    width: 100%;
+    display: flex;
+}
+.d_title>div div{
+    display: flex;
+    justify-content: space-between;
+}
+.d_title>div>div img{
+    vertical-align: baseline;
+}
+#d1{
+    margin-right: 200px;
+}
+.d_title .d_title_store{
+    margin: 10px 0;
+}
+/* 地址样式 */
+.adress{
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding: 5px 0;
+    
+}
+.adress img{
+    width: 16px;
+    height: 16px;
+    vertical-align: bottom;
+    padding: 5px 0;
+}
+.adress span{
+    border-right:1px solid #eee; 
+    padding: 5px 40px 5px 5px;
+}
+/* 提示信息 */
+.d_info{
+    border-bottom: 1px solid #eee;
+    padding:5px 0 10px;; 
+}
+.d_info img{
+    width: 16px;
+    height: 16px;
+    vertical-align: bottom;
+    padding: 0;
+}
+.d_info span{
+    height: 16px;
+    line-height: 16px;
+    padding-left:5px; 
+}
+/* 优惠活动 */
+.d_actity{
+    border-bottom: 1px solid #eee;
+    
+}
+.d_actity div{
+    border-top: 1px solid #eee;
+    padding: 5px 0;
+}
+.d_actity div img{
+    vertical-align: middle;
+}
+/* 推荐菜 */
+.d_more_img{
+    padding-top:5px; 
+}
+.d_more_img img{
+    width: 100%;
+    vertical-align: baseline;
+}
+/* 餐厅基本信息介绍 */
+.d_can{
+    margin: 3px 0 10px;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+}
+.d_can .d_map{
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    width: 100%;
+    height: 100px;
+}
+/* 评分拍照模块 */
+.d_other{
+    margin: 10px 0;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+}
+.d_other ul{
+    display: flex;
+    margin: 0;
+}
+.d_other ul li{
+    width: 100%;
+    justify-content: space-around;
+}
+.d_other ul li img{
+    justify-items: center;
+}
+.p_style{
+    margin: 0 !important;
+    font-size: 12px;
+    color: #a7a1a1;
+    
+}
+/* 推荐 */
+.d_recommed{
+    padding: 0 0 5px;
+    margin-bottom:35px; 
+}
+/* 按钮 */
+.d_ding{
+    position: fixed;
+    top:632px;
+    z-index: 1;
+    width: 100%;
+}
+.mint-button{
+    border-radius: 0 !important;
+    font-size: 16px !important;
+    height: 35px !important;
+}
