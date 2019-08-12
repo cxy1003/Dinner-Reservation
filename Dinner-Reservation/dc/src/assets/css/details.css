@@ -146,6 +146,7 @@
 .d_other ul{
     display: flex;
     margin: 0;
+    padding-left:40px; 
 }
 .d_other ul li{
     width: 100%;
@@ -172,7 +173,7 @@
     z-index: 1;
     width: 100%;
 }
-.mint-button{
+.d_ding .mint-button{
     border-radius: 0 !important;
     font-size: 16px !important;
     height: 35px !important;
