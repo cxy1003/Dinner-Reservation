@@ -1,6 +1,10 @@
 /* 设置所有ul为弹性布局 ，自动换行
    下边距为5px，内边距为15px*/
-  ul{
+   p,ul,li,h1,h2,h3,h4,h5,h6{
+    margin:0;
+    padding: 0;
+}
+   ul{
       display: flex;
       flex-wrap: wrap;
       margin-bottom: 5px;
