@@ -7,34 +7,34 @@
           <div class="login">登录/注册</div>
       </div>
       <!-- 订单状态导航 -->
-      <ul class="nav">
+      <ul class="nav bg">
          <li>
-              <a href="#" class="order">
-                <img src="../img/mine/jinxingzhong.png">
+              <a href="#">
+                <img class="nav_img" src="../img/mine/jinxingzhong.png">
                 <p class="font_family font_mine">进行中</p>
               </a>
          </li>
          <li>
-              <a href="#" class="order">
-                <img src="../img/mine/daizhifu.png">
+              <a href="#">
+                <img  class="nav_img" src="../img/mine/daizhifu.png">
                 <p class="font_family font_mine">待支付</p>
               </a>
          </li>
         <li>
-              <a href="#" class="order">
-                <img src="../img/mine/daidianping.png">
+              <a href="#">
+                <img class="nav_img" src="../img/mine/daidianping.png">
                 <p class="font_family font_mine">待点评</p>
               </a>
         </li>
         <li>
-              <a href="#" class="order">
-                <img src="../img/mine/quanbudingdan.png">
+              <a href="#">
+                <img class="nav_img" src="../img/mine/quanbudingdan.png">
                 <p class="font_family font_mine">全部订单</p>
               </a>
         </li>     
       </ul>
       <!-- 积分优惠导航 -->
-      <ul class="nav_middle">
+      <ul class="nav_other bg">
          <li>
               <a href="#" class="my_prefer">
                 <img src="../img/mine/jifen.png">
@@ -67,44 +67,45 @@
         </li>   
       </ul>
       <!-- 积分兑换导航 -->
-       <div class="my_bgcolor">
-          <p class="font_family">积分</p>
-          <ul class="nav">
+       <div class="bg">
+         <table></table>
+          <p class="font_family font_title">积分</p>
+          <ul class="nav score_nav">
             <li>
-              <a href="#" class="order">
-                <img src="../img/mine/duihuanlipin.png">
+              <a href="#">
+                <img class="nav_img" src="../img/mine/duihuanlipin.png">
                 <p class="font_family font_mine">兑换礼品</p>
               </a>
             </li>
             <li>
-              <a href="#" class="order">
-                <img src="../img/mine/jifenchoujiang.png">
+              <a href="#">
+                <img class="nav_img" src="../img/mine/jifenchoujiang.png">
                 <p class="font_family font_mine">积分抽奖</p>
               </a>
             </li>
             <li>
-              <a href="#" class="order">
-                <img src="../img/mine/yahuati.png">
+              <a href="#">
+                <img class="nav_img" src="../img/mine/yahuati.png">
                 <p class="font_family font_mine">押话题</p>
               </a>
             </li>
             <li>
-              <a href="#" class="order">
-                <img src="../img/mine/jifenguize.png">
+              <a href="#">
+                <img class="nav_img" src="../img/mine/jifenguize.png">
                 <p class="font_family font_mine">积分规则</p>
               </a>
             </li>     
          </ul>
        </div>
        <!-- 推荐餐厅 -->
-       <div class="my_bgcolor">
+       <div class="bg">
          <!-- 推荐餐厅文本 -->
-         <div>
-            <img src="" alt="">
-            <p class="font_family recom_title">推荐餐厅</p>
+         <div class="Recommend_title">
+            <i><img class="nav_img" src="../img/mine/tuijian.png"></i>
+            <p class="font_family">推荐餐厅</p>
          </div>
          <!-- 推荐餐厅列表 -->
-         <ul class="nav Recommend_nav">
+         <ul>
          <li>
               <a href="#" class="Recommend_img">
                 <img src="../img/mine/1.jpg">
@@ -137,47 +138,48 @@
 
        </div>
        <!-- 其他 导航栏 -->
-       <div class="my_bgcolor">
-          <p class="font_family">其他</p>
-           <ul class="nav_middle">
-         <li>
-              <a href="#" class="order">
-                <img src="../img/mine/wodeshoucang.png">
+       <div class="bg">
+         <table></table>
+          <p class="font_family font_title">其他</p>
+           <ul class="nav_other buttom_nav">
+            <li>
+              <a href="#">
+                <img class="nav_img" src="../img/mine/wodeshoucang.png">
                 <p class="font_family font_mine">我的收藏</p>
               </a>
-         </li>
-         <li>
-              <a href="#" class="order">
-                <img src="../img/mine/liulanlishi.png">
+            </li>
+            <li>
+              <a href="#">
+                <img class="nav_img" src="../img/mine/liulanlishi.png">
                 <p class="font_family font_mine">浏览历史</p>
               </a>
-         </li>
-        <li>
-              <a href="#" class="order">
-                <img src="../img/mine/wodetuijian.png">
+           </li>
+           <li>
+              <a href="#">
+                <img class="nav_img" src="../img/mine/wodetuijian.png">
                 <p class="font_family font_mine">我的推荐</p>
               </a>
-        </li>
-        <li>
-              <a href="#" class="order">
-                <img src="../img/mine/wodedianping.png">
+           </li>
+           <li>
+              <a href="#">
+                <img class="nav_img" src="../img/mine/wodedianping.png">
                 <p class="font_family font_mine">我的点评</p>
               </a>
-        </li>   
-        <li>
-              <a href="#" class="order">
-                <img src="../img/mine/wodexiangce.png">
+           </li>   
+           <li>
+              <a href="#">
+                <img class="nav_img" src="../img/mine/wodexiangce.png">
                 <p class="font_family font_mine">我的相册</p>
               </a>
-        </li>
-         <li>
-              <a href="#" class="order">
-                <img src="../img/mine/wodetianjia.png">
+           </li>
+           <li>
+              <a href="#">
+                <img class="nav_img" src="../img/mine/wodetianjia.png">
                 <p class="font_family font_mine">添加餐厅</p>
               </a>
-        </li>      
-      </ul>
-       </div>
+           </li>      
+       </ul>
+     </div>
    </div>
 </template>
 

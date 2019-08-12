@@ -1,65 +1,74 @@
-/* 设置顶部背景样式 */
-.my_bgcolor{
-    background: #ddd;
+/* 设置所有ul为弹性布局 ，自动换行
+   下边距为5px，内边距为15px*/
+  ul{
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 5px;
+      padding:15px; 
   }
+ /* 设置导航标题共有样式（包括其他、积分） */
+  .font_title{
+      margin-left:10px;
+      margin-top:10px;
+  }
+  /* 设置顶部背景样式 */
   .top{
       width: 100%;
-      height:180px;
-      background-image: url("../../img/mine/mine.jpg");
-      position: relative;
+      height:180px;                                     /*顶部高*/
+      background-image: url("../../img/mine/bg3.jpg");  /*背景图片*/ 
+      background-size:100%; 
+      position: relative;                               /*父级元素设置定位*/
   }
   /* 设置用户头像上传样式 */
   .user{
-      width: 61px;
+      width: 61px;                 /*设置头像宽高*/
       height: 61px;
-      border-radius: 50%;
-      background-color: azure;
+      position: absolute;          /*设置相对定位*/ 
+      border-radius: 50%;          /*设置圆角*/                      
+      background-color: azure;  /*设置div背景色*/
       background-image: url("../../img/mine/header.png");
-      background-size:100%; 
-      margin-top:100px;
-      margin-left: 15px;
-      display: inline-block;
+      background-size:100%;    /*图片尺寸*/ 
+      top: 55%;
+      left: 6%; 
        }
+    /* 登陆注册/文本设置定位 */
      .login{
-         position: absolute;
+         position: absolute;   /*设置相对定位*/ 
          font-size:15px;
          color: aliceblue;
          left:89px;
          top: 128px;
      }
+     /* 顶部设置按钮的设置 */
      .install{
          width:40px;
          height:40px;
          background-image: url("../../img/mine/shezhi.png");
          background-size:100%; 
-         float:right;
+         float:right;           /*设置向右浮动*/ 
          margin-top:14px;
          margin-right: 15px;
      }
-     .order img{
+     /* 设置导航图片大小 */
+     .nav_img{
          width: 25px;
          height: 25px;
      }
+     /* 将顶部导航对齐方式为两端对齐*/
      .nav{
-         display: flex;
          justify-content: space-around;
-         background: #ddd;
-         margin: 0;
-         padding:10px;
-         margin-bottom: 5px;
      }
-     /* 设置导航栏ul为弹性布局 */
-     .nav_middle{
-         display: flex;
-         justify-content:flex-start;
-         flex-wrap: wrap;
-         background: #ddd;
-         padding-top: 20px;
-         margin-bottom: 7px;
+     /* 设置顶部导航图片之间的距离 */
+     .nav li a img{
+         margin-left: 9px;
      }
-     /* 设置中间导航栏的每个li之间的间距 */
-     .nav_middle li{
-         margin-left:40px;
+     /* 设置顶部导航最后一个图片距离 */
+     .nav>li:last-child a img{
+        margin-left: 13px;
+     }
+     /* 设置第二个导航栏的每个li之间的间距 */
+     .nav_other li{
+         margin-left:32px;
          margin-right:20px;
          margin-bottom: 20px;
      }
@@ -67,12 +76,39 @@
      .my_prefer img{
        width:40px;
        height:40px;
+       margin-left:6px;
      }
-     /* 推荐餐厅样式设置 */
+     /* 设置积分栏导航图片之间的距离 */
+     .score_nav li a img{
+         margin-left:14px;
+     }
+     .score_nav>li:nth-child(3) a img{
+        margin-left:10px;
+     }
+     .Recommend_title{
+       padding-top:10px; 
+       position: relative;
+       text-align: center;
+     }
+     .Recommend_title>i{
+       position: absolute;
+       top:20%;
+       left:35%;
+     }
+     .recom_title{
+        text-align: center;
+      }
+     /* 推荐餐厅图片大小 */
      .Recommend_img img{
-       width:80px;
+       width:79px;
        height:60px;
+       margin-left: 5px;
      }
+     /* 推荐餐厅图片下的标题字体样式 */
+     .Recommend_img p{
+         margin-left:15px;
+     }
+     /* 推荐餐厅图片下的预定按钮样式 */
      .Recommend_img+input{
          width: 70px;
          height: 26px;
@@ -84,7 +120,9 @@
          background: 0 0;
          box-sizing: border-box;
          color: red;
+         margin-left:3px;
      }
-     .recom_title{
-       text-align: center;
+     /* 底部导航样式 */
+     .buttom_nav li a img{
+         margin-left: 16px;
      }

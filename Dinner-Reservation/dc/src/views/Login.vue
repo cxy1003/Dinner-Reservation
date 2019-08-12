@@ -7,10 +7,12 @@
           <p>登录</p>
         </div>
         <table></table>
-        <div>
         <!-- 创建输入框 -->
-          <input class="uname" placeholder="输入手机号" v-model="uname" ><br>
+        <div class="my_bgcolor">
+          <input class="uname" placeholder="输入手机号" v-model="uname" >
+        </div>
         <!-- 密码输入框 -->
+        <div class="my_bgcolor">
           <input class="upwd" label="密码"  placeholder="输入密码" type="password"  v-model="upwd"><span>|获取验证码</span>
         </div>
         <!-- 登录按钮 -->
@@ -21,7 +23,6 @@
         </div>
    </div>
 </template>
-
 <script>
 export default {
 
