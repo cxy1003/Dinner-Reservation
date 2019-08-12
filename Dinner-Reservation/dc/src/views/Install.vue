@@ -28,14 +28,14 @@
 </template>
 <script>
 export default {
-    data(){},
-    methods:{
-        sharing(){
-           this.$messagebox("公众号'专属小秘'已复制，您可直接分享")
-        }
+  data() {},
+  methods: {
+    sharing() {
+      this.$messagebox("公众号'专属小秘'已复制，您可直接分享");
     }
-}
+  }
+};
 </script>
 <style scoped>
-    @import url("../assets/css/install.css");
+@import url("../assets/css/install.css");
 </style>
