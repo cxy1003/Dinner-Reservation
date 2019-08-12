@@ -1,5 +1,5 @@
 <template>
-    <div class="bg">
+    <div class="bg_install">
         <!-- 我的里的设置页面 -->
         <!-- 页头设置 -->
         <div class="setting">
@@ -37,6 +37,5 @@ export default {
 }
 </script>
 <style scoped>
-    @import url("../assets/css/comm.css");
     @import url("../assets/css/install.css");
 </style>
