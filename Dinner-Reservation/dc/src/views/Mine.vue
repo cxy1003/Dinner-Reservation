@@ -7,7 +7,7 @@
           <div class="login">登录/注册</div>
       </div>
       <!-- 订单状态导航 -->
-      <ul class="nav bg">
+      <ul class="nav bg mine_nav">
          <li>
               <a href="#">
                 <img class="nav_img" src="../img/mine/jinxingzhong.png">
@@ -34,7 +34,7 @@
         </li>     
       </ul>
       <!-- 积分优惠导航 -->
-      <ul class="nav_other bg">
+      <ul class="nav_other bg mine_nav">
          <li>
               <a href="#" class="my_prefer">
                 <img src="../img/mine/jifen.png">
@@ -70,7 +70,7 @@
        <div class="bg">
          <table></table>
           <p class="font_family font_title">积分</p>
-          <ul class="nav score_nav">
+          <ul class="nav score_nav mine_nav">
             <li>
               <a href="#">
                 <img class="nav_img" src="../img/mine/duihuanlipin.png">
@@ -105,7 +105,7 @@
             <p class="font_family">推荐餐厅</p>
          </div>
          <!-- 推荐餐厅列表 -->
-         <ul>
+         <ul class="mine_nav">
          <li>
               <a href="#" class="Recommend_img">
                 <img src="../img/mine/1.jpg">
@@ -141,7 +141,7 @@
        <div class="bg">
          <table></table>
           <p class="font_family font_title">其他</p>
-           <ul class="nav_other buttom_nav">
+           <ul class="nav_other buttom_nav mine_nav">
             <li>
               <a href="#">
                 <img class="nav_img" src="../img/mine/wodeshoucang.png">
@@ -190,5 +190,5 @@ export default {
 </script>
 
 <style scoped>
-@import url("../assets/css/user.css");
+@import url("../assets/css/mine.css");
 </style>
