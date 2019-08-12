@@ -10,7 +10,7 @@ a:hover{
 }
 /* 背景颜色 */
 .bg{
-    background: #eee;
+    background: #fafafa;
 }
 /* 字体相关样式 */
 .font_family{
@@ -20,35 +20,5 @@ a:hover{
 }
 /* 字体颜色 */
 .font_price{
-    color: #fe434e;
-}
-.font_mine{
-    font-size:14px;
-}
-/* 字体大小 */
-.font_span{
-    font-size: 12px;
-}
-/* 公共外边距 */
-.mr{
-    margin-right:20px; 
-}
-.mb{
-    margin-bottom: 10px;
-}
-.mt{
-    margin-top:10px;
-}
-.t_b_padding{
-    padding: 5px 0;
-}
-.l_r_padding{
-    padding: 0 5px;
-}
-/* 上下边框 */
-.bt{
-    border-top: 1px solid #eee;
-}
-.bb{
-    border-bottom: 1px solid #eee;
+    color:red;
 }

@@ -1,0 +1,154 @@
+    /* 背景上栏修饰 */
+    p,a,h1,h2,h3,h4,h5,h6,ul,li{
+        margin:0;
+        padding:0;
+    }
+    #container{
+        display: flex;
+        justify-content: space-between;/*弹性布局*/
+        width:100%;
+        height:200px;
+        background-image:url("../../img/carousel/c1.png");
+    }  
+    /* 上栏整体 */
+    #container #top-img{
+        height:50px;
+        line-height:50px;
+    }
+    /* 上海字体样式 */
+    #container #top-img .font_family{
+        color:#fff;
+        font-size: 18px;
+    }
+    /* 图标的样式V */
+   #container .icon{  
+       font-size:20px;
+       position: absolute;
+       top:11px;
+       left:30px;
+   }
+   /* 文本框修饰 */
+   /* #container #top-img .input{
+       display: inline-block;
+       width:83%;
+       height:30px;
+       border-radius:10%;
+   } */
+
+  
+   /* 文本框 */
+     #container #top-img .inputIcon{
+        width:65%;
+        height: 26px;
+        font-size: 14px !important;
+        border-radius: 15px;/*圆角*/
+        padding: 0 0 0 23px;
+        border: 1px solid rgba(255,255,255,.5);
+        background: 0 0;
+        box-sizing: border-box;
+        margin-left:30px;
+        background-color:#fff;
+        opacity: 0.8;
+        position: absolute;
+        top:15px;
+        left:40px;
+        /* background:url("../../img/indexs/search.png") no-repeat; */   
+        color:#ccc;
+          font-size:16px;
+         
+   }
+   #container #top-img .search{
+       width:20px;height:20px;
+       position: relative;
+       left:32px;
+       top:8px;
+       color:#000;
+       z-index:1;
+   }
+   /* 附近 */
+   #container .near{
+        display: flex;
+        height:50px;
+        flex-direction: column;
+        line-height:50px;
+   }
+   /* 小图标 */
+   #container .near img{
+       width:16px;height:16px;
+       display: inline-block;
+       position: relative;
+       top:14px;left:-11px;
+   }
+   #container .near p{
+       font-size:6px;
+       color:#fff;
+       position: relative;
+       top:-3px;left:-13px;
+   }
+   /* 餐厅预订 */
+   #main .perplot{
+       margin:20px 10px 0 30px;
+   }
+   #main .perplot .font{
+        margin:0;
+        color:#717171;
+   }
+   /* 推荐餐厅 */
+   #main .recommend{
+       width:100%;
+       height:50px;
+       /* padding:0 5px;   */
+   }
+   /* 推荐餐厅前面的文字 */
+   #main .recommend .row{
+        display: inline-block;       
+        line-height:50px;
+        margin-left:10px;
+    }
+   /*竖线 */
+   #main .recommend .row .rows{
+       display: inline-block;
+        font-weight: inherit;
+       color:red;
+       /* 渐变色实现 */
+       background-image: linear-gradient(to bottom red 10px,yellow 100px);
+   }
+   /*文字 */
+   #main .recommend .row .font_family{
+       display: inline-block;
+       color:rgb(37, 36, 36);
+       margin-left:3px;   
+   }
+   /* 店铺介绍 */
+   #main .recommend .info{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-around;/*两端对齐*/
+         /* 垂直居中 */
+        /* padding:4px 5px; 最外层加内边距  */
+   }
+   /* 店铺图片样式 */
+   #main .recommend .info .a{
+    width:47%;/*指定商品的宽度*/
+    border:1px solid #ccc;/* 商品外灰色边框 */
+    border-radius:5px;/*指定元素圆角*/
+    margin:4px 2px;/*外边距*/
+    /*padding: 4px;内边距*/
+    box-sizing:border-box;/*重新计算宽度*/
+    flex-direction: column;/*指定子元素排列方式*/
+   }
+   /* 图片的样式 */
+   #main .recommend .info .a img{
+       width:100%;
+       height:150px;
+       margin-right:5px;
+   }
+   /* 标题大小及颜色 */
+   #main .recommend .info .a .font_family{
+       font-size:15px;
+       margin:5px 0 5px 5px;
+       color:#000;
+   }
+   #main .recommend .info .a .font_price{
+    padding:0 0 5px 5px;
+   }

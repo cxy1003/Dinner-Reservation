@@ -3,8 +3,8 @@ import Router from 'vue-router'
 import Index from './views/Index'
 import Details from './views/Details'
 import Login from './views/Login'
-import Reguser from './views/Reguser'
-import Mine from './views/Mine'
+import Install from './views/Install'
+import Carousel from './components/Carousel'
 import Notfound from './views/Notfound'
 Vue.use(Router)
 
@@ -13,8 +13,10 @@ export default new Router({
     {path:"/",component:Index},
     {path:"/details",component:Details},
     {path:"/login",component:Login},
-    {path:"/reguser",component:Reguser},
-    {path:"/mine",component:Mine},
-    {path:"*",component:Notfound}
+    {path:"/install",component:Install},
+    {path:"/carousel",component:Carousel},
+    {path:"*",component:Notfound},
+    
+    
   ]
 })
