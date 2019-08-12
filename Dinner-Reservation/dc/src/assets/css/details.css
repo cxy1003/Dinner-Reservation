@@ -146,6 +146,7 @@
 .d_other ul{
     display: flex;
     margin: 0;
+    padding-left:40px; 
 }
 .d_other ul li{
     width: 100%;
