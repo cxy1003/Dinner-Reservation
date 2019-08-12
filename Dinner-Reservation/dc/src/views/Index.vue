@@ -1,7 +1,7 @@
 <template>
-<div id="main">
+<div id="i-main">
     <!-- 背景轮播图及其上栏 -->
-    <div id="container">
+    <div id="i-container">
         <div id="top-img">
             <a class="font_family"  href="javascript:;">上海 </a>
             <!-- icon V 图标 -->
