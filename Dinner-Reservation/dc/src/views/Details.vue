@@ -33,7 +33,7 @@
                         <span  class="font_span d-mp">粤菜馆</span>
                     </div>
                 </div>
-                <p class="font_span">口味 3.6 环境 3.6 服务 3.6</p>
+                <p class="font_span mb mt">口味 3.6 环境 3.6 服务 3.6</p>
             </div>
             <!-- 地址部分 -->
             <div class="adress">

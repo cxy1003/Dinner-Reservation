@@ -7,6 +7,7 @@ import Install from './views/Install'
 // import Carousel from './components/Carousel'
 import Mine from './views/Mine'
 import Reguser from './views/Reguser'
+import Userpreplot from './views/Userpreplot'
 import Notfound from './views/Notfound'
 Vue.use(Router)
 
@@ -19,6 +20,7 @@ export default new Router({
     {path:"/mine",component:Mine},
     {path:"/reguser",component:Reguser},
     // {path:"/carousel",component:Carousel},
+    {path:"/userpreplot",component:Userpreplot},
     {path:"*",component:Notfound},
     
     
