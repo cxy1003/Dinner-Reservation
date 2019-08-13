@@ -66,7 +66,18 @@
  </div>
 </template>
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            
+        }
+    },
+    created() {
+        this.axios.get("http://127.0.0.1:5050/myindex/goods").then(result=>{
+            console.log(result)
+        })
+    },
+};
 </script>
 <style scoped>
 /* 引入基础样式 */
