@@ -1,7 +1,7 @@
 <template>
   <div id="allorder">
       <!-- 顶部导航栏 -->
-      <div class="nav-top bb">
+      <div class="nav-top">
           <!-- 三角 -->
           <img src="../img/indexs/jian.png" alt="">
           <span>订单列表</span>
@@ -19,20 +19,15 @@
             <img src="../img/indexs/jian0.png" alt="">
           </span>
       </div>
-      <!-- 添加商品 -->
-      <div class="addgood"> 
-        <div class="goods">
-          <img src="../img/indexs/g8.jpg" alt="">
-          <h4 class="font_family order_font">粤珍轩<br>&nbsp; &nbsp;&nbsp;土门商厦店</h4>         
-        </div>
-        <div class="add">
-          <span class="price font_price">￥60-100</span>
-          <span>-</span>
-          <input class="Input" value="1">
-          <span>+</span>
-        </div>
-      </div>    
-  </div>
+      <!--商品详情 -->
+      <div class="mb bb">
+        <mt-cell class="detail" title="御珍轩 土门商厦店" label="预定中">
+            <img  slot="icon" src="../img/allorder/preop.png" alt="">
+            <img src="../img/allorder/trash.png" alt="">            
+        </mt-cell>
+        <span class="title font_family">8-13 周二 13:30|5人 大厅</span>
+      </div>
+</div>
 </template>
 <script>
 export default {

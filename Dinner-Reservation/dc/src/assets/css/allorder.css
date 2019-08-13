@@ -7,6 +7,8 @@
     line-height:50px;
     text-align:center;/*文字居中*/
     background:#fff;
+    position: fixed;
+    top:0px;
   }
   /* 箭头的位置 */
   #allorder .nav-top>img{
@@ -19,6 +21,7 @@
   #allorder .orders{
     width:100%;
     height:50px;
+    margin-top:50px;
     line-height:50px;
     background:#fff;
     /* 弹性布局 */
@@ -43,44 +46,22 @@
     font-size:14px;
     margin-left:10px;
   }
-  /*2修饰商品样式*/
-  #allorder .addgood{
-      width:100%;/*指定商品的宽度*/
-      height:100px;
-      border-radius:5px;/*指定元素圆角*/
-      margin:2px 0;/*外边距*/
-      padding: 2px;/*内边距*/
-      box-sizing:border-box;/*重新计算宽度*/
-      display: flex;
-      justify-content:space-between;
-      flex-direction: column;/*指定子元素排列方式*//*最小高度*/
-      text-align:center;
-      background:#fff;
+  #allorder .detail{
+      /* padding-top:10px; */
+        height:70px;
+        line-height:70px;
   }
-  /* 图片和标题 */
-  #allorder .addgood .goods{
-    display: flex;
+  /* ui标签样式 */
+  #allorder .mint-cell-wrapper{
+      padding-top:15px;
   }
-  /*3修饰商品中图片样式*/
-  #allorder .addgood .goods>img{
-      height:100px;
+  #allorder .title{
+      font-size:12px;
+      position:relative;
+      bottom:27px;
+      left:63px;
   }
-  #allorder .addgood .goods>h4{
-    margin-top:20px;
-    font-size:15px;
-    line-height:20px;
-  }
-  /* 加减及文字 */
-  #allorder .addgood .add .price{
-    margin:0 0 0 145px;
-    padding-right:50px;
-  }
-  #allorder .addgood .add .Input{
-    /* input大小 */
-    text-align:center;
-    width:40px;height:40px;
-    margin:0;padding:0;
-  }
-  #allorder .addgood .add  span{
-    margin:0;
+  #allorder span.mint-cell-text{
+      position: relative;
+      left:10px;
   }
