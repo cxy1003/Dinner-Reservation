@@ -8,8 +8,10 @@ import Install from './views/Install'
 import Mine from './views/Mine'
 import Reguser from './views/Reguser'
 import Userpreplot from './views/Userpreplot'
-import Notfound from './views/Notfound'
 import Personal from './views/Personal'
+import Allorder from './views/Allorder'
+import Notfound from './views/Notfound'
+
 Vue.use(Router)
 
 export default new Router({
@@ -22,7 +24,9 @@ export default new Router({
     {path:"/reguser",component:Reguser},
     // {path:"/carousel",component:Carousel},
     {path:"/userpreplot",component:Userpreplot},
-    {path:"*",component:Notfound},
     {path:"/personal",component:Personal}, 
+    {path:"/allorder",component:Allorder},
+    {path:"*",component:Notfound},
+    
   ]
 })
