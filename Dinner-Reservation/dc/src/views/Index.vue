@@ -1,9 +1,5 @@
 <template>
 <div id="i-main">
-    <!-- 面板组件 -->
-    <mt-tab-container v-model="active">
-        <!-- 子面板 -->
-        <mt-tab-container-item id="message">
         <!-- 背景轮播图及其上栏 -->
             <div id="i-container">
                 <div id="top-img">
@@ -67,17 +63,7 @@
                     </div>
                 </div>      
             </div>
-        </mt-tab-container-item>
-    </mt-tab-container>
-    <!--底部导航栏  -->
-    <!-- 第一个按钮 -->
-    <mt-tabbar v-model="active" fixed>
-        <!-- 第一个按钮 -->
-        <mt-tab-item id="message" @click.native="changeState(0)">
-            <!-- 图片和通讯录 -->
-            
-        </mt-tab-item>
-    </mt-tabbar>
+
  </div>
 </template>
 <script>
