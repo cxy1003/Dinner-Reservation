@@ -1,5 +1,5 @@
 <template>
-  <div id="allorder">
+  <div id="allorders">
       <!-- 顶部导航栏 -->
       <div class="nav-top">
           <!-- 三角 -->
