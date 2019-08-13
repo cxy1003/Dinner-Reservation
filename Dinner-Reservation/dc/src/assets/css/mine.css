@@ -75,8 +75,8 @@
      }
      /* 设置第二个导航栏的每个li之间的间距 */
      .nav_other li{
-         margin-left:32px;
-         margin-right:20px;
+         margin-left:21px;
+         margin-right:38px;
          margin-bottom: 20px;
      }
      /* 设置我的积分，我的优惠..导航栏图片尺寸 */
