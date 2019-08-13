@@ -10,6 +10,7 @@ import Reguser from './views/Reguser'
 import Userpreplot from './views/Userpreplot'
 import Personal from './views/Personal'
 import Allorder from './views/Allorder'
+import Orderresult from './views/Orderresult'
 import Notfound from './views/Notfound'
 
 Vue.use(Router)
@@ -26,6 +27,7 @@ export default new Router({
     {path:"/userpreplot",component:Userpreplot},
     {path:"/personal",component:Personal}, 
     {path:"/allorder",component:Allorder},
+    {path:"/orderresult",component:Orderresult},
     {path:"*",component:Notfound},
     
   ]

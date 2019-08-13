@@ -63,9 +63,10 @@
                     <span class="font_span">  推荐菜</span>
                 </div>
                 <div class="d_more_img">
-                    <img src="../../public/img/details/11.jpg" alt="">
+                    <img src="../../public/img/details/11.jpg" alt="" class="mr_s">
                     <img src="../../public/img/details/22.jpg" alt="">
-                    <img src="../../public/img/details/33.jpg" alt="">
+                    <img src="../../public/img/details/33.jpg" alt="" class="mr_s">
+                    <img src="../../public/img/details/44.jpg" alt="">
                 </div>
             </div>
             <!-- 餐厅基本信息 -->

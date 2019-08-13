@@ -121,8 +121,11 @@
 .d_more_img{
     padding-top:5px; 
 }
+.mr_s{
+    margin-right:5px; 
+}
 .d_more_img img{
-    width: 100%;
+    width: 49%;
     vertical-align: baseline;
 }
 /* 餐厅基本信息介绍 */
