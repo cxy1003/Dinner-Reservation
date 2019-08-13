@@ -4,7 +4,7 @@
           <table></table>
           <div class="install"></div>
           <div class="user"></div>
-          <div class="login">登录/注册</div>
+          <div class="login" @click="go">登录/注册</div>
       </div>
       <!-- 订单状态导航 -->
       <ul class="nav bg mine_nav">
@@ -185,6 +185,14 @@
 
 <script>
 export default {
+    data(){
+        return{}
+    },
+    methods:{
+        go(){
+            this.$router.push('/Login');
+        }
+    }
 
 }
 </script>
