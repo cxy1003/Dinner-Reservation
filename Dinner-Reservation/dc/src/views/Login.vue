@@ -1,5 +1,5 @@
 <template>
-   <div class="bg">
+   <div class="bg" id="abc">
       <!-- login.vue -->
         <!-- 标题 -->
         <div class="login_title">
