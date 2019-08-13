@@ -57,6 +57,9 @@ input+span{
    background-image: url(../../img/mine/dianhua.png) no-repeat;
    background-size: 25px;
 }
-.personal_infor mt-cell{
-    border-bottom: 1px solid red
+/* 个人信息栏单元格下边距 */
+.personal_infor{
+   /* margin-bottom: 2px solid red;
+    */
+    margin-bottom: 1px;
 }
