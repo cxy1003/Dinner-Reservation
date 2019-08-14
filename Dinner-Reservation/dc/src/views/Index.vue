@@ -42,7 +42,7 @@
                 <!--餐厅介绍 -->
                 <div class="info" >
                     <div class="a" v-for="(item,i) of arr" :key="i">
-                        <img :src="`img/index/${item.img}`" alt="">
+                        <img :src="`http://127.0.0.1:5050/img/index/${item.img}`" alt="">
                         <p class="font_family" v-text="item.store"></p>
                         <span class="font_price">人均:￥</span>
                         <span class="font_price" v-text="item.price">60-100</span>
@@ -63,7 +63,6 @@ export default {
         this.axios.get("http://127.0.0.1:5050/myindex/goods").then(result=>{
              var arr=result.data;
              this.arr=arr;
-             console.log(arr)
         })
     },
 };

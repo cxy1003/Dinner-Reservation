@@ -11,7 +11,7 @@ create table dc_user(
     gender varchar(5),
     upic varchar(128)
 ); 
-insert into dc_user values(null,'tom',md5('123'),"15339165228","0","img/1.png");
+insert into dc_user values(null,'tom',md5('123'),"15339165228","0","1.png");
 -- 轮播图dc_index_carouse
 create table dc_index_carouse(
 	cid int primary key auto_increment,
@@ -19,13 +19,13 @@ create table dc_index_carouse(
 	href varchar(128),
 	title varchar(64)
 );
-insert into dc_index_carouse values (null,"img/c1.png","index.html",""),
-(null,"img/c2.png","index.html",""),
-(null,"img/c3.png","index.html",""),
-(null,"img/c4.png","index.html",""),
-(null,"img/c5.png","index.html",""),
-(null,"img/c6.png","index.html",""),
-(null,"img/c7.png","index.html","");
+insert into dc_index_carouse values (null,"c1.png","index.html",""),
+(null,"c2.png","index.html",""),
+(null,"c3.png","index.html",""),
+(null,"c4.png","index.html",""),
+(null,"c5.png","index.html",""),
+(null,"c6.png","index.html",""),
+(null,"c7.png","index.html","");
 # 预定表 dc_preplot(前端获取)
 create table dc_preplot(
     pid int primary key auto_increment,

@@ -15,7 +15,7 @@
         <div class="details font_family">
             <!-- 详情页图片部分 -->
             <div class="details_img">
-                <img :src="'../../public/img/details/'+p1.img" alt="">
+                <img :src="`http://127.0.0.1:5050/img/details/${p1.img}`" alt="">
             </div>
             <!-- 店家详情 -->
             <div class="d_title">

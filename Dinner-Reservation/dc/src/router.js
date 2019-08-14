@@ -5,7 +5,7 @@ import Index from './views/Index'
 import Details from './views/Details'
 import Login from './views/Login'
 import Install from './views/Install'
-// import Carousel from './components/Carousel'
+import Carousel from './components/Carousel'
 import Mine from './views/Mine'
 import Reguser from './views/Reguser'
 import Userpreplot from './views/Userpreplot'
@@ -25,7 +25,7 @@ export default new Router({
     {path:"/install",component:Install},
     {path:"/mine",component:Mine},
     {path:"/reguser",component:Reguser},
-    // {path:"/carousel",component:Carousel},
+    {path:"/carousel",component:Carousel},
     {path:"/userpreplot",component:Userpreplot},
     {path:"/personal",component:Personal}, 
     {path:"/allorder",component:Allorder},

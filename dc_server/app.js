@@ -32,7 +32,7 @@ app.use(session({
     resave:true,  //请求时更新数据
     saveUninitialized:true //保存初始的数据
 }))
-//托管静态资源到qiongyou下
+//托管静态资源到dc下
 app.use(express.static("public"))
 //使用中间件
 app.use(bodyParser.urlencoded({
