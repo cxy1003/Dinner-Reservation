@@ -3,7 +3,7 @@
         <!-- 背景轮播图及其上栏 -->
             <div id="i-container">
                 <div id="top-img">
-                    <a class="font_family"  href="javascript:;">上海 </a>
+                    <a @click="Search" class="font_family"  href="javascript:;">上海 </a>
                     <!-- icon V 图标 -->
                     <img class="icon" src="../../public/img/index/icon1.png" alt="">         
                     <!-- 文本框 -->
@@ -40,7 +40,7 @@
                     <p class="font_family">推荐餐厅</p>
                 </div> 
                 <!--餐厅介绍 -->
-                <div class="info" >
+                <div class="info">
                     <div class="a" v-for="(item,i) of arr" :key="i">
                         <img :src="`http://127.0.0.1:5050/img/index/${item.img}`" alt="">
                         <p class="font_family" v-text="item.store"></p>
@@ -49,6 +49,7 @@
                     </div>
                 </div>      
             </div>
+          <!-- <div style="height:950px;"></div> -->
  </div>
 </template>
 <script>
@@ -57,6 +58,11 @@ export default {
         return {
             arr:[],
             // p1:"",
+        }
+    },
+    methods:{
+        Search(){
+            this.$router.push("./Search.vue")
         }
     },
     created() {

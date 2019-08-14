@@ -3,6 +3,7 @@
         margin:0;
         padding:0;
     } */
+
     #i-container{
         display: flex;
         justify-content: space-between;/*弹性布局*/
@@ -107,7 +108,10 @@
    #i-main .recommend{
        width:100%;
        height:50px;
-       /* padding:0 5px;   */
+       margin-bottom:57px;
+       /* padd
+       
+       ing:0 5px;   */
    }
    /* 推荐餐厅前面的文字 */
    #i-main .recommend .row{
@@ -136,6 +140,7 @@
        justify-content: space-around;/*两端对齐*/
          /* 垂直居中 */
         /* padding:4px 5px; 最外层加内边距  */
+        margin-bottom:57px;
    }
    /* 店铺图片样式 */
    #i-main .recommend .info .a{
@@ -161,4 +166,7 @@
    }
    #i-main .recommend .info .a .font_price{
     padding:0 0 5px 5px;
+   }
+   .mint-tab-container{
+      overflow:visible !important;
    }

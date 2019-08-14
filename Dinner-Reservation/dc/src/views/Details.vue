@@ -1,6 +1,6 @@
 <template>
     <div class="bg">
-        <!-- 导航部分 -->
+        <!-- 导航部分  -->
         <div class="d_bar">
             <div class="d_img">
                 <img src="../../public/img/details/return.png" alt="">
