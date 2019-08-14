@@ -59,6 +59,7 @@ export default {
     },
     back(){
       this.$router.push('/Mine');
+      // this.$router.go(-1);   
     }
   }
 }

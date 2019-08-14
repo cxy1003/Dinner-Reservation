@@ -10,8 +10,7 @@
            <!-- <details></details> -->
          </mt-tab-container-item>
           <mt-tab-container-item id="mine">
-           <mine>
-           </mine>
+           <mine>   </mine>
          </mt-tab-container-item>
       </mt-tab-container>
       <!--底部导航栏  -->
@@ -62,11 +61,13 @@ export default {
        }
     },    
   methods:{
+    
     changeState(x){
+      console.log(x);
       //函数功能:将当前参数下标
       //对应数组值修改true其它修改false
       //1:创建循环,循环数组中内容var ui=x;
-      
+      this.id=x
       for(var i=0;i<this.currentIndex.length;i++){
        //2:判断如果循环下标与n相等 20
        var ui = x;
