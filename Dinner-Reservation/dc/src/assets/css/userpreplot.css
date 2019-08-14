@@ -1,8 +1,64 @@
 /* 预订详情页面 */
 .u_preplot_yu {
     position: fixed;
+    top:0;
+    width: 100%;
+    height: 30px;
+    padding-top:10px; 
 }
 .u_preplot_yu img{
-    margin-bottom:5px; 
+    margin-right:136px; 
     vertical-align: bottom;
+
+}
+.u_info{
+    margin-top:40px; 
+}
+.u_bg_margin{
+    margin-right:294px;
+}
+.u_b_margin{
+    margin-right:206px;
+}
+/* 开关样式 */
+.u_switch{
+    position: relative;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+.u_switch input+span{
+    margin: 0 ;
+}
+.u_switch .mint-switch{
+    position: absolute;
+    right: 0;
+    top:5px;
+}
+/* 需求 */
+.u_anpai input{
+    height: 35px;
+    width: 320px;
+    background: #fafafa !important;
+    
+}
+.u_end{
+    text-align: center;
+    margin: 311px auto 0;
+    /* padding-bottom:10px;  */
+}
+.u_radio{
+    text-align: right;
+}
+/*  */
+u_radio .mint-radio-core {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
 }
