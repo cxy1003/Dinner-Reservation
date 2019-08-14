@@ -2,10 +2,6 @@
  <div class="my_bgcolor">
    <!-- 个人信息页面  -->
    <!-- 顶部 -->
-    <!-- <div class="login_title">
-        <img src="../img/mine/left.png">
-         <p>个人信息</p> 
-    </div> -->
     <!-- 点击修改头像 -->
     <mt-header title="个人信息">
            <mt-button  icon="back" slot="left">返回</mt-button>
