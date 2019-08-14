@@ -2,11 +2,9 @@
    <div class="my_bgcolor" id="abc">
       <!-- login.vue -->
         <!-- 标题 -->
-        <div class="login_title">
-          <img src="../img/mine/left.png">
-          <p>登录</p> 
-        </div>
-        <table></table>
+        <mt-header title="登录">
+           <mt-button @click="back" icon="back" slot="left">返回</mt-button>
+        </mt-header>
         <!-- 创建输入框 -->
        <mt-field class="personal_infor" label="用户名" placeholder="请输入用户名" type="email" v-model="uname"></mt-field>
        <mt-field class="personal_infor" label="用户密码" placeholder="请输入密码" type="password" v-modal="upwd"></mt-field>
@@ -58,6 +56,9 @@ export default {
     },
     reg(){
       this.$router.push('/Reguser')
+    },
+    back(){
+      this.$router.push('/Mine');
     }
   }
 }

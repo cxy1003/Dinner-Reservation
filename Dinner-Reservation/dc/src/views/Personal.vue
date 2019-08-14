@@ -2,11 +2,14 @@
  <div class="my_bgcolor">
    <!-- 个人信息页面  -->
    <!-- 顶部 -->
-    <div class="login_title">
+    <!-- <div class="login_title">
         <img src="../img/mine/left.png">
          <p>个人信息</p> 
-    </div>
+    </div> -->
     <!-- 点击修改头像 -->
+    <mt-header title="个人信息">
+           <mt-button  icon="back" slot="left">返回</mt-button>
+    </mt-header>
     <div class="personal_headImg">
         <img src="../img/mine/touxiang.png" alt="">
         <p class="font_family font_mine">点击修改头像</p>
@@ -32,7 +35,7 @@
              <img slot="icon" src="../img/mine/weixin.png" width="24"  height="24">
              <span style="color: red">点击绑定</span>
         </mt-cell>
-        <mt-button size="large">退出登录</mt-button>
+        <mt-button size="large" @click="back">退出登录</mt-button>
         
         
         
@@ -46,7 +49,13 @@ export default {
     return{
       
     }
+    },
+    methods:{
+        back(){
+            this.$router.push("/Mine");
+        }
     }
+
 
 }
 </script>
