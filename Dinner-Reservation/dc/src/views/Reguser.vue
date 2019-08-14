@@ -2,10 +2,9 @@
    <div class="my_bgcolor">
       <!-- login.vue -->
         <!-- 标题 -->
-        <div class="login_title">
-          <img @click="go" src="../img/mine/left.png">
-          <p>注册</p>
-        </div>
+        <mt-header title="注册">
+           <mt-button @click="go" icon="back" slot="left">返回</mt-button>
+        </mt-header>
         <table></table>
         <!-- 创建输入框 -->
        <mt-field  class="personal_infor" label="用户名" placeholder="请输入用户名" v-model="uname">
