@@ -29,7 +29,7 @@ export default {
  .service_img{
      width: 100%;
      height:700px;
-      background-image: url(../img/mine/beijing1.jpg); 
+      background-image: url(../img/mine/beijing5.jpg); 
      background-size:100%; 
 
  }
