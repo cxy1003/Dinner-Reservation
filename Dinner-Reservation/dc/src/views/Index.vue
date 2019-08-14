@@ -39,7 +39,7 @@
                     <p class="rows">|</p>
                     <p class="font_family">推荐餐厅</p>
                 </div> 
-                <!--餐厅介绍  -->
+                <!--餐厅介绍 -->
                 <div class="info" >
                     <div class="a" v-for="(item,i) of arr" :key="i">
                         <img :src="`img/index/${item.img}`" alt="">

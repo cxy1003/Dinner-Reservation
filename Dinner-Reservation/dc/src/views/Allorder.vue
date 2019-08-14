@@ -3,7 +3,7 @@
       <!-- 顶部导航栏 -->
       <div class="nav-top">
           <!-- 三角 -->
-          <img src="../img/indexs/jian.png" alt="">
+          <img src="../../public/img/index/jian.png" alt="">
           <span>订单列表</span>
       </div>
       <!-- 订单栏 -->
@@ -16,14 +16,14 @@
             <li class="order_font">待点评</li>
           </ul>
           <span class="spanImg">|
-            <img src="../img/indexs/jian0.png" alt="">
+            <img src="../../public/img/index/jian0.png" alt="">
           </span>
       </div>
       <!--商品详情 -->
       <div class="mb bb">
         <mt-cell class="detail" title="御珍轩 土门商厦店" label="预定中">
-            <img  slot="icon" src="../img/allorder/preop.png" alt="">
-            <img src="../img/allorder/trash.png" alt="">            
+            <img  slot="icon" src="../../public/img/allorder/preop.png" alt="">
+            <img src="../../public/img/allorder/trash.png" alt="">            
         </mt-cell>
         <span class="title font_family">8-13 周二 13:30|5人 大厅</span>
       </div>
