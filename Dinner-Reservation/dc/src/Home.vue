@@ -48,9 +48,10 @@
 </template>
 <script>
 import Index from "../src/views/Index"
-// import Details from "../src/views/details"
+import Fond from "../src/views/fond"
 import Mine from "../src/views/Mine"
 import Tablebar from "../src/views/Tablebar"
+import Login from "../src/views/Login"
 export default {
     data(){
      return {
@@ -81,8 +82,10 @@ export default {
  },
   components:{
     "index":Index,
+    "fond":Fond,
     "mine":Mine,
-    "tablebar":Tablebar
+    "tablebar":Tablebar,
+    "login":Login
   }
 }
 </script>
