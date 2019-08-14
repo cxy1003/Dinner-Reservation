@@ -6,11 +6,14 @@
          <mt-tab-container-item id="index">
            <index></index>
          </mt-tab-container-item>
-          <mt-tab-container-item id="details">
-           <!-- <details></details> -->
+          <mt-tab-container-item id="fond">
+           <fond></fond>
+         </mt-tab-container-item>
+         <mt-tab-container-item id="service">
+           <service></service>
          </mt-tab-container-item>
           <mt-tab-container-item id="mine">
-           <mine>   </mine>
+           <mine></mine>
          </mt-tab-container-item>
       </mt-tab-container>
       <!--底部导航栏  -->
@@ -24,7 +27,7 @@
          </tablebar>
          订餐   
         </mt-tab-item>
-        <mt-tab-item id="details" @click.native="changeState(1)">
+        <mt-tab-item id="fond" @click.native="changeState(1)">
          <tablebar 
          :selectedImage="require('./assets/succfaxian.png')"
          :normalImage="require('./assets/normalfaxian.png')"
@@ -32,11 +35,19 @@
          </tablebar>
          发现
         </mt-tab-item>
-        <mt-tab-item id="mine" @click.native="changeState(2)">
+         <mt-tab-item id="service" @click.native="changeState(2)">
+          <tablebar
+          :selectedImage="require('./assets/succxiaomi.png')"
+          :normalImage="require('./assets/normalxiaomi.png')"
+          :focused="currentIndex[2].isSelect">
+          </tablebar>
+          小秘
+        </mt-tab-item>
+        <mt-tab-item id="mine" @click.native="changeState(3)">
           <tablebar
           :selectedImage="require('./assets/succmine.png')"
           :normalImage="require('./assets/normalmine.png')"
-          :focused="currentIndex[2].isSelect">
+          :focused="currentIndex[3].isSelect">
           </tablebar>
           我的
         </mt-tab-item>
@@ -49,15 +60,16 @@
 import Index from "../src/views/Index"
 import Fond from "../src/views/fond"
 import Mine from "../src/views/Mine"
+import Service from "../src/views/Service"
 import Tablebar from "../src/views/Tablebar"
-import Login from "../src/views/Login"
+// import Login from "../src/views/Login"
 export default {
     data(){
      return {
        //面板中显示子组件id
       active:"index",
       //创建数组保存图片焦点状态
-      currentIndex:[{isSelect:true},{isSelect:false},{isSelect:false}]
+      currentIndex:[{isSelect:true},{isSelect:false},{isSelect:false},{isSelect:false}]
        }
     },    
   methods:{
@@ -86,7 +98,7 @@ export default {
     "fond":Fond,
     "mine":Mine,
     "tablebar":Tablebar,
-    "login":Login
+    "service":Service
   }
 }
 </script>
