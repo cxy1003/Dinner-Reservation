@@ -51,7 +51,6 @@ export default {
 }
 </script>
 <style scoped>
-    @import url("../assets/css/comm.css");
     .slide{
       width:100%;
       height:320px;
