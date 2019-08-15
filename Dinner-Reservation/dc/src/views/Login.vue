@@ -6,8 +6,10 @@
            <mt-button @click="back" icon="back" slot="left">返回</mt-button>
         </mt-header>
         <!-- 创建输入框 -->
-       <mt-field class="personal_infor" label="用户名" placeholder="请输入用户名" type="email" v-model="uname"></mt-field>
-       <mt-field class="personal_infor" label="用户密码" placeholder="请输入密码" type="password" v-modal="upwd"></mt-field>
+       <!-- 1:用户输入框 -->
+        <mt-field label="用户名"  placeholder="请输入用户名" v-model="uname"></mt-field>
+        <!-- 2：密码输入框 -->
+        <mt-field label="密码"   placeholder="请输入密码" v-model="upwd" type="password"></mt-field>
         <!-- 登录按钮 -->
         <mt-button size="large" type="danger" @click="login">登录</mt-button>
         <div class="point">
@@ -21,7 +23,7 @@ export default {
   data(){
      return{
        uname:"", //用户名
-       upwd:"",  //用户密码
+       upwd:""  //用户密码
      }
   },
   methods:{
@@ -37,23 +39,22 @@ export default {
     if(!ureg.test(uname)){
       this.$messagebox("用户名格式不正确");
       return;
-    }
-    else if(!preg.test(upwd)){
+    }else if(!preg.test(upwd)){
       this.$messagebox("密码格式不正确");
       return;
-    }
-    //发送ajax请求 axios
-    var url = "user/login";
-    var obj = {uname:uname,upwd:upwd};
-    this.axios.post(url,{params:obj}).then(res=>{
-      if(res.data.code==200){
-        this.$toast("登陆成功");
-        this.$router.push("/Mine");
-      }else{
+    }else{
+        //发送ajax请求 axios
+      var url = "/user/login";
+      var obj = {uname:uname,upwd:upwd};
+       this.axios.post(url,{params:obj}).then(res=>{
+       if(res.data.code==200){
+         this.$router.push("/Mine");
+       }else{
         this.$messagebox("用户名或密码不正确");
       }
-    })
-    },
+     }) 
+    }
+  },
     reg(){
       this.$router.push('/Reguser')
     },
