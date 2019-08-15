@@ -58,7 +58,7 @@ export default {
       this.$router.push('/Reguser')
     },
     back(){
-      // this.$router.push('/Mine');
+      // this.$router.push('/Home/Mine');
       this.$router.go(-1);   
     }
   }

@@ -57,7 +57,7 @@
             <div class="tui bt mt">
                 <div class="t_b_padding bb">
                     <span class="font_price ">|</span>
-                    <span class="font_span">  推荐菜</span>
+                    <span class="font_span"> 推荐菜</span>
                 </div>
                 <div class="d_more_img">
                     <img src="../../public/img/details/11.jpg" alt="" class="mr_s">
