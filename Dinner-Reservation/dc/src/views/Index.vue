@@ -62,7 +62,7 @@ export default {
     },
     methods:{
         Search(){
-            this.$router.push("./Search.vue")
+            this.$router.push("/search")
         }
     },
     created() {

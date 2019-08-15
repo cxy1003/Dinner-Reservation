@@ -12,6 +12,7 @@ import Userpreplot from './views/Userpreplot'
 import Personal from './views/Personal'
 import Allorder from './views/Allorder'
 import Orderresult from './views/Orderresult'
+import Search from './views/Search'
 import Notfound from './views/Notfound'
 
 Vue.use(Router)
@@ -30,6 +31,7 @@ export default new Router({
     {path:"/personal",component:Personal}, 
     {path:"/allorder",component:Allorder},
     {path:"/orderresult",component:Orderresult},
+    {path:"/search",component:Search},
     {path:"*",component:Notfound},
     
   ]
