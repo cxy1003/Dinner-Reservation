@@ -22,11 +22,7 @@
                 <p class="d_title_store" v-text="p1.d_name"></p>
                 <div>
                     <div id="d1">
-                        <img src="../../public/img/details/ss1.png" alt="">
-                        <img src="../../public/img/details/ss1.png" alt="">
-                        <img src="../../public/img/details/ss1.png" alt="">
-                        <img src="../../public/img/details/ss1.png" alt="">
-                        <img src="../../public/img/details/ss1.png" alt="">
+                       <el-rate v-model="value" disabled show-score text-color="#ff9900" score-template=""> </el-rate>
                         <span class="font_span">¥</span>
                         <span class="font_span" v-text="p1.price"></span>
                     </div>
@@ -89,7 +85,7 @@
                     <span class="font_span" v-text="p1.d_phone"></span>
                 </div>
             </div>
-            <!-- 拍照和点评的功能模块 -->
+            <!-- 拍照和点评的功能模块  -->
             <div class="d_other t_b_padding">
                 <ul>
                     <li>
@@ -132,6 +128,7 @@
 export default {
     data() {
         return {
+            value:4,
             p1:"",
             p2:"",
             p3:"",
@@ -193,4 +190,7 @@ export default {
 </script>
 <style>
    @import url(../assets/css/details.css); 
+   .block{
+       height:20px;
+   }
 </style>

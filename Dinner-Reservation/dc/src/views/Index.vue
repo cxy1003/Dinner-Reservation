@@ -1,13 +1,13 @@
 <template>
 <div id="i-main">
         <!-- 背景轮播图及其上栏 -->
-            <div id="i-container">
+            <div id="i-container">              
                 <div id="top-img">
                     <a @click="Search" class="font_family"  href="javascript:;">上海 </a>
                     <!-- icon V 图标 -->
-                    <img class="icon" src="../../public/img/index/icon1.png" alt="">         
+                    <img class="icon" src="../../public/img/index/icon1.png" alt="">
                     <!-- 文本框 -->
-                        <!-- 搜索图片 -->
+                    <!-- 搜索图片 -->
                     <img class="search" src="../../public/img/index/search.png" alt="">
                     <input type="text" class="inputIcon" placeholder="请输入商户名，地点或菜名">           
                 </div>
@@ -15,7 +15,8 @@
                 <div class="near">
                     <img src="../../public/img/index/near.png" alt="">
                     <p>附近</p>
-                </div>          
+                </div> 
+                <carousel style="z-index:100;height:100px;width:100px;"></carousel>     
             </div>
         <!--餐厅预订 -->
             <ul class="perplot">
@@ -41,7 +42,7 @@
                 </div> 
                 <!--餐厅介绍 -->
                 <div class="info">
-                    <div class="a" v-for="(item,i) of arr" :key="i" @click="godetails(item.id)">
+                    <div class="a" v-for="(item,i) of arr" :key="i">
                         <img :src="`http://127.0.0.1:5050/img/index/${item.img}`" alt="">
                         <p class="font_family" v-text="item.store"></p>
                         <span class="font_price">人均:￥</span>
@@ -53,6 +54,7 @@
  </div>
 </template>
 <script>
+import Carousel from "../components/Carousel"
 export default {
     data() {
         return {
@@ -62,12 +64,11 @@ export default {
     },
     methods:{
         Search(){
-            this.$router.push("./Search.vue")
-        },
-        godetails(){
-            console.log("需要获取ID值，进行传递，才能实现数据的更新")
-            this.$router.push('/details')
+            this.$router.push("/search")
         }
+    },
+    components:{
+        "carousel":Carousel
     },
     created() {
         this.axios.get("http://127.0.0.1:5050/myindex/goods").then(result=>{
@@ -76,6 +77,7 @@ export default {
         })
     },
 };
+
 </script>
 <style scoped>
 /* 引入基础样式 */

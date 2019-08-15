@@ -3,7 +3,8 @@
         <!-- 餐厅预订订单页面 -->
         <div class="u_preplot_yu">
             <!-- 导航部分 -->
-            <img src="../../public/img/details/return.png" alt="">
+           <img src="../../public/img/details/return.png" alt="">
+            
             <span class="font_family">餐厅详情</span>
         </div>
         <div class="mt u_info bb">
