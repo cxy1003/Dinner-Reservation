@@ -9,7 +9,7 @@
         justify-content: space-between;/*弹性布局*/
         width:100%;
         height:200px;
-        background-image:url("../../img/carousel/c1.png");
+        /* background-image:url("../../img/carousel/c1.png"); */
     }  
     /* 上栏整体 */
     #i-container #top-img{

@@ -1,13 +1,13 @@
 <template>
 <div id="i-main">
         <!-- 背景轮播图及其上栏 -->
-            <div id="i-container">
+            <div id="i-container">              
                 <div id="top-img">
                     <a @click="Search" class="font_family"  href="javascript:;">上海 </a>
                     <!-- icon V 图标 -->
-                    <img class="icon" src="../../public/img/index/icon1.png" alt="">         
+                    <img class="icon" src="../../public/img/index/icon1.png" alt="">
                     <!-- 文本框 -->
-                        <!-- 搜索图片 -->
+                    <!-- 搜索图片 -->
                     <img class="search" src="../../public/img/index/search.png" alt="">
                     <input type="text" class="inputIcon" placeholder="请输入商户名，地点或菜名">           
                 </div>
@@ -15,7 +15,8 @@
                 <div class="near">
                     <img src="../../public/img/index/near.png" alt="">
                     <p>附近</p>
-                </div>          
+                </div> 
+                <carousel style="z-index:100;height:100px;width:100px;"></carousel>     
             </div>
         <!--餐厅预订 -->
             <ul class="perplot">
@@ -53,6 +54,7 @@
  </div>
 </template>
 <script>
+import Carousel from "../components/Carousel"
 export default {
     data() {
         return {
@@ -65,6 +67,9 @@ export default {
             this.$router.push("/search")
         }
     },
+    components:{
+        "carousel":Carousel
+    },
     created() {
         this.axios.get("http://127.0.0.1:5050/myindex/goods").then(result=>{
              var arr=result.data;
@@ -72,6 +77,7 @@ export default {
         })
     },
 };
+
 </script>
 <style scoped>
 /* 引入基础样式 */
