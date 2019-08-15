@@ -41,7 +41,7 @@
                 </div> 
                 <!--餐厅介绍 -->
                 <div class="info">
-                    <div class="a" v-for="(item,i) of arr" :key="i">
+                    <div class="a" v-for="(item,i) of arr" :key="i" @click="godetails(item.id)">
                         <img :src="`http://127.0.0.1:5050/img/index/${item.img}`" alt="">
                         <p class="font_family" v-text="item.store"></p>
                         <span class="font_price">人均:￥</span>
@@ -63,6 +63,10 @@ export default {
     methods:{
         Search(){
             this.$router.push("./Search.vue")
+        },
+        godetails(){
+            console.log("需要获取ID值，进行传递，才能实现数据的更新")
+            this.$router.push('/details')
         }
     },
     created() {
