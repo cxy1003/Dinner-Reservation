@@ -2,13 +2,13 @@
     <div class="bg">
         <!-- 导航部分  -->
         <div class="d_bar">
-            <div class="d_img">
+            <div class="d_img" @click="returnIindex()">
                 <img src="../../public/img/details/return.png" alt="">
             </div>
             <div class="d_size">餐厅详情</div>
             <div>
                 <img class="d_img_two" src="../../public/img/details/share.png" alt="">
-                <img src="../../public/img/details/start.png" alt="">
+                <img src="../../public/img/details/start.png" alt="" @click="startstyle()">
             </div>
         </div>
         <!-- 详情页 -->
@@ -93,7 +93,7 @@
             <div class="d_other t_b_padding">
                 <ul>
                     <li>
-                        <img src="../../public/img/details/gga.png" alt="">
+                        <img src="../../public/img/details/gga.png" alt=""  @click="actionSheet">
                         <p class="p_style">&nbsp;拍照</p>
                     </li>
                     <li>
@@ -122,6 +122,10 @@
         <div class="d_ding">
             <mt-button type="danger" size="large">立即预定</mt-button>
         </div>
+        <mt-actionsheet
+            :actions= "data"
+            v-model="sheetVisible">
+        </mt-actionsheet>
     </div>
 </template>
 <script>
@@ -135,7 +139,19 @@ export default {
             p5:"",
             p6:"",
             p7:"",
-            p8:""
+            p8:"",
+            // 设置一个状态保存是否更换图片
+            alive:"true",
+            // action sheet 选项内容
+            data: [{
+            name: '拍照',
+            method : this.getCamera	// 调用methods中的函数
+            }, {
+            name: '从相册中选择',
+            method : this.getLibrary	// 调用methods中的函数
+            }],
+            // action sheet 默认不显示，为false。操作sheetVisible可以控制显示与隐藏
+            sheetVisible: false
         }
     },
     created() {
@@ -152,6 +168,27 @@ export default {
            this.p8=p8;
         })
     },
+    methods: {
+        // 点击按钮跳转事件
+        returnIindex:function(){
+            this.$router.push('/')
+        },
+        // 点击星星实现取消和收藏的功能
+        startstyle(){
+            
+        },
+        // 拍照传照片的功能
+        actionSheet: function(){
+            // 打开action sheet
+            this.sheetVisible = true;
+        },
+        getCamera: function(){
+            console.log("打开照相机")
+        },
+        getLibrary: function(){
+            console.log("打开相册")
+        }
+    }
 }
 </script>
 <style>
