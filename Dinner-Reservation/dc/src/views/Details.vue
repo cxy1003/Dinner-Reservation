@@ -85,7 +85,7 @@
                     <span class="font_span" v-text="p1.d_phone"></span>
                 </div>
             </div>
-            <!-- 拍照和点评的功能模块 -->
+            <!-- 拍照和点评的功能模块  -->
             <div class="d_other t_b_padding">
                 <ul>
                     <li>
