@@ -42,7 +42,7 @@
                 </div> 
                 <!--餐厅介绍 -->
                 <div class="info">
-                    <div class="a" v-for="(item,i) of arr" :key="i">
+                    <div class="a" v-for="(item,i) of arr" :key="i" @click="jumpdetails">
                         <img :src="`http://127.0.0.1:5050/img/index/${item.img}`" alt="">
                         <p class="font_family" v-text="item.store"></p>
                         <span class="font_price">人均:￥</span>
@@ -63,6 +63,9 @@ export default {
         }
     },
     methods:{
+        jumpdetails(){
+            this.$router.push("/details")
+        },
         Search(){
             this.$router.push("/search")
         }

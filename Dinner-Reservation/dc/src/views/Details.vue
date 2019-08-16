@@ -22,7 +22,7 @@
                 <p class="d_title_store" v-text="p1.d_name"></p>
                 <div>
                     <div id="d1">
-                       <el-rate v-model="value" disabled show-score text-color="#ff9900" score-template=""> </el-rate>
+                        <el-rate v-model="value" disabled show-score text-color="#ff9900" score-template=""> </el-rate>
                         <span class="font_span">¥</span>
                         <span class="font_span" v-text="p1.price"></span>
                     </div>
@@ -57,7 +57,7 @@
             <div class="tui bt mt">
                 <div class="t_b_padding bb">
                     <span class="font_price ">|</span>
-                    <span class="font_span"> 推荐菜</span>
+                    <span class="font_span">  推荐菜</span>
                 </div>
                 <div class="d_more_img">
                     <img src="../../public/img/details/11.jpg" alt="" class="mr_s">
@@ -85,7 +85,7 @@
                     <span class="font_span" v-text="p1.d_phone"></span>
                 </div>
             </div>
-            <!-- 拍照和点评的功能模块  -->
+            <!-- 拍照和点评的功能模块 -->
             <div class="d_other t_b_padding">
                 <ul>
                     <li>
