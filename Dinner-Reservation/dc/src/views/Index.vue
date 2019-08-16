@@ -15,9 +15,9 @@
                 <div class="near">
                     <img src="../../public/img/index/near.png" alt="">
                     <p>附近</p>
-                </div> 
-                <carousel style="z-index:100;height:100px;width:100px;"></carousel>     
+                </div>    
             </div>
+            <carousel style="z-index:0"></carousel>     
         <!--餐厅预订 -->
             <ul class="perplot">
                 <li class="perplot-list">
