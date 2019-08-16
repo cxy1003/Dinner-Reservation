@@ -22,9 +22,8 @@
     background: url(../../img/mine/upwd.png) no-repeat;
     background-size:35px; 
 }
-input{
+#abc input{
     height:35px;
-    padding: 0px 2px 2px 39px;
     border:0;  
     border:0;
     margin-bottom: 5px;
@@ -36,6 +35,7 @@ input+span{
 .point{
     display: flex;
     justify-content: space-between;
+    padding-top:50px; 
 }
 .point a{
     font-size:15px;

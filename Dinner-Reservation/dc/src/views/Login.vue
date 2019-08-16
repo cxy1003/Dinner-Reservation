@@ -7,18 +7,23 @@
         </mt-header>
         <!-- 创建输入框 -->
        <!-- 1:用户输入框 -->
-        <mt-field label="用户名"  placeholder="请输入用户名" v-model="uname"></mt-field>
+        <mt-field label="用户名"  placeholder="请输入用户名或者手机号码" v-model="uname"></mt-field>
         <!-- 2：密码输入框 -->
-        <mt-field label="密码"   placeholder="请输入密码" v-model="upwd" type="password"></mt-field>
+        <div class="bt bb bg ">
+          <mt-field label="密码"   placeholder="请输入密码" v-model="upwd" type="password"></mt-field>
+        </div>
         <!-- 登录按钮 -->
-        <mt-button size="large" type="danger" @click="login">登录</mt-button>
-        <div class="point">
-           <a href="#">其他方式登录</a>
-           <a href="#" @click="reg">注册-></a>
+        <div class="button_padding bg">
+          <mt-button size="large" type="danger" @click="login">登录</mt-button>
+        </div>
+        <div class="point bg l_r_padding">
+          <a href="#">其他方式登录</a>
+          <a href="#" @click="reg">注册-></a>
         </div>
    </div>
 </template>
 <script>
+import qs from 'qs'
 export default {
   data(){
      return{
@@ -29,31 +34,32 @@ export default {
   methods:{
     // 完成用户登录操作
     login(){
-    //  用户名和密码格式验证
-    // 用户名格式为手机号格式
-    var ureg=/^[a-z0-9]{3,6}$/i;
-    var preg=/^[a-z0-9]{3,6}$/i;
-    var uname=this.uname;
-    var upwd=this.upwd;
-    // 用户名验证 如果格式不正确提示错误信息
-    if(!ureg.test(uname)){
-      this.$messagebox("用户名格式不正确");
-      return;
-    }else if(!preg.test(upwd)){
-      this.$messagebox("密码格式不正确");
-      return;
-    }else{
-        //发送ajax请求 axios
-      var url = "/user/login";
-      var obj = {uname:uname,upwd:upwd};
-       this.axios.post(url,{params:obj}).then(res=>{
-       if(res.data.code==200){
-         this.$router.push("/Mine");
-       }else{
-        this.$messagebox("用户名或密码不正确");
-      }
-     }) 
+      //  用户名和密码格式验证
+      // 用户名格式为手机号格式
+      var ureg=/^[a-z0-9]{3,6}$/i;
+      var preg=/^[a-z0-9]{3,6}$/i;
+      var uname=this.uname;
+      var upwd=this.upwd;
+      // 用户名验证 如果格式不正确提示错误信息
+      if(!ureg.test(uname)){
+        this.$messagebox("用户名格式不正确");
+        return;
+      }else if(!preg.test(upwd)){
+        this.$messagebox("密码格式不正确");
+        return;
+      }else{
+          //发送ajax请求 axios
+        var url = "http://127.0.0.1:5050/user/login";
+        var obj = {uname:uname,upwd:upwd};
+        this.axios.get(url,{params:obj}).then(res=>{
+        if(res.data.code==200){
+          this.$router.push("/Mine");
+        }else{
+          this.$messagebox("用户名或密码不正确");
+        }
+      }) 
     }
+    // 登录结束
   },
     reg(){
       this.$router.push('/Reguser')
@@ -66,7 +72,9 @@ export default {
 }
 </script>
 
-<style>
-  /* @import url("../assets/css/comm.css"); */
+<style scoped>
   @import url("../assets/css/login.css");
+  .button_padding{
+     padding-top:50px; 
+  }
 </style>
