@@ -23,7 +23,6 @@
    </div>
 </template>
 <script>
-import qs from 'qs'
 export default {
   data(){
      return{
@@ -42,10 +41,10 @@ export default {
       var upwd=this.upwd;
       // 用户名验证 如果格式不正确提示错误信息
       if(!ureg.test(uname)){
-        this.$messagebox("用户名格式不正确");
+        this.$toast("用户名格式不正确");
         return;
       }else if(!preg.test(upwd)){
-        this.$messagebox("密码格式不正确");
+        this.$toast("密码格式不正确");
         return;
       }else{
           //发送ajax请求 axios
@@ -55,7 +54,7 @@ export default {
         if(res.data.code==200){
           this.$router.push("/Mine");
         }else{
-          this.$messagebox("用户名或密码不正确");
+          this.$toast("用户名或密码错误")
         }
       }) 
     }

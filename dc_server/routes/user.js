@@ -28,8 +28,8 @@ router.post("/reg",function(req,res){
 	})
 })
 //2.用户登录
-router.post("/login",function(req,res){
-	var obj=req.body;
+router.get("/login",function(req,res){
+	var obj=req.query;
 	//判断是否为空
 	if(!obj.uname){
 		res.send({code:401,msg:" uname required"})
