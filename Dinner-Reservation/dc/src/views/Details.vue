@@ -15,33 +15,33 @@
         <div class="details font_family">
             <!-- 详情页图片部分 -->
             <div class="details_img">
-                <img :src="`http://127.0.0.1:5050/img/details/${p1.img}`" alt="">
+                <img :src="`http://127.0.0.1:5050/img/details/${img}`" alt="">
             </div>
             <!-- 店家详情 -->
             <div class="d_title">
-                <p class="d_title_store" v-text="p1.d_name"></p>
+                <p class="d_title_store" v-text="d_name"></p>
                 <div>
                     <div id="d1">
                         <el-rate v-model="value" disabled show-score text-color="#ff9900" score-template=""> </el-rate>
                         <span class="font_span">¥</span>
-                        <span class="font_span" v-text="p1.price"></span>
+                        <span class="font_span" v-text="price"></span>
                     </div>
                     <div>
-                        <span  class="font_span d-mp" v-text="p1.subtitle"></span>
+                        <span  class="font_span d-mp" v-text="subtitle"></span>
                     </div>
                 </div>
-                <p class="font_span mb mt" v-text="p1.intr"></p>
+                <p class="font_span mb mt" v-text="intr"></p>
             </div>
             <!-- 地址部分 -->
             <div class="adress">
                 <img src="../../public/img/details/ad.png" alt="">
-                <span class="font_span mr" v-text="p1.address"></span>
+                <span class="font_span mr" v-text="address"></span>
                 <img src="../../public/img/details/phone.png" alt="">
             </div>
             <!-- 提示信息 -->
             <div class="d_info mb">
                 <img src="../../public/img/details/info.png" alt="">
-                <span class="font_span" v-text="p1.information"></span>
+                <span class="font_span" v-text="information"></span>
             </div>
             <!-- 优惠活动 -->
             <div class="d_actity">
@@ -50,7 +50,7 @@
                 </div>
                 <div>
                     <img src="../../public/img/details/ji.png" alt="">
-                    <span class="font_span l_r_padding" v-text="p1.activity"></span>
+                    <span class="font_span l_r_padding" v-text="activity"></span>
                 </div>
             </div>
             <!-- 推荐菜 -->
@@ -78,11 +78,11 @@
                 </div>
                 <div class="t_b_padding bb">
                     <span class="font_price font_span">详情介绍:</span>
-                    <span class="l_r_padding font_span" v-text="p1.d_intr"></span>
+                    <span class="l_r_padding font_span" v-text="d_intr"></span>
                 </div>
                 <div class="t_b_padding">
                     <span class="font_price font_span">电话：</span>
-                    <span class="font_span" v-text="p1.d_phone"></span>
+                    <span class="font_span" v-text="d_phone"></span>
                 </div>
             </div>
             <!-- 拍照和点评的功能模块 -->
@@ -128,15 +128,10 @@
 export default {
     data() {
         return {
+            id:1,
             value:4,
-            p1:"",
-            p2:"",
-            p3:"",
-            p4:"",
-            p5:"",
-            p6:"",
-            p7:"",
-            p8:"",
+            activity:"",
+           address:"",d_intr:"",d_name:"",d_phone:"",img:"",information:"",intr:"",price:"",subtitle:"",score:"",
             // 设置一个状态保存是否更换图片
             alive:"true",
             // action sheet 选项内容
@@ -151,19 +146,29 @@ export default {
             sheetVisible: false
         }
     },
+    // 接受父组件传来的lid
     created() {
-        this.axios.get("http://127.0.0.1:5050/mydetails/details").then(result=>{
-           var [p1,p2,p3,p4,p5,p6,p7,p8]=result.data;
-           console.log(p1)
-           this.p1=p1;
-           this.p2=p2;
-           this.p3=p3;
-           this.p4=p4;
-           this.p5=p5;
-           this.p6=p6;
-           this.p7=p7;
-           this.p8=p8;
+        if(this.id){
+            console.log(this.id)
+        this.axios.get("http://127.0.0.1:5050/mydetails/details/",{params:{id:this.id}}).then(result=>{
+           var {activity,address,d_intr,d_name,d_phone,img,information,intr,price,subtitle,score}=result.data;
+           console.log(result.data)
+        //    console.log(p1)
+           this.activity=activity;
+            this.address=address;
+            this.d_intr=d_intr;
+            this.d_name=d_name;
+            this.d_phone=d_phone;
+            this.img=img;
+            this.information=information;
+            this.intr=intr;
+            this.price=price;
+            this.subtitle=subtitle;
+            this.score=intr;
+           console.log(this.activity)
+      
         })
+    }
     },
     methods: {
         // 点击按钮跳转事件

@@ -6,8 +6,8 @@ var router=express.Router();
 const pool=require("../pool.js")
 //详情页
 router.get("/details",function(req,res){
-	var obj=req.query;
-	pool.query("select * from goods_details",function(err,result){
+	var id=req.query.id
+	pool.query("select * from goods_details where id=?",[id],function(err,result){
 		if(err)throw err;
 		console.log(result);
 		res.send(result);
