@@ -151,8 +151,8 @@ export default {
         if(this.id){
             console.log(this.id)
         this.axios.get("http://127.0.0.1:5050/mydetails/details/",{params:{id:this.id}}).then(result=>{
-           var {activity,address,d_intr,d_name,d_phone,img,information,intr,price,subtitle,score}=result.data;
-           console.log(result.data)
+        //    var {activity,address,d_intr,d_name,d_phone,img,information,intr,price,subtitle,score}=result.data;
+           console.log(result.data[0].id)
         //    console.log(p1)
            this.activity=activity;
             this.address=address;
