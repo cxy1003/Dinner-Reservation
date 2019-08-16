@@ -12,7 +12,7 @@
        </mt-field>
        <mt-field class="personal_infor" label="手机号" placeholder="请输入手机号" type="email" v-model="phone"></mt-field>
        <mt-field class="personal_infor" label="用户密码" placeholder="请输入密码" type="password" v-model="upwd"></mt-field>
-       <mt-field class="personal_infor" label="确认密码" placeholder="请再次输入密码" type="tel" v-model="reupwd"></mt-field>
+       <mt-field class="personal_infor" label="确认密码" placeholder="请再次输入密码" type="password" v-model="reupwd"></mt-field>
         <!-- 登录按钮 -->
         <mt-button size="large" type="danger" @click="userReg">提交</mt-button>
         <div class="point">
@@ -21,6 +21,7 @@
    </div>
 </template>
 <script>
+import qs from 'qs'
 export default {
  data(){
    return{
@@ -54,29 +55,20 @@ export default {
       this.$messagebox("两次输入密码不一致");
       return;
     }else{
-      this.$messagebox("注册成功").then(result=>{
-        var url = "http://127.0.0.1:5050/user/reg";
+      var url = "http://127.0.0.1:5050/user/reg";
         var obj = {uname:uname,upwd:upwd,phone:phone};
-        this.axios.post(url,{params:obj}).then(res=>{
-          console.log(res)
-        })
-        this.$router.push("/Login")
-      })
-       
+        this.axios.post(url,qs.stringify(obj)).then(res=>{
+          console.log(res.data)
+          if(res.data.code==200){
+            this.$messagebox("注册成功").then(result=>{
+              this.$router.push("/Login")
+            })
+          }
+        }
+      )
     }
-    // 发送ajax请求 axios
-    // var url = "http://127.0.0.1:5050/user/reg";
-    // var obj = {uname:uname,upwd:upwd,phone:phone};
-    // this.axios.post(url,{params:obj}).then(res=>{
-    //   if(res.data.code==200){
-    //     this.$toast("登陆成功");
-    //     this.$router.push("/Mine");
-    //   }else{
-    //     this.$messagebox("用户名或密码不正确");
-    //   }
-    // })
-   },
-   go(){
+  },
+  go(){
      this.$router.push("/Login")
    }
  }
@@ -84,5 +76,5 @@ export default {
 </script>
 
 <style>
-  @import url("../assets/css/login.css");
+@import url("../assets/css/login.css");
 </style>
