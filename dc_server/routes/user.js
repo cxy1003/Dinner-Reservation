@@ -41,8 +41,10 @@ router.get("/login",function(req,res){
 	}
 	pool.query("select uid from dc_user where uname=? and upwd=?",[obj.uname,obj.upwd],function(err,result){
 		if(err)throw err;
-		console.log(result);
+		console.log(result); //2
 		if(result.length>0){
+			req.session.uid=result[0].uid;
+			console.log(req.session)
 			res.send({code:200,msg:"login success"})
 		}else{
 			res.send({code:301,msg:"login error"})	

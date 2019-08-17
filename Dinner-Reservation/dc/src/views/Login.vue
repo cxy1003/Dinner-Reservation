@@ -18,7 +18,7 @@
         </div>
         <div class="point bg l_r_padding">
           <a href="#">其他方式登录</a>
-          <a href="#" @click="reg">注册-></a>
+          <span href="#" @click="reg">注册-></span>
         </div>
    </div>
 </template>

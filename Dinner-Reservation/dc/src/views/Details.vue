@@ -2,46 +2,46 @@
     <div class="bg">
         <!-- 导航部分  -->
         <div class="d_bar">
-            <div class="d_img" @click="returnIindex()">
+            <div class="d_img" @click="returnIindex">
                 <img src="../../public/img/details/return.png" alt="">
             </div>
             <div class="d_size">餐厅详情</div>
             <div>
                 <img class="d_img_two" src="../../public/img/details/share.png" alt="">
-                <img src="../../public/img/details/start.png" alt="" @click="startstyle()">
+                <img :data-id="product.id" src="../../public/img/details/start.png" alt="" @click="startstyle" ref="imgs">
             </div>
         </div>
         <!-- 详情页 -->
         <div class="details font_family">
             <!-- 详情页图片部分 -->
             <div class="details_img">
-                <img :src="`http://127.0.0.1:5050/img/details/${p1.img}`" alt="">
+                <img :src="`http://127.0.0.1:5050/img/details/${product.img}`" alt="">
             </div>
             <!-- 店家详情 -->
             <div class="d_title">
-                <p class="d_title_store" v-text="p1.d_name"></p>
+                <p class="d_title_store" v-text="product.d_name"></p>
                 <div>
                     <div id="d1">
                         <el-rate v-model="value" disabled show-score text-color="#ff9900" score-template=""> </el-rate>
                         <span class="font_span">¥</span>
-                        <span class="font_span" v-text="p1.price"></span>
+                        <span class="font_span" v-text="product.price"></span>
                     </div>
                     <div>
-                        <span  class="font_span d-mp" v-text="p1.subtitle"></span>
+                        <span  class="font_span d-mp" v-text="product.subtitle"></span>
                     </div>
                 </div>
-                <p class="font_span mb mt" v-text="p1.intr"></p>
+                <p class="font_span mb mt" v-text="product.intr"></p>
             </div>
             <!-- 地址部分 -->
             <div class="adress">
                 <img src="../../public/img/details/ad.png" alt="">
-                <span class="font_span mr" v-text="p1.address"></span>
+                <span class="font_span mr" v-text="product.address"></span>
                 <img src="../../public/img/details/phone.png" alt="">
             </div>
             <!-- 提示信息 -->
             <div class="d_info mb">
                 <img src="../../public/img/details/info.png" alt="">
-                <span class="font_span" v-text="p1.information"></span>
+                <span class="font_span" v-text="product.information"></span>
             </div>
             <!-- 优惠活动 -->
             <div class="d_actity">
@@ -50,7 +50,7 @@
                 </div>
                 <div>
                     <img src="../../public/img/details/ji.png" alt="">
-                    <span class="font_span l_r_padding" v-text="p1.activity"></span>
+                    <span class="font_span l_r_padding" v-text="product.activity"></span>
                 </div>
             </div>
             <!-- 推荐菜 -->
@@ -78,11 +78,11 @@
                 </div>
                 <div class="t_b_padding bb">
                     <span class="font_price font_span">详情介绍:</span>
-                    <span class="l_r_padding font_span" v-text="p1.d_intr"></span>
+                    <span class="l_r_padding font_span" v-text="product.d_intr"></span>
                 </div>
                 <div class="t_b_padding">
                     <span class="font_price font_span">电话：</span>
-                    <span class="font_span" v-text="p1.d_phone"></span>
+                    <span class="font_span" v-text="product.d_phone"></span>
                 </div>
             </div>
             <!-- 拍照和点评的功能模块 -->
@@ -126,71 +126,85 @@
 </template>
 <script>
 export default {
-    data() {
-        return {
-            value:4,
-            p1:"",
-            p2:"",
-            p3:"",
-            p4:"",
-            p5:"",
-            p6:"",
-            p7:"",
-            p8:"",
-            // 设置一个状态保存是否更换图片
-            alive:"true",
-            // action sheet 选项内容
-            data: [{
-            name: '拍照',
-            method : this.getCamera	// 调用methods中的函数
-            }, {
-            name: '从相册中选择',
-            method : this.getLibrary	// 调用methods中的函数
-            }],
-            // action sheet 默认不显示，为false。操作sheetVisible可以控制显示与隐藏
-            sheetVisible: false
+  data() {
+    return {
+      product: "",
+
+      value: 4,
+      // 设置一个状态保存是否更换图片
+      alive: "true",
+      // action sheet 选项内容
+      data: [
+        {
+          name: "拍照",
+          method: this.getCamera // 调用methods中的函数
+        },
+        {
+          name: "从相册中选择",
+          method: this.getLibrary // 调用methods中的函数
         }
-    },
-    created() {
-        this.axios.get("http://127.0.0.1:5050/mydetails/details").then(result=>{
-           var [p1,p2,p3,p4,p5,p6,p7,p8]=result.data;
-           console.log(p1)
-           this.p1=p1;
-           this.p2=p2;
-           this.p3=p3;
-           this.p4=p4;
-           this.p5=p5;
-           this.p6=p6;
-           this.p7=p7;
-           this.p8=p8;
+      ],
+      // action sheet 默认不显示，为false。操作sheetVisible可以控制显示与隐藏
+      sheetVisible: false
+    };
+  },
+  // 接受父组件传来的lid
+  props: ["id"],
+  created() {
+    if (this.id) {
+      this.axios
+        .get("http://127.0.0.1:5050/mydetails/details/", {
+          params: { id: this.id }
         })
-    },
-    methods: {
-        // 点击按钮跳转事件
-        returnIindex:function(){
-            this.$router.push('/')
-        },
-        // 点击星星实现取消和收藏的功能
-        startstyle(){
-            
-        },
-        // 拍照传照片的功能
-        actionSheet: function(){
-            // 打开action sheet
-            this.sheetVisible = true;
-        },
-        getCamera: function(){
-            console.log("打开照相机")
-        },
-        getLibrary: function(){
-            console.log("打开相册")
-        }
+        .then(result => {
+          // console.log(result.data)
+          var { product } = result.data;
+          this.product = product;
+        });
     }
-}
+  },
+  mounted() {
+        var imgst=this.$refs.imgs;
+        imgst.onclick=function(){
+
+           imgst.src=require('../assets/start2.png')
+        }
+  },
+  methods: {
+    // 点击按钮跳转事件
+    returnIindex: function() {
+      this.$router.push("/");
+    },
+    // 点击星星实现取消和收藏的功能
+    startstyle() {
+        this.axios.get("http://127.0.0.1:5050/islogin").then(res => {
+            if(res.data.code==301){
+                 this.$messagebox("请先登录,再购买商品").then(result=>{
+              this.$router.push("/login")
+            })
+             }else{
+                this.$toast("添加成功")
+                console.log(res)
+             }
+        });
+    },
+    // 拍照传照片的功能
+    actionSheet: function() {
+      // 打开action sheet
+      this.sheetVisible = true;
+    },
+    getCamera: function() {
+      console.log("打开照相机");
+    },
+    getLibrary: function() {
+      console.log("打开相册");
+    }
+  }
+};
 </script>
 <style>
-   @import url(../assets/css/details.css); 
-   .block{
-       height:20px;
-   }
+@import url(../assets/css/details.css);
+.block {
+  height: 20px;
+}
 </style>

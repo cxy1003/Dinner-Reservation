@@ -22,7 +22,7 @@ export default new Router({
   routes: [
     {path:"/Index",component:Index},
     {path:"/",component:Home},
-    {path:"/details",component:Details},
+    {path:"/details/:id",component:Details,props:true},
     {path:"/login",component:Login},
     {path:"/install",component:Install},
     {path:"/mine",component:Mine},

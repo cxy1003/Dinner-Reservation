@@ -10,6 +10,8 @@ const myindexRouter=require("./routes/myindex.js")
 const mydetailsRouter=require("./routes/mydetails.js")
 //引入预定模块
 const preplotRouter=require("./routes/preplot.js")
+// 引入
+const isloginRouter=require("./routes/islogin.js")
 //引入中间件
 const bodyParser=require("body-parser")
 // 跨域
@@ -49,3 +51,5 @@ app.use("/myindex",myindexRouter)
 app.use("/mydetails",mydetailsRouter)
 //使用预定路由器
 app.use("/preplot",preplotRouter)
+// 使用判断登录状态指定路由
+app.use("/islogin",isloginRouter)
