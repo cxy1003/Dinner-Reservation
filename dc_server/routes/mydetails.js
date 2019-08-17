@@ -6,7 +6,6 @@ var router=express.Router();
 const pool=require("../pool.js")
 //详情页
 router.get("/details",function(req,res){
-<<<<<<< HEAD
     var id=req.query.id
     var output={
         product:{}
@@ -17,14 +16,6 @@ router.get("/details",function(req,res){
         console.log(output);
         res.send(output);
     })
-=======
-	var id=req.query.id
-	pool.query("select * from goods_details where id=?",[id],function(err,result){
-		if(err)throw err;
-		console.log(result);
-		res.send(result);
-	})
->>>>>>> b875f298b6ce1e56febef219d7fa99e082d4b058
 })
 //导出路由
 module.exports=router;
