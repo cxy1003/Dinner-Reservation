@@ -15,15 +15,24 @@
         <div class="details font_family">
             <!-- 详情页图片部分 -->
             <div class="details_img">
+<<<<<<< HEAD
                 <img :src="`http://127.0.0.1:5050/img/details/${product.img}`" alt="">
             </div>
             <!-- 店家详情 -->
             <div class="d_title">
                 <p class="d_title_store" v-text="product.d_name"></p>
+=======
+                <img :src="`http://127.0.0.1:5050/img/details/${img}`" alt="">
+            </div>
+            <!-- 店家详情 -->
+            <div class="d_title">
+                <p class="d_title_store" v-text="d_name"></p>
+>>>>>>> b875f298b6ce1e56febef219d7fa99e082d4b058
                 <div>
                     <div id="d1">
                         <el-rate v-model="value" disabled show-score text-color="#ff9900" score-template=""> </el-rate>
                         <span class="font_span">¥</span>
+<<<<<<< HEAD
                         <span class="font_span" v-text="product.price"></span>
                     </div>
                     <div>
@@ -31,17 +40,34 @@
                     </div>
                 </div>
                 <p class="font_span mb mt" v-text="product.intr"></p>
+=======
+                        <span class="font_span" v-text="price"></span>
+                    </div>
+                    <div>
+                        <span  class="font_span d-mp" v-text="subtitle"></span>
+                    </div>
+                </div>
+                <p class="font_span mb mt" v-text="intr"></p>
+>>>>>>> b875f298b6ce1e56febef219d7fa99e082d4b058
             </div>
             <!-- 地址部分 -->
             <div class="adress">
                 <img src="../../public/img/details/ad.png" alt="">
+<<<<<<< HEAD
                 <span class="font_span mr" v-text="product.address"></span>
+=======
+                <span class="font_span mr" v-text="address"></span>
+>>>>>>> b875f298b6ce1e56febef219d7fa99e082d4b058
                 <img src="../../public/img/details/phone.png" alt="">
             </div>
             <!-- 提示信息 -->
             <div class="d_info mb">
                 <img src="../../public/img/details/info.png" alt="">
+<<<<<<< HEAD
                 <span class="font_span" v-text="product.information"></span>
+=======
+                <span class="font_span" v-text="information"></span>
+>>>>>>> b875f298b6ce1e56febef219d7fa99e082d4b058
             </div>
             <!-- 优惠活动 -->
             <div class="d_actity">
@@ -50,7 +76,11 @@
                 </div>
                 <div>
                     <img src="../../public/img/details/ji.png" alt="">
+<<<<<<< HEAD
                     <span class="font_span l_r_padding" v-text="product.activity"></span>
+=======
+                    <span class="font_span l_r_padding" v-text="activity"></span>
+>>>>>>> b875f298b6ce1e56febef219d7fa99e082d4b058
                 </div>
             </div>
             <!-- 推荐菜 -->
@@ -78,11 +108,19 @@
                 </div>
                 <div class="t_b_padding bb">
                     <span class="font_price font_span">详情介绍:</span>
+<<<<<<< HEAD
                     <span class="l_r_padding font_span" v-text="product.d_intr"></span>
                 </div>
                 <div class="t_b_padding">
                     <span class="font_price font_span">电话：</span>
                     <span class="font_span" v-text="product.d_phone"></span>
+=======
+                    <span class="l_r_padding font_span" v-text="d_intr"></span>
+                </div>
+                <div class="t_b_padding">
+                    <span class="font_price font_span">电话：</span>
+                    <span class="font_span" v-text="d_phone"></span>
+>>>>>>> b875f298b6ce1e56febef219d7fa99e082d4b058
                 </div>
             </div>
             <!-- 拍照和点评的功能模块 -->
@@ -126,6 +164,7 @@
 </template>
 <script>
 export default {
+<<<<<<< HEAD
   data() {
     return {
       product: "",
@@ -168,6 +207,71 @@ export default {
         imgst.onclick=function(){
 
            imgst.src=require('../assets/start2.png')
+=======
+    data() {
+        return {
+            id:1,
+            value:4,
+            activity:"",
+           address:"",d_intr:"",d_name:"",d_phone:"",img:"",information:"",intr:"",price:"",subtitle:"",score:"",
+            // 设置一个状态保存是否更换图片
+            alive:"true",
+            // action sheet 选项内容
+            data: [{
+            name: '拍照',
+            method : this.getCamera	// 调用methods中的函数
+            }, {
+            name: '从相册中选择',
+            method : this.getLibrary	// 调用methods中的函数
+            }],
+            // action sheet 默认不显示，为false。操作sheetVisible可以控制显示与隐藏
+            sheetVisible: false
+        }
+    },
+    // 接受父组件传来的lid
+    created() {
+        if(this.id){
+            console.log(this.id)
+        this.axios.get("http://127.0.0.1:5050/mydetails/details/",{params:{id:this.id}}).then(result=>{
+        //    var {activity,address,d_intr,d_name,d_phone,img,information,intr,price,subtitle,score}=result.data;
+           console.log(result.data[0].id)
+        //    console.log(p1)
+           this.activity=activity;
+            this.address=address;
+            this.d_intr=d_intr;
+            this.d_name=d_name;
+            this.d_phone=d_phone;
+            this.img=img;
+            this.information=information;
+            this.intr=intr;
+            this.price=price;
+            this.subtitle=subtitle;
+            this.score=intr;
+           console.log(this.activity)
+      
+        })
+    }
+    },
+    methods: {
+        // 点击按钮跳转事件
+        returnIindex:function(){
+            this.$router.push('/')
+        },
+        // 点击星星实现取消和收藏的功能
+        startstyle(){
+            
+        },
+        // 拍照传照片的功能
+        actionSheet: function(){
+            // 打开action sheet
+            this.sheetVisible = true;
+        },
+        getCamera: function(){
+            console.log("打开照相机")
+        },
+        getLibrary: function(){
+            console.log("打开相册")
+>>>>>>> b875f298b6ce1e56febef219d7fa99e082d4b058
         }
   },
   methods: {
