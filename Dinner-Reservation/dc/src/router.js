@@ -13,15 +13,17 @@ import Personal from './views/Personal'
 import Allorder from './views/Allorder'
 import Orderresult from './views/Orderresult'
 import Search from './views/Search'
-import Preplot from './views/Preplot'
+// import Preplot from './views/Preplot'
 import Notfound from './views/Notfound'
+import imClient from './components/imClient/imClient'
+import imServer from './components/imServer/imServer'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {path:"/Index",component:Index},
-    {path:"/",component:Home},
+    {path:"/", name:'imClient',component:Home},
     {path:"/details",component:Details},
     {path:"/login",component:Login},
     {path:"/install",component:Install},
@@ -33,7 +35,9 @@ export default new Router({
     {path:"/allorder",component:Allorder},
     {path:"/orderresult",component:Orderresult},
     {path:"/search",component:Search},
-    {path:"/preplot",component:Preplot},
-    {path:"*",component:Notfound}
+    // {path:"/preplot",component:Preplot},
+    {path:"*",component:Notfound},
+    { path: '/imServer',  component: imServer },
+        { path: '/imClient',  component: imClient },
   ]
 })

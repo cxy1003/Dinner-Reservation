@@ -9,8 +9,9 @@
           <mt-tab-container-item id="fond">
            <fond></fond>
          </mt-tab-container-item>
-         <mt-tab-container-item id="service">
-           <service></service>
+         <mt-tab-container-item id="im-client">
+           <!-- <service></service> -->
+           <im-client></im-client>
          </mt-tab-container-item>
           <mt-tab-container-item id="mine">
            <mine></mine>
@@ -35,7 +36,7 @@
          </tablebar>
          发现
         </mt-tab-item>
-         <mt-tab-item id="service" @click.native="changeState(2)">
+         <mt-tab-item id="im-client" @click.native="changeState(2)">
           <tablebar
           :selectedImage="require('./assets/succxiaomi.png')"
           :normalImage="require('./assets/normalxiaomi.png')"
@@ -62,6 +63,7 @@ import Fond from "../src/views/fond"
 import Mine from "../src/views/Mine"
 import Service from "../src/views/Service"
 import Tablebar from "../src/views/Tablebar"
+import imClient from "../src/components/imClient/imClient"
 // import Login from "../src/views/Login"
 export default {
     data(){
@@ -98,7 +100,9 @@ export default {
     "fond":Fond,
     "mine":Mine,
     "tablebar":Tablebar,
-    "service":Service
+    // "service":Service
+    "imClient":imClient,
+
   }
 }
 </script>

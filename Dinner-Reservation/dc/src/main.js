@@ -1,9 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import { imServerStore } from '../src/store/imServerStore.js';
+import http from '../src/common/http';
+Vue.prototype.$http = http;
+import ak from '../src/common/ak';
+Vue.prototype.$ak = ak;
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+// import 'font-awesome/css/font-awesome.min.css'
 
 Vue.use(ElementUI);
 
@@ -28,7 +34,11 @@ Vue.use(Vuex)
 
 new Vue({
   router,
-  store,
-  axios,
+  store: {
+    // store,
+    imServerStore: imServerStore
+   },
+  
+  // axios,
   render: h => h(App)
 }).$mount('#app')
