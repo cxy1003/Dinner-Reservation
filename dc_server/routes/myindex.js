@@ -15,7 +15,7 @@ router.get("/carousel",function(req,res){
 	})
 })
 //商品
-router.get("/goods",function(req,res){
+router.get("/goods/",function(req,res){
 	var obj=req.query;
 	pool.query("select * from goods",function(err,result){
 		if(err)throw err;

@@ -28,8 +28,8 @@ router.post("/reg",function(req,res){
 	})
 })
 //2.用户登录
-router.post("/login",function(req,res){
-	var obj=req.body;
+router.get("/login",function(req,res){
+	var obj=req.query;
 	//判断是否为空
 	if(!obj.uname){
 		res.send({code:401,msg:" uname required"})
@@ -41,8 +41,10 @@ router.post("/login",function(req,res){
 	}
 	pool.query("select uid from dc_user where uname=? and upwd=?",[obj.uname,obj.upwd],function(err,result){
 		if(err)throw err;
-		console.log(result);
+		console.log(result); //2
 		if(result.length>0){
+			req.session.uid=result[0].uid;
+			console.log(req.session)
 			res.send({code:200,msg:"login success"})
 		}else{
 			res.send({code:301,msg:"login error"})	

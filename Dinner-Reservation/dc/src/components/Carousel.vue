@@ -42,8 +42,9 @@
 .carousel{
   width:100%;
   height:200px;
-  position: relative;
-  right:200px;
+  position: absolute;
+  top:0;
+  z-index: 0;
 }
 .img{width:100%;}
 .mint-swipe{height:200px;}

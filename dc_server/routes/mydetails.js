@@ -6,12 +6,16 @@ var router=express.Router();
 const pool=require("../pool.js")
 //详情页
 router.get("/details",function(req,res){
-	var obj=req.query;
-	pool.query("select * from goods_details",function(err,result){
-		if(err)throw err;
-		console.log(result);
-		res.send(result);
-	})
+    var id=req.query.id
+    var output={
+        product:{}
+    }
+    pool.query("select * from goods_details where id=?",[id],function(err,result){
+        if(err)throw err;
+        output.product=result[0]
+        console.log(output);
+        res.send(output);
+    })
 })
 //导出路由
 module.exports=router;

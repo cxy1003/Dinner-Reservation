@@ -15,9 +15,9 @@
                 <div class="near">
                     <img src="../../public/img/index/near.png" alt="">
                     <p>附近</p>
-                </div> 
-                <carousel style="z-index:100;height:100px;width:100px;"></carousel>     
+                </div>    
             </div>
+            <carousel style="z-index:0"></carousel>     
         <!--餐厅预订 -->
             <ul class="perplot">
                 <li class="perplot-list">
@@ -41,9 +41,11 @@
                     <p class="font_family">推荐餐厅</p>
                 </div> 
                 <!--餐厅介绍 -->
-                <div class="info">
+                <div class="info">  
                     <div class="a" v-for="(item,i) of arr" :key="i">
-                        <img :src="`http://127.0.0.1:5050/img/index/${item.img}`" alt="">
+                        <router-link :to="`/details/${++i}`">
+                            <img :src="`http://127.0.0.1:5050/img/index/${item.img}`" alt="">
+                        </router-link>
                         <p class="font_family" v-text="item.store"></p>
                         <span class="font_price">人均:￥</span>
                         <span class="font_price" v-text="item.price">60-100</span>
@@ -60,9 +62,13 @@ export default {
         return {
             arr:[],
             // p1:"",
+            lid:""
         }
     },
     methods:{
+        // jumpdetails(){
+        //     this.$router.push("/details")
+        // },
         Search(){
             this.$router.push("/search")
         }
@@ -71,9 +77,10 @@ export default {
         "carousel":Carousel
     },
     created() {
-        this.axios.get("http://127.0.0.1:5050/myindex/goods").then(result=>{
+        this.axios.get("http://127.0.0.1:5050/myindex/goods/").then(result=>{
              var arr=result.data;
              this.arr=arr;
+            
         })
     },
 };

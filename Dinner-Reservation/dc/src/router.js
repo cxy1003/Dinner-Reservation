@@ -23,8 +23,10 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {path:"/Index",component:Index},
-    {path:"/", name:'imClient',component:Home},
+    {path:"/",component:Home},
     {path:"/details",component:Details},
+    {path:"/",component:Home},
+    {path:"/details/:id",component:Details,props:true},
     {path:"/login",component:Login},
     {path:"/install",component:Install},
     {path:"/mine",component:Mine},
