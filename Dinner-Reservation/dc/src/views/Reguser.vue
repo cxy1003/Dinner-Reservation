@@ -27,7 +27,6 @@ export default {
    return{
      uname:"",
      phone:null,
-     opwd:"",
      reupwd:"",
      upwd:""
    }
@@ -61,7 +60,7 @@ export default {
           console.log(res.data)
           if(res.data.code==200){
             this.$messagebox("注册成功").then(result=>{
-              this.$router.push("/Login")
+              this.$router.push("/login")
             })
           }
         }
@@ -69,7 +68,7 @@ export default {
     }
   },
   go(){
-     this.$router.push("/Login")
+     this.$router.push("/login")
    }
  }
 }

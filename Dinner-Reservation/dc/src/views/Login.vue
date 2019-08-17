@@ -52,7 +52,7 @@ export default {
         var obj = {uname:uname,upwd:upwd};
         this.axios.get(url,{params:obj}).then(res=>{
         if(res.data.code==200){
-          this.$router.push("/mine");
+          this.$router.push("/");
         }else{
           this.$toast("用户名或密码错误")
         }

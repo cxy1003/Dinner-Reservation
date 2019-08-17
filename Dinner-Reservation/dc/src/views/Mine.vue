@@ -190,7 +190,7 @@ export default {
     },
     methods:{
         go(){
-            this.$router.push('/Login');
+            this.$router.push('/login');
         }
     }
 }
