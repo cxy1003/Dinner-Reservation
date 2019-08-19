@@ -15,7 +15,7 @@
        <mt-field class="personal_infor" label="确认密码" placeholder="请再次输入密码" type="password" v-model="reupwd"></mt-field>
         <!-- 登录按钮 -->
         <mt-button size="large" type="danger" @click="userReg">提交</mt-button>
-        <div class="point">
+        <div class="point bg">
            <a href="#">其他方式注册</a>
         </div>
    </div>

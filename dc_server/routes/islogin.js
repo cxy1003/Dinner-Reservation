@@ -10,6 +10,8 @@ router.get("/",function(req,res){
     if(!uid){//2.2如果当前用户没有登录
         res.send({code:301,msg:"请登录"});
         return;
+    }else{
+        res.send("用户已登录")
     }
    
 })
