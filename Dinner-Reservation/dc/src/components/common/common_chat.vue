@@ -19,7 +19,7 @@
                                 <div class="info-wrapper" :class="item.state">
                                     <!-- 头像 -->
                                     <div class="avatar-wrapper">
-                                        <img class="kf-img" :src="item.avatarUrl">
+                                        <!-- <img class="kf-img" :src="item.avatarUrl"> -->
                                         <img class="kf-img" src="../../../static/image/im_robot_avatar.png">
                                     </div>
                                     <!-- 1)文本类型 -->

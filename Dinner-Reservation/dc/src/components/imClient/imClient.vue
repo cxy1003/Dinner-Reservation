@@ -4,8 +4,8 @@
         <div class="imClient-inner">
             <header class="imClient-header">
                 <div class="name-wrapper position-v-mid">
-                    <span v-if="chatInfoEn.chatState == 'robot'">小秘客服</span>
-                    
+                    <span class="back" @click="back">返回</span>
+                    <span v-if="chatInfoEn.chatState == 'robot'">小秘客服</span> 
                     <span v-else-if="chatInfoEn.chatState == 'agent'">您正在与客服{{serverChatEn.serverChatName}}对话</span>
                 </div>
                 <div class="opr-wrapper position-v-mid">
@@ -125,6 +125,9 @@ export default {
     computed: {},
     watch: {},
     methods: {
+        back(){
+          this.$router.push("-1");
+        },
         /**
          * 注册账号信息
          */
@@ -380,6 +383,11 @@ export default {
         color: #ffffff;
         .name-wrapper {
             margin-left: 20px;
+            position: relative;
+        }
+        .back{
+            position: absolute;
+            left:200px;
         }
         .logo {
             height: 45px;

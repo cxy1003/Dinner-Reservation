@@ -3,7 +3,8 @@
     <div class="imRecord-wrapper">
         <header class="header">
             <div class="kf-info-wrapper">
-                <img class="kf-avatar" :src="storeServerChatEn.avatarUrl" />
+                <!-- <img class="kf-avatar" :src="storeServerChatEn.avatarUrl" /> -->
+                <img class="kf-avatar" src="../../../static/image/im_server_avatar.png">
                 <span class="kf-name position-h-v-mid">{{storeServerChatEn.serverChatName}}</span>
             </div>
             <div class="client-info-wrapper">
