@@ -34,6 +34,13 @@ Vue.use(Vuex)
 
 new Vue({
   router,
+  scrollBehavior(to,from,savedPosition){
+    if(savedPosition){
+      return savedPosition;
+    }else{
+      return {x:0,y:0}
+    }
+  },
   store: {
     // store,
     imServerStore: imServerStore

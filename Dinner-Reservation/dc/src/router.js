@@ -21,6 +21,14 @@ import imServer from './components/imServer/imServer'
 Vue.use(Router)
 
 export default new Router({
+  //在此处加入
+  scrollBehavior(to,from,savedPosition){
+    if(savedPosition){
+      return savedPosition;
+    }else{
+      return {x:0,y:0}
+    }
+  },
   routes: [
     {path:"/Index",component:Index},
     {path:"/",component:Home},
@@ -40,6 +48,6 @@ export default new Router({
     // {path:"/preplot",component:Preplot},
     {path:"*",component:Notfound},
     { path: '/imServer',  component: imServer },
-        { path: '/imClient',  component: imClient },
+    { path: '/imClient',  component: imClient }
   ]
 })

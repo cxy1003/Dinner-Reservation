@@ -28,7 +28,7 @@
                         &nbsp;<img  class="perplot-img" src="../../public/img/index/preplot2.png" alt="">
                         <p class="font">电话预定</p>
                     </li>
-                    <li class="perplot-list">
+                    <li class="perplot-list"  @click="kefu">
                         &nbsp;<img  class="perplot-img" src="../../public/img/index/preplot.png" alt="">
                         <p class="font">小秘预订</p>
                 </li>
@@ -71,6 +71,9 @@ export default {
         // },
         Search(){
             this.$router.push("/search")
+        },
+        kefu(){
+            this.$router.push("/imClient")
         }
     },
     components:{
