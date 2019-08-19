@@ -17,8 +17,8 @@
           <mt-button size="large" type="danger" @click="login">登录</mt-button>
         </div>
         <div class="point bg l_r_padding">
-          <a href="#">其他方式登录</a>
-          <span href="#" @click="reg">注册-></span>
+          <span class="">其他方式登录</span>
+          <span  @click="reg">注册-></span>
         </div>
    </div>
 </template>
