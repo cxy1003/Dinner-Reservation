@@ -126,7 +126,7 @@ export default {
     watch: {},
     methods: {
         back(){
-          this.$router.push("-1");
+          this.$router.push("/");
         },
         /**
          * 注册账号信息
@@ -387,7 +387,7 @@ export default {
         }
         .back{
             position: absolute;
-            left:200px;
+            right:18px;
         }
         .logo {
             height: 45px;
