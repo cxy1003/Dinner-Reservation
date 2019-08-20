@@ -140,6 +140,10 @@
     width: 100%;
     height: 100px;
 }
+.d_can .d_map img{
+    width: 100%;
+    height:100%;
+}
 /* 评分拍照模块 */
 .d_other{
     margin: 10px 0;
