@@ -107,6 +107,8 @@ export default {
 }
 </script>
  
-<style>
-
+<style scoped>
+  .mint-tabbar > .mint-tab-item.is-selected{
+    color:red;
+  }
 </style>

@@ -215,7 +215,7 @@ export default {
                         padding-top: 11px;
                         .name {
                             display: inline-block;
-                            float: left;
+                            // float: left;
                             width: 50%;
                             font-size: 14px;
                             color: #3e3e3e;

@@ -73,8 +73,8 @@
                     <span class="font_span">  餐厅基本信息</span>
                 </div>
                 <!-- 地图部分预留 -->
-                <div class="d_map t_b_padding">地图
-                    <img src="" alt="">
+                <div class="d_map t_b_padding">
+                    <img src="../../public/img/details/map.jpg" alt="">
                 </div>
                 <div class="t_b_padding bb">
                     <span class="font_price font_span">详情介绍:</span>
