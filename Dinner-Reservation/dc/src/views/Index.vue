@@ -53,10 +53,12 @@
                 </div>      
             </div>
           <!-- <div style="height:950px;"></div> -->
+     <buttombar></buttombar>
  </div>
 </template>
 <script>
 import Carousel from "../components/Carousel"
+import Buttombar from "../views/Buttombar"
 export default {
     data() {
         return {
@@ -77,7 +79,8 @@ export default {
         }
     },
     components:{
-        "carousel":Carousel
+        "carousel":Carousel,
+        "buttombar":Buttombar
     },
     created() {
         this.axios.get("http://127.0.0.1:5050/myindex/goods/").then(result=>{

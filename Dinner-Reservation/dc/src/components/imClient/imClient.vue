@@ -66,6 +66,7 @@
                 <el-button type="primary" @click="logoutDialog_submit">结束会话</el-button>
             </div>
         </el-dialog>
+        <buttombar></buttombar>
     </div>
 </template>
 
@@ -74,13 +75,15 @@ import commonChat from '@/components/common/common_chat.vue';
 import imRate from './imRate.vue';
 import imLeave from './imLeave.vue';
 import imTransfer from './imTransfer.vue';
+import Buttombar from '../../views/Buttombar';
 
 export default {
     components: {
         commonChat: commonChat,
         imRate: imRate,
         imLeave: imLeave,
-        imTransfer: imTransfer
+        imTransfer: imTransfer,
+        Buttombar:Buttombar
     },
     data() {
         return {
@@ -358,7 +361,7 @@ export default {
     },
     mounted() {
         this.regClientChatEn();
-    }
+    },
 };
 </script>
 

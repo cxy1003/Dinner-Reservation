@@ -180,10 +180,12 @@
            </li>      
        </ul>
      </div>
+     <buttombar></buttombar>
    </div>
 </template>
 
 <script>
+import Buttombar from "../views/Buttombar"
 export default {
     data(){
         return{}
@@ -192,7 +194,10 @@ export default {
         go(){
             this.$router.push('/login');
         }
-    }
+    },
+    components:{
+        "buttombar":Buttombar
+    },
 }
 </script>
 
