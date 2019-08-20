@@ -10,7 +10,7 @@
       </div>
       <div v-show="res.uid" class="login">
         <span class="a_style">欢迎！{{(res.uname)}}</span>
-        <button class="button_style" @click="quit">退出登录</button>
+        <button v-show="res.uid" class="button_style" @click="quit">退出登录</button>
       </div>
     </div>
     <!-- 订单状态导航 -->
