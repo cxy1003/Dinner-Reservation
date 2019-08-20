@@ -21,4 +21,7 @@ export default {
       width:30px;
       height:30px;
   }
+  .mint-tabbar > .mint-tab-item.is-selected{
+      color:red;
+  }
 </style>
