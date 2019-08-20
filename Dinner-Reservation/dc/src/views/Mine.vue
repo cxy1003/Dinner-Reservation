@@ -206,10 +206,15 @@ export default {
       this.$router.push("/login");
     },
     quit() {
-      // this.$store.commit("changeUser", { uid: "", uname: "" });
-      localStorage.clear();
-      // this.$router.push("/mine")
-      window.location.reload();
+      this.$messagebox.confirm("请确定是否要退出").then(action=>{
+        // this.$store.commit("changeUser", { uid: "", uname: "" });
+        localStorage.clear();
+        // this.$router.push("/mine")
+        window.location.reload();
+      }).catch(err=>{
+        
+      })
+      
     }
   }
 };

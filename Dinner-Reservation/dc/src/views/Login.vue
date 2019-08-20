@@ -64,7 +64,7 @@ export default {
             this.$toast("登录成功,正跳转至首页")
             setTimeout(() => {
               this.$router.push("/");
-            }, 2000);
+            }, 1000);
           } else {
             this.$toast("用户名或密码错误");
           }
