@@ -73,8 +73,9 @@
                     <span class="font_span">  餐厅基本信息</span>
                 </div>
                 <!-- 地图部分预留 -->
-                <div class="d_map t_b_padding">
+                <div class="d_map t_b_padding">地图
                     <img src="../../public/img/details/map.jpg" alt="">
+                    
                 </div>
                 <div class="t_b_padding bb">
                     <span class="font_price font_span">详情介绍:</span>
@@ -108,7 +109,7 @@
             </div>
             <!-- 推荐 -->
             <div class="d_recommed">
-                <div class="bt bb t_b_padding">
+                <div class="t_b_padding bt bb">
                     <span class="font_price">|</span>
                     <span class="font_span"> 小伙伴们还喜欢</span>
                 </div>
@@ -116,7 +117,7 @@
         </div>
         <!-- 立即预定 -->
         <div class="d_ding">
-            <mt-button type="danger" size="large"  @click="reserve">立即预定</mt-button>
+            <mt-button type="danger" size="large" :data-id="`${id}`"  @click="reserve">立即预定</mt-button>
         </div>
         <mt-actionsheet
             :actions= "data"
@@ -178,7 +179,8 @@ export default {
       this.$router.push("/");
     },
      //   设置店家预定，判断是否登录，如果登录跳转至立即预定页面，否则跳转到登录页面
-        reserve(){
+        reserve(e){
+            var id=e.target.dataset.id
             // 发送ajax
             this.axios.get("http://127.0.0.1:5050/islogin").then(res=>{
                 if(res.data.code==301){
@@ -189,7 +191,9 @@ export default {
                     // 获取当前页面上的id,和用户信息
                     // id保存在全局中，通过路由传送过去
                     // 跳转到立即预定页面
-                    this.$router.push("/userpreplot")
+                    
+                    console.log(id)
+                    this.$router.push("/userpreplot?id="+id)
                 }
             })
         },

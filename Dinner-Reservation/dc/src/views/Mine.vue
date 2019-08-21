@@ -15,7 +15,7 @@
     </div>
     <!-- 订单状态导航 -->
     <ul class="nav bg mine_nav">
-      <li>
+      <li @click="jump">
         <a href="#">
           <img class="nav_img" src="../img/mine/jinxingzhong.png" />
           <p class="font_family font_mine">进行中</p>
@@ -247,6 +247,9 @@ export default {
     }
   },
     methods:{
+        jump(){
+          this.$router.push("/allorder")
+        },
         go(){
             this.$router.push('/login');
         },

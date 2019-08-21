@@ -2,7 +2,7 @@
     <div class="u_preplot bg l_r_padding">
         <!-- 餐厅预订订单页面 -->
         <div class="u_preplot_yu">
-            <!-- 导航部分 -->
+            <!-- 导航部分  -->
            <img src="../../public/img/details/return.png" alt="">
             
             <span class="font_family">餐厅详情</span>
@@ -68,7 +68,7 @@ export default {
         isselef:false,//是否替他人订餐
     };
   },
-  pid:["lid"],
+//   pid:["lid"],
   watch:{
     //   监视人数，判断人数是否数字
 //     people(){  

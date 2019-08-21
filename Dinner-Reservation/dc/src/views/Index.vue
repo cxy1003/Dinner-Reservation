@@ -42,11 +42,11 @@
                 </div> 
                 <!--餐厅介绍 -->
                 <div class="info">  
-                    <div class="a" v-for="(item,i) of arr" :key="i">
-                        <router-link :to="`/details/${++i}`">
+                    <div @click="detail" class="a" v-for="(item,i) of arr" :key="i">
+                        <p :data-id="`${item.id}`">
                             <img :src="`http://127.0.0.1:5050/img/index/${item.img}`" alt="">
-                        </router-link>
-                        <p class="font_family" v-text="item.store"></p>
+                        </p>
+                        <p class="font_family" :data-name="`${item.store}`" v-text="item.store"></p>
                         <span class="font_price">人均:￥</span>
                         <span class="font_price" v-text="item.price">60-100</span>
                     </div>
@@ -64,13 +64,21 @@ export default {
         return {
             arr:[],
             // p1:"",
-            lid:""
+            lid:"",
+            store:"",
         }
     },
     methods:{
         // jumpdetails(){
         //     this.$router.push("/details")
         // },
+        detail(e){
+            // 先获取自定义属性
+           var id=e.target.dataset.id
+           var name=e.target.dataset.name
+           console.log(id,name)
+           this.$router.push("/details")
+        },
         Search(){
             this.$router.push("/search")
         },

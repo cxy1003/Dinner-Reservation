@@ -34,24 +34,22 @@ export default new Router({
   routes: [
     {path:"/index",component:Index},
     {path:"/",component:Home},
-    {path:"/details",component:Details},
-    {path:"/",component:Home},
     {path:"/details/:id",component:Details,props:true},
     {path:"/login",component:Login},
     {path:"/install",component:Install},
     {path:"/mine",component:Mine},
     {path:"/reguser",component:Reguser},
     {path:"/carousel",component:Carousel},
-    {path:"/userpreplot/:lid",component:Userpreplot,pid:true},
+    {path:"/userpreplot/",component:Userpreplot},
     {path:"/personal",component:Personal}, 
     {path:"/allorder",component:Allorder},
     {path:"/orderresult",component:Orderresult},
     {path:"/fond",component:fond},
     {path:"/search",component:Search},
     // {path:"/preplot",component:Preplot},
-    {path:"*",component:Notfound},
     {path:"/buttombar",component:Buttombar},
     { path: '/imServer',  component: imServer },
-    { path: '/imClient',  component: imClient }
+    { path: '/imClient',  component: imClient },
+    {path:"*",component:Notfound}
   ]
 })

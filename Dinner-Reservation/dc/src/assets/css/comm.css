@@ -40,6 +40,7 @@ a:hover{
 }
 .t_b_padding{
     padding: 5px 0;
+    display:column !important ;
 }
 .l_r_padding{
     padding: 0 5px;
