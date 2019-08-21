@@ -40,7 +40,7 @@ export default new Router({
     {path:"/mine",component:Mine},
     {path:"/reguser",component:Reguser},
     {path:"/carousel",component:Carousel},
-    {path:"/userpreplot",component:Userpreplot},
+    {path:"/userpreplot/:lid",component:Userpreplot,pid:true},
     {path:"/personal",component:Personal}, 
     {path:"/allorder",component:Allorder},
     {path:"/orderresult",component:Orderresult},

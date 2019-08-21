@@ -116,7 +116,7 @@
         </div>
         <!-- 立即预定 -->
         <div class="d_ding">
-            <mt-button type="danger" size="large">立即预定</mt-button>
+            <mt-button type="danger" size="large"  @click="reserve">立即预定</mt-button>
         </div>
         <mt-actionsheet
             :actions= "data"
@@ -150,7 +150,7 @@ export default {
       sheetVisible: false
     };
   },
-  // 接受父组件传来的lid
+  // 接受父组件传来的id
   props: ["id"],
   created() {
     if (this.id) {
@@ -177,6 +177,22 @@ export default {
     returnIindex: function() {
       this.$router.push("/");
     },
+     //   设置店家预定，判断是否登录，如果登录跳转至立即预定页面，否则跳转到登录页面
+        reserve(){
+            // 发送ajax
+            this.axios.get("http://127.0.0.1:5050/islogin").then(res=>{
+                if(res.data.code==301){
+                    this.$messagebox("请您先登录，再购买商品").then(result=>{
+                        this.$router.push("/login")
+                        })
+                }else{
+                    // 获取当前页面上的id,和用户信息
+                    // id保存在全局中，通过路由传送过去
+                    // 跳转到立即预定页面
+                    this.$router.push("/userpreplot")
+                }
+            })
+        },
     // 点击星星实现取消和收藏的功能
     startstyle() {
         this.axios.get("http://127.0.0.1:5050/islogin").then(res => {
