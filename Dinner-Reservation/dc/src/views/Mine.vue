@@ -15,25 +15,19 @@
     </div>
     <!-- 订单状态导航 -->
     <ul class="nav bg mine_nav">
-      <li>
-        <a href="#">
+      <li @click="jumporderlist">
+        <a >
           <img class="nav_img" src="../img/mine/jinxingzhong.png" />
           <p class="font_family font_mine">进行中</p>
         </a>
       </li>
-      <li>
+      <li @click="jumporderlist">
         <a href="#">
           <img class="nav_img" src="../img/mine/daizhifu.png" />
           <p class="font_family font_mine">待支付</p>
         </a>
       </li>
-      <li>
-        <a href="#">
-          <img class="nav_img" src="../img/mine/daidianping.png" />
-          <p class="font_family font_mine">待点评</p>
-        </a>
-      </li>
-      <li>
+      <li @click="jumporderlist">
         <a href="#">
           <img class="nav_img" src="../img/mine/quanbudingdan.png" />
           <p class="font_family font_mine">全部订单</p>
@@ -247,8 +241,12 @@ export default {
     }
   },
     methods:{
+        jumporderlist(){
+          console.log(1)
+          this.$router.push('/login')
+        },
         go(){
-            this.$router.push('/login');
+          this.$router.push('/login');
         },
         quit() {
           this.$messagebox.confirm("请确定是否要退出").then(action=>{

@@ -15,7 +15,7 @@
         <div class="details font_family">
             <!-- 详情页图片部分 -->
             <div class="details_img">
-                <img :src="`http://127.0.0.1:5050/img/details/${product.img}`" alt="">
+                <img :src="`${img1}`" alt="">
             </div>
             <!-- 店家详情 -->
             <div class="d_title">
@@ -131,7 +131,7 @@ export default {
   data() {
     return {
       product: "",
-
+      img1:"",
       value: 4,
       // 设置一个状态保存是否更换图片
       alive: "true",
@@ -144,8 +144,10 @@ export default {
         {
           name: "从相册中选择",
           method: this.getLibrary // 调用methods中的函数
-        }
+        },
+        
       ],
+     
       // action sheet 默认不显示，为false。操作sheetVisible可以控制显示与隐藏
       sheetVisible: false
     };
@@ -159,7 +161,10 @@ export default {
           params: { id: this.id }
         })
         .then(result => {
-          // console.log(result.data)
+          console.log(result.data)
+        //   console.log(result.data.product.img)
+          this.img1="http://127.0.0.1:5050/img/details/"+result.data.product.img;
+          console.log(this.img1);
           var { product } = result.data;
           this.product = product;
         });

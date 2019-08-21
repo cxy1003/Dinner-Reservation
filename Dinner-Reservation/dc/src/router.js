@@ -32,10 +32,8 @@ export default new Router({
     }
   },
   routes: [
+    {path:"/",component:Home},
     {path:"/index",component:Index},
-    {path:"/",component:Home},
-    {path:"/details",component:Details},
-    {path:"/",component:Home},
     {path:"/details/:id",component:Details,props:true},
     {path:"/login",component:Login},
     {path:"/install",component:Install},
