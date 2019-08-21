@@ -6,7 +6,7 @@
       <div class="user"></div>
       <div v-show="!res.uid" class="login">
         <router-link :to="`/login`" class="a_style">登录</router-link>/
-        <router-link :to="`/reg`" class="a_style">注册</router-link>
+        <router-link :to="`/reguser`" class="a_style">注册</router-link>
       </div>
       <div v-show="res.uid" class="login">
         <span class="a_style">欢迎！{{(res.uname)}}</span>
