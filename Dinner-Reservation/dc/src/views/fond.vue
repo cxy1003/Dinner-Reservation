@@ -61,13 +61,17 @@
           </mt-cell>
        </li>
    </ul>
+   <buttombar></buttombar>
      
   </div>
 </template>
 
 <script>
+import Buttombar from "../views/Buttombar"
 export default {
-
+  components:{
+        "buttombar":Buttombar
+    },
 }
 </script>
 

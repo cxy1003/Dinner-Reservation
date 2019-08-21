@@ -7,12 +7,14 @@ import Login from './views/Login'
 import Install from './views/Install'
 import Carousel from './components/Carousel'
 import Mine from './views/Mine'
+import fond from './views/fond'
 import Reguser from './views/Reguser'
 import Userpreplot from './views/Userpreplot'
 import Personal from './views/Personal'
 import Allorder from './views/Allorder'
 import Orderresult from './views/Orderresult'
 import Search from './views/Search'
+import Buttombar from './views/Buttombar'
 // import Preplot from './views/Preplot'
 import Notfound from './views/Notfound'
 import imClient from './components/imClient/imClient'
@@ -30,7 +32,7 @@ export default new Router({
     }
   },
   routes: [
-    {path:"/Index",component:Index},
+    {path:"/index",component:Index},
     {path:"/",component:Home},
     {path:"/details",component:Details},
     {path:"/",component:Home},
@@ -44,9 +46,11 @@ export default new Router({
     {path:"/personal",component:Personal}, 
     {path:"/allorder",component:Allorder},
     {path:"/orderresult",component:Orderresult},
+    {path:"/fond",component:fond},
     {path:"/search",component:Search},
     // {path:"/preplot",component:Preplot},
     {path:"*",component:Notfound},
+    {path:"/buttombar",component:Buttombar},
     { path: '/imServer',  component: imServer },
     { path: '/imClient',  component: imClient }
   ]
