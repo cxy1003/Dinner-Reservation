@@ -123,7 +123,6 @@
             :actions= "data"
             v-model="sheetVisible">
         </mt-actionsheet>
-
         
     </div>
 </template>
@@ -180,8 +179,10 @@ export default {
     },
      //   设置店家预定，判断是否登录，如果登录跳转至立即预定页面，否则跳转到登录页面
         reserve(e){
-            var id=e.target.dataset
+            var id=e.target.dataset.id
+            var name=e.target.dataset.name
             console.log(id)
+            console.log(name)
             // 发送ajax
             this.axios.get("http://127.0.0.1:5050/islogin").then(res=>{
                 if(res.data.code==301){
@@ -192,9 +193,7 @@ export default {
                     // 获取当前页面上的id,和用户信息
                     // id保存在全局中，通过路由传送过去
                     // 跳转到立即预定页面
-                    
-                    console.log(id)
-                    this.$router.push("/userpreplot")
+                    this.$router.push("/userpreplot/?id"+id)
                 }
             })
         },

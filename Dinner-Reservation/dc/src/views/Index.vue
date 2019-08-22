@@ -95,7 +95,10 @@ export default {
         this.axios.get("http://127.0.0.1:5050/myindex/goods/").then(result=>{
              var arr=result.data;
              this.arr=arr;
-            
+             console.log(arr)
+            localStorage.setItem("pid",result.data[0].id)
+            localStorage.setItem("store",result.data[0].store)
+          
         })
     },
 };

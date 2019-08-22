@@ -34,6 +34,7 @@ Vue.use(Vuex)
 
 new Vue({
   router,
+  // 定位顶部
   scrollBehavior(to,from,savedPosition){
     if(savedPosition){
       return savedPosition;
