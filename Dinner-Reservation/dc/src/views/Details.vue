@@ -117,7 +117,7 @@
         </div>
         <!-- 立即预定 -->
         <div class="d_ding">
-            <mt-button type="danger" size="large" :data-id="`${id}`"  @click="reserve">立即预定</mt-button>
+            <mt-button type="danger" size="large"  @click="reserve">立即预定</mt-button>
         </div>
         <mt-actionsheet
             :actions= "data"
@@ -180,7 +180,8 @@ export default {
     },
      //   设置店家预定，判断是否登录，如果登录跳转至立即预定页面，否则跳转到登录页面
         reserve(e){
-            var id=e.target.dataset.id
+            var id=e.target.dataset
+            console.log(id)
             // 发送ajax
             this.axios.get("http://127.0.0.1:5050/islogin").then(res=>{
                 if(res.data.code==301){
@@ -193,7 +194,7 @@ export default {
                     // 跳转到立即预定页面
                     
                     console.log(id)
-                    this.$router.push("/userpreplot?id="+id)
+                    this.$router.push("/userpreplot")
                 }
             })
         },

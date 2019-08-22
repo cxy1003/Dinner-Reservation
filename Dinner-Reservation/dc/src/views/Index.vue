@@ -42,11 +42,11 @@
                 </div> 
                 <!--餐厅介绍 -->
                 <div class="info">  
-                    <div @click="detail" class="a" v-for="(item,i) of arr" :key="i">
-                        <p :data-id="`${item.id}`">
-                            <img :src="`http://127.0.0.1:5050/img/index/${item.img}`" alt="">
+                    <div @click="detail"   class="a" v-for="(item,i) of arr" :key="i">
+                        <p>
+                            <img :src="`http://127.0.0.1:5050/img/index/${item.img}`" :data-id="`${item.id}`" :data-name="`${item.store}`" alt="" >
                         </p>
-                        <p class="font_family" :data-name="`${item.store}`" v-text="item.store"></p>
+                        <p class="font_family" v-text="item.store" :data-id="`${item.id}`" :data-name="`${item.store}`"></p>
                         <span class="font_price">人均:￥</span>
                         <span class="font_price" v-text="item.price">60-100</span>
                     </div>
@@ -74,10 +74,11 @@ export default {
         // },
         detail(e){
             // 先获取自定义属性
+            // console.log(e.target);
            var id=e.target.dataset.id
            var name=e.target.dataset.name
            console.log(id,name)
-           this.$router.push("/details")
+           this.$router.push("/details/"+id)
         },
         Search(){
             this.$router.push("/search")

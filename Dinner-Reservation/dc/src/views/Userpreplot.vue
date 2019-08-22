@@ -50,7 +50,7 @@
         </div>
 
         <div class="u_end  bb">
-            <mt-button type="danger" size="small" align="center">确定提交</mt-button>
+            <mt-button @click="submit" :data-store="name" type="danger" size="small" align="center">确定提交</mt-button>
         </div>
     </div>
     
