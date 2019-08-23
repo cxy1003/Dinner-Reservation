@@ -127,14 +127,15 @@
     </div>
 </template>
 <script>
+import VueEvent from "../model/VueEvent.js"
 export default {
   data() {
     return {
       product: "",
-
       value: 4,
       // 设置一个状态保存是否更换图片
       alive: "true",
+      obj:{},
       // action sheet 选项内容
       data: [
         {
@@ -147,7 +148,8 @@ export default {
         }
       ],
       // action sheet 默认不显示，为false。操作sheetVisible可以控制显示与隐藏
-      sheetVisible: false
+      sheetVisible: false,
+       msg1:"jfods"
     };
   },
   // 接受父组件传来的id
@@ -162,6 +164,8 @@ export default {
           // console.log(result.data)
           var { product } = result.data;
           this.product = product;
+         
+        //   console.log(product.d_name)
         });
     }
   },
@@ -178,11 +182,7 @@ export default {
       this.$router.push("/");
     },
      //   设置店家预定，判断是否登录，如果登录跳转至立即预定页面，否则跳转到登录页面
-        reserve(e){
-            var id=e.target.dataset.id
-            var name=e.target.dataset.name
-            console.log(id)
-            console.log(name)
+        reserve(){
             // 发送ajax
             this.axios.get("http://127.0.0.1:5050/islogin").then(res=>{
                 if(res.data.code==301){
@@ -190,10 +190,27 @@ export default {
                         this.$router.push("/login")
                         })
                 }else{
-                    // 获取当前页面上的id,和用户信息
-                    // id保存在全局中，通过路由传送过去
-                    // 跳转到立即预定页面
-                    this.$router.push("/userpreplot/?id"+id)
+                    // 发送请求保存店名
+                    // this.axios.get("http://127.0.0.1:5050/myindex/goods/").then(res=>{
+                    //     if(res.data.code==200){
+                    //         console.log(res.data)
+                    //         localStorage.setItem("pid",res.data[0].id);
+                    //         localStorage.setItem("store",res.data[0].store)
+                    //         console.log(res.data.store)
+                    //     }
+                        // 获取当前店名称
+                        var names=this.product.d_name
+                        var id=this.id
+                        // console.log(names,id)
+                        // Vuex传参
+                        // this.$store.commit("changeUser",{uid:id,names:names})
+                        // this.$emit("user",{uid:id,names:names})
+                         this.obj={uid:id,names:names}
+                        VueEvent.$emit('to-news',this.msg1)
+                        // 跳转
+                         this.$router.push("/userpreplot")
+                    // })
+                   
                 }
             })
         },

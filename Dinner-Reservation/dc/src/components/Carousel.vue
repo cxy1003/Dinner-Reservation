@@ -27,7 +27,7 @@
   },
   created() {
     this.axios.get("http://127.0.0.1:5050/myindex/carousel").then(result=>{
-        console.log(result)
+        // console.log(result)
         var imgs=result.data;
         this.imgs=imgs
     })

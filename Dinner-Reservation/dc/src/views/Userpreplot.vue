@@ -50,12 +50,13 @@
         </div>
 
         <div class="u_end  bb">
-            <mt-button @click="submit" :data-store="name" type="danger" size="small" align="center">确定提交</mt-button>
+            <mt-button @click="submit" type="danger" size="small" align="center">确定提交</mt-button>
         </div>
     </div>
     
 </template>
 <script>
+import VueEvent from "../model/VueEvent.js"
 export default {
   data() {
     return {
@@ -66,6 +67,8 @@ export default {
         phone:"",//有效的手机号
         text:"",//评论区
         isselef:false,//是否替他人订餐
+        msg:"",
+       
     };
   },
 //   pid:["lid"],
@@ -91,7 +94,17 @@ export default {
 //           }
 //       }
    },
+   mounted(){
+    //    console.log(VueEvent.$on('to-news')  )
+    
+      VueEvent.$on('to-news',function(data){
+          console.log(data);
+        //   console.log(data.names)
+      })
+     
+   },
   methods: {
+      
     //点击按钮获取按钮上的内容
     submit() {
       // 验证手机号是否有效
