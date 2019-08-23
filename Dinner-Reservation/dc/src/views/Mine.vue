@@ -15,28 +15,28 @@
     </div>
     <!-- 订单状态导航 -->
     <ul class="nav bg mine_nav">
-      <li @click="jump">
-        <a href="#">
+      <li @click="jumporderlist">
+        <a>
           <img class="nav_img" src="../img/mine/jinxingzhong.png" />
           <p class="font_family font_mine">进行中</p>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a>
           <img class="nav_img" src="../img/mine/daizhifu.png" />
           <p class="font_family font_mine">待支付</p>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a>
           <img class="nav_img" src="../img/mine/daidianping.png" />
           <p class="font_family font_mine">待点评</p>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a>
           <img class="nav_img" src="../img/mine/quanbudingdan.png" />
-          <p class="font_family font_mine">全部订单</p>
+          <p class="font_family font_mine" @click="look">全部订单</p>
         </a>
       </li>
     </ul>
@@ -247,8 +247,25 @@ export default {
     }
   },
     methods:{
-        jump(){
-          this.$router.push("/allorder")
+      look(){
+            // 发送ajax
+            this.axios.get("http://127.0.0.1:5050/islogin").then(res=>{
+                if(res.data.code==301){
+                    this.$messagebox("请您先登录，再购买商品").then(result=>{
+                        this.$router.push("/login")
+                        })
+                }else{
+                    // 获取当前页面上的id,和用户信息
+                    // id保存在全局中，通过路由传送过去
+                    // 跳转到立即预定页面
+                    this.$router.push("/allorder")
+                }
+            })
+    
+      },
+        jumporderlist(){
+          console.log(1)
+          this.$router.push('/login')
         },
         go(){
             this.$router.push('/login');

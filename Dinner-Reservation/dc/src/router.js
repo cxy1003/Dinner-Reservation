@@ -15,10 +15,10 @@ import Allorder from './views/Allorder'
 import Orderresult from './views/Orderresult'
 import Search from './views/Search'
 import Buttombar from './views/Buttombar'
-// import Preplot from './views/Preplot'
 import Notfound from './views/Notfound'
 import imClient from './components/imClient/imClient'
 import imServer from './components/imServer/imServer'
+
 
 Vue.use(Router)
 
@@ -46,7 +46,6 @@ export default new Router({
     {path:"/orderresult",component:Orderresult},
     {path:"/fond",component:fond},
     {path:"/search",component:Search},
-    // {path:"/preplot",component:Preplot},
     {path:"/buttombar",component:Buttombar},
     { path: '/imServer',  component: imServer },
     { path: '/imClient',  component: imClient },
