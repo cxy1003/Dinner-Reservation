@@ -78,6 +78,12 @@ export default {
 }
 </script>
 <style scoped>
+#allorders{
+  background: #eee;
+}
+.nav-top{
+  background: rgba(230, 198, 17, 0.555)
+}
 /* 引入基础样式 */
 #allorders{
   background: #eee;
