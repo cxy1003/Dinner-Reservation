@@ -39,8 +39,9 @@ a:hover{
     margin-top:10px;
 }
 .t_b_padding{
-    padding: 5px 0;
-    display:column !important ;
+    padding: 5px 0 !important;
+    display: block !important;
+    line-height: 22px !important;
 }
 .l_r_padding{
     padding: 0 5px;

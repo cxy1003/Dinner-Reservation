@@ -28,19 +28,22 @@ insert into dc_index_carouse values (null,"c1.png","index.html",""),
 (null,"c7.png","index.html","");
 # 预定表 dc_preplot(前端获取)
 create table dc_preplot(
-pid int primary key auto_increment,
-uname varchar(128),
-phone varchar(128),
-# 预订人数
-reserpeople varchar(128),
-date varchar(50),
-# 是否预定
-ispreplot varchar(50),
-gender varchar(5),
-# 备注框
-comment varchar(128),
-preplottime varchar(10)
+    pid int primary key auto_increment,
+    uname varchar(128),
+    phone varchar(128),
+    # 预订人数
+    reserpeople varchar(2),
+    pdate varchar(50),
+    # 是否预定
+    ispreplot varchar(50),
+    # 备注框
+    comment varchar(128)
 );
+insert into dc_preplot values(null,"lili","13652698536","2","10:30","1",""),
+(null,"tom","13652698552","4","20:30","1",""),
+(null,"tom","13652698552","4","20:30","1",""),
+(null,"tom","13652698552","4","20:30","1",""),
+(null,"tom","13652698552","4","20:30","1","");
 # 评分表 dc_marksheet(前端获取)
 create table dc_marksheet(
 pid int primary key auto_increment,
