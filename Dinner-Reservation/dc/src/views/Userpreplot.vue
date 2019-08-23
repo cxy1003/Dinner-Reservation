@@ -41,7 +41,7 @@
         <div class="u_anpai bb" style="margin-top:10px;">
             <el-input  type="textarea" style="height:100px;" placeholder="请输入内容" v-model="comment" clearable></el-input>
             
-            <mt-button class="submit" type="danger" size="large">确定提交</mt-button>
+            <mt-button @click="submit" class="submit" type="danger" size="large">确定提交</mt-button>
        
         </div>
         </div>
