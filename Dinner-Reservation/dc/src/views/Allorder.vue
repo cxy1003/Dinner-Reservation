@@ -43,6 +43,7 @@
 export default {
   data(){
     return{
+      list:[],
       pid:"4",
       showView: true // 用于点击当前页的router时，刷新当前页
     }
