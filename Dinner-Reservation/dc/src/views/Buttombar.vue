@@ -1,7 +1,7 @@
 <template>
 <!-- 底部导航栏组件 -->
   <div class="bottom-tab">
-        <div class="tab-item" @click="switchTo('/Index')">
+        <div class="tab-item" @click="switchTo('/index')">
             <img :src="'/Index' === $route.path ? tabBarImgArr[0].selected : tabBarImgArr[0].normal" alt="首页">
             <span :class="{on: '/home' === $route.path}">首页</span>
         </div>

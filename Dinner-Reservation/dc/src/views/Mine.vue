@@ -22,13 +22,13 @@
         </a>
       </li>
       <li @click="jumporderlist">
-        <a href="#">
+        <a >
           <img class="nav_img" src="../img/mine/daizhifu.png" />
           <p class="font_family font_mine">待支付</p>
         </a>
       </li>
       <li @click="jumporderlist">
-        <a href="#">
+        <a>
           <img class="nav_img" src="../img/mine/quanbudingdan.png" />
           <p class="font_family font_mine">全部订单</p>
         </a>
@@ -242,8 +242,7 @@ export default {
   },
     methods:{
         jumporderlist(){
-          console.log(1)
-          this.$router.push('/login')
+          this.$router.push('/allorder')
         },
         go(){
           this.$router.push('/login');
