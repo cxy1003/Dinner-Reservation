@@ -15,27 +15,19 @@
             <li class="order_font">待支付</li>
             <li class="order_font">待点评</li>
           </ul>
-          <span class="spanImg">|
-            <img src="../../public/img/index/jian0.png" alt="">
-          </span>
       </div>
       <!--商品详情 -->
-      <div class="mb bb"  v-for="(item,i) of list" :key="i">
-        <mt-cell class="detail" title="御珍轩 土门商厦店" label="预定中">
-            <img  slot="icon" src="../../public/img/allorder/preop.png" alt="">
-            <img src="../../public/img/allorder/trash.png" @click="delorder" v-if="showView">
-        </mt-cell>
-        <span class="title font_family">
-          <span v-text="item.uname"></span>
-          <span v-text="item.phone"></span>
-            <!-- 预定时间 -->
-          <span v-text="item.preplottime"></span>
-          <!-- 订单人数 -->
-          <span v-text="item.reserpeople"></span>
-
-            <!-- 客户备注 -->
-          <span>{{item.comment}}</span>
-           大厅</span>
+      <div class="info-bg">
+          <!-- <img class="order-img" src="../img/mine/111.png" alt=""><span>111</span> -->
+          <div class="info">
+            <img class="order-img" src="../img/mine/111.png" alt="">
+            <div>
+               <p class="order_font first-elem">下单时间：</p>
+               <p class="order_font">顾客姓名：</p>
+               <p class="order_font">订单人数</p>
+               <p class="order_font">备注：</p>
+            </div>
+          </div>
       </div>
 </div>
 </template>
@@ -71,6 +63,49 @@ export default {
 }
 </script>
 <style scoped>
+#allorders{
+  background: #eee;
+}
+.nav-top{
+  background: rgba(230, 198, 17, 0.555)
+}
 /* 引入基础样式 */
-@import url("../assets/css/allorder.css");
+/* @import url("../assets/css/allorder.css"); */
+ .orders_list{
+     display: flex;
+     justify-content: space-around;
+     padding: 10px 20px 10px 20px; 
+     background: pink;
+     z-index: 1;
+     margin-top: 50px;
+}
+.order-img{
+   width:60px;
+   height:60px;
+   margin-top:10px; 
+   margin-left: 20px;
+   margin-right: 20px;
+}
+.info{
+  display: flex;
+}
+.info-bg{
+  background: #fff;
+  padding: 10px;
+  margin-top:10px; 
+  border-radius:5%;
+  width: 90%; 
+  margin-left:10px;
+  opacity: 1;
+}
+.first-elem{
+  margin-top:10px; 
+}
+.order_font{
+  font-size:13px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:rgba(46, 42, 42, 0.8);
+  margin-bottom: 6px;
+}
+
 </style>
