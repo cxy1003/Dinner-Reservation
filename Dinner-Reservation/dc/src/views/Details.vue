@@ -135,7 +135,6 @@ export default {
       value: 4,
       // 设置一个状态保存是否更换图片
       alive: "true",
-      obj:{},
       // action sheet 选项内容
       data: [
         {
@@ -149,7 +148,6 @@ export default {
       ],
       // action sheet 默认不显示，为false。操作sheetVisible可以控制显示与隐藏
       sheetVisible: false,
-       msg1:"jfods"
     };
   },
   // 接受父组件传来的id
@@ -205,10 +203,10 @@ export default {
                         // Vuex传参
                         // this.$store.commit("changeUser",{uid:id,names:names})
                         // this.$emit("user",{uid:id,names:names})
-                         this.obj={uid:id,names:names}
-                        VueEvent.$emit('to-news',this.msg1)
+                        //  this.obj={uid:id,names:names}
+                       // VueEvent.$emit('to-news',this.msg1)
                         // 跳转
-                         this.$router.push("/userpreplot")
+                         this.$router.push("/userpreplot/"+id+","+names)
                     // })
                    
                 }

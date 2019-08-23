@@ -8,13 +8,15 @@
             <span class="font_family">餐厅详情</span>
         </div>
         <div class="mt u_info bb">
+            <span>店名：</span><span>{{arr[1]}}</span>
             <div class="bb t_b_padding">
                 <span class="font_family u_bg_margin">人数</span>
-                  <el-input v-model="people" style="width:50px;">人</el-input>
+                <el-input placeholder="请输入"  v-model="reserpeople" clearable></el-input>
             </div>
             <div class="t_b_padding ">
+
                 <span class="font_family">请选择就餐时间</span>
-                <el-time-select v-model="value" :picker-options="{
+                <el-time-select v-model="pdate" :picker-options="{
                             start: '08:30',
                             step: '00:15',
                             end: '18:30'
@@ -30,7 +32,7 @@
         <div class="u_switch bt bb t_b_padding">
             <span>我要预订包房</span>
             <!-- 开关 -->
-            <el-switch v-model="isAgree" active-color="#13ce66" inactive-color="#ff4949"></el-switch>
+            <el-switch  active-color="#13ce66" inactive-color="#ff4949"></el-switch>
         </div>
         <!-- 用户信息 -->
         <div class="">
@@ -41,12 +43,12 @@
         </div>
         <!-- 需求安排 -->
         <div class="u_anpai bb">
-            <el-input placeholder="请输入内容" v-model="text" clearable></el-input>
+            <el-input placeholder="请输入内容" v-model="comment" clearable></el-input>
         </div>
         <div class="u_switch bt bb t_b_padding">
             <span>替他人订餐</span>
             <!-- 开关 -->
-           <el-switch v-model="isselef" active-color="#13ce66" inactive-color="#ff4949"></el-switch>
+           <el-switch  active-color="#13ce66" inactive-color="#ff4949"></el-switch>
         </div>
 
         <div class="u_end  bb">
@@ -57,81 +59,46 @@
 </template>
 <script>
 import VueEvent from "../model/VueEvent.js"
+import qs from "qs"
 export default {
   data() {
     return {
       // 获取页面上的内容，最后将内容传递给数据库
-        people:"1",//人数
-        value:"",//日期
-        isAgree:false,//是否预定包房
+        reserpeople:"",//人数
+        pdate:"",//日期
+        ispreplot:false,//是否预定包房
         phone:"",//有效的手机号
         text:"",//评论区
-        isselef:false,//是否替他人订餐
-        msg:"",
-       
+        // isselef:false,//是否替他人订餐
+        arr:"",
+       comment:""
     };
   },
-//   pid:["lid"],
   watch:{
-    //   监视人数，判断人数是否数字
-//     people(){  
-//         var reg=/^\d{2}$/
-//         if(reg.test(this.people)==false){
-//             this.$toast("请输入有效数字");
-//             return;
-//         }else{
-//            console.log(this.people)
-//         }
-//     },
-//     //   监视手机号
-//      phone(){
-//           var reg=/^1[3-9]\d{9}$/
-//           if(reg.test(this.phone)==false){
-//                this.$toast("请您输入有效的手机号");
-//                 return; 
-//           }else{
-//              console.log(this.phone)
-//           }
-//       }
-   },
+  },
    mounted(){
-    //    console.log(VueEvent.$on('to-news')  )
-    
-      VueEvent.$on('to-news',function(data){
-          console.log(data);
-        //   console.log(data.names)
-      })
+    this.arr=(this.$route.params.arr).split(',');
      
    },
   methods: {
       
     //点击按钮获取按钮上的内容
     submit() {
-      // 验证手机号是否有效
-      var phreg = /^1[3-7][0-9]{9}$/;
-      if (!phreg.test(phone)) {
-        this.$toast("请您输入有效的手机号");
-        reurn;
-      } else if (pitch == true) {
-        // 如果pitch的状态为true，则value=1
-        value = 1;
-        return;
-      } else if (pitch == false) {
-        value = 0;
-      } else {
         //否则发送ajax将数据保存到数据库中/发送到订单表中preplot
-        var url = "http://127.0.0.1:5050/mydetails/preplot/";
+        var url = "http://127.0.0.1:5050/preplot";
         //获取参数
         var obj = {
-          num: num,
-          time: time,
-          isselect: isselect,
-          uname: uname,
-          phone: phone,
-          value: value,
-          str: str,
-          isselef: isselef
+          reserpeople: this.reserpeople,
+          pdate: this.pdate,
+          // isselect: isselect,
+          // uname: uname,
+          phone: this.phone,
+          // value: value,
+          // str: str,
+          ispreplot: this.ispreplot,
+          comment:this.comment
         };
+        console.log(obj)
         this.axios.post(url, qs.stringify(obj)).then(res => {
           console.log(res);
           if (res.data.code == 200) {
@@ -142,7 +109,7 @@ export default {
         });
       }
     }
-  }
+  
 };
 </script>
 <style>
