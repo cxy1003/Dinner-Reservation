@@ -20,12 +20,22 @@
           </span>
       </div>
       <!--商品详情 -->
-      <div class="mb bb">
+      <div class="mb bb"  v-for="(item,i) of list" :key="i">
         <mt-cell class="detail" title="御珍轩 土门商厦店" label="预定中">
             <img  slot="icon" src="../../public/img/allorder/preop.png" alt="">
             <img src="../../public/img/allorder/trash.png" @click="delorder" v-if="showView">
         </mt-cell>
-        <span class="title font_family">8-13 周二 13:30|5人 大厅</span>
+        <span class="title font_family">
+          <span v-text="item.uname"></span>
+          <span v-text="item.phone"></span>
+            <!-- 预定时间 -->
+          <span v-text="item.preplottime"></span>
+          <!-- 订单人数 -->
+          <span v-text="item.reserpeople"></span>
+
+            <!-- 客户备注 -->
+          <span>{{item.comment}}</span>
+           大厅</span>
       </div>
 </div>
 </template>

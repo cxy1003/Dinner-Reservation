@@ -77,7 +77,7 @@ export default {
     },
     back() {
       // this.$router.push('/Home/Mine');
-      this.$router.push("/");
+      this.$router.push("/mine");
     }
   }
 };
