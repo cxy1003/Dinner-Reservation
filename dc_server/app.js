@@ -12,6 +12,8 @@ const mydetailsRouter=require("./routes/mydetails.js")
 const preplotRouter=require("./routes/preplot.js")
 // 引入判断客户是否登录模块
 const isloginRouter=require("./routes/islogin.js")
+// 引入查询订单模块
+const selectRouter=require("./routes/selectorder")
 // 删除订单模块
 const delorderRouter=require("./routes/delorder.js")
 //引入中间件
@@ -55,5 +57,7 @@ app.use("/mydetails",mydetailsRouter)
 app.use("/preplot",preplotRouter)
 // 使用判断登录状态指定路由
 app.use("/islogin",isloginRouter)
+// 使用查询订单的路由
+app.use("/select",selectRouter)
 // 使用删除用户的路由
 app.use("/delete",delorderRouter)

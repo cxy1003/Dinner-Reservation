@@ -3,7 +3,7 @@
         <!-- 背景轮播图及其上栏 -->
             <div id="i-container">              
                 <div id="top-img">
-                    <a @click="Search" class="font_family"  href="javascript:;">上海 </a>
+                    <a @click="Search" class="font_family">西安 </a>
                     <!-- icon V 图标 -->
                     <img class="icon" src="../../public/img/index/icon1.png" alt="">
                     <!-- 文本框 -->

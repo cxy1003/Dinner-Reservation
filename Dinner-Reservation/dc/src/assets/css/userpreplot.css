@@ -1,4 +1,24 @@
-/* 预订详情页面 */
+预订详情页面
+.num{
+    display:flex;
+    justify-content: space-between;
+}
+.u_preplot{
+    height:200px !important;
+}
+.num .el-input{
+    position:absoult;
+    left:50px;
+    bottom:45px;
+    width:12%;
+}
+/* div.u_preplot .bg .l_r_padding{
+    height:100%;
+} */
+.el-icon-time:before{
+    position: relative;
+    left:40px;
+}
 .u_preplot_yu {
     position: fixed;
     top:0;
@@ -40,6 +60,12 @@
     width: 320px;
     background: #fafafa !important;
     
+}
+.submit{
+    position: fixed;
+    top:625px;
+    z-index: 1;
+    width: 73%;
 }
 .u_end{
     text-align: center;

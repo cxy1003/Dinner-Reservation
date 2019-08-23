@@ -1,9 +1,9 @@
 <template>
-  <div id="allorders">
+   <div id="allorders">
       <!-- 顶部导航栏 -->
       <div class="nav-top">
           <!-- 三角 -->
-          <img src="../../public/img/index/jian.png" alt="">
+          <img  @click="returnMine" src="../../public/img/index/jian.png" alt="">
           <span>订单列表</span>
       </div>
       <!-- 订单栏 -->
@@ -15,27 +15,20 @@
             <li class="order_font">待支付</li>
             <li class="order_font">待点评</li>
           </ul>
-          <span class="spanImg">|
-            <img src="../../public/img/index/jian0.png" alt="">
-          </span>
       </div>
       <!--商品详情 -->
-      <div class="mb bb"  v-for="(item,i) of list" :key="i">
-        <mt-cell class="detail" title="御珍轩 土门商厦店" label="预定中">
-            <img  slot="icon" src="../../public/img/allorder/preop.png" alt="">
-            <img src="../../public/img/allorder/trash.png" @click="delorder" v-if="showView">
-        </mt-cell>
-        <span class="title font_family">
-          <span v-text="item.uname"></span>
-          <span v-text="item.phone"></span>
-            <!-- 预定时间 -->
-          <span v-text="item.preplottime"></span>
-          <!-- 订单人数 -->
-          <span v-text="item.reserpeople"></span>
-
-            <!-- 客户备注 -->
-          <span>{{item.comment}}</span>
-           大厅</span>
+      <div class="info-bg" v-for="(item,i) of order" :key="i">
+          <div class="info">
+            <img class="order-img" src="../img/mine/dingdan.png" alt="">
+            <div>
+               <p class="order_font first-elem">订餐时间：<span v-text="item.pdate"></span></p>
+               <p class="order_font">顾客姓名：<span v-text="item.uname"></span></p>
+               <p class="order_font">订餐人数：<span v-text="item.reserpeople"></span></p>
+	       <p class="order_font">顾客电话：<span v-text="item.phone"></span></p>
+               <p class="order_font">客户备注：<span v-text="item.comment"></span></p>
+            </div>
+            <img  class="del-img" src="../img/mine/del.png" alt="" @click="delorder" v-if="showView">
+          </div>
       </div>
 </div>
 </template>
@@ -43,12 +36,25 @@
 export default {
   data(){
     return{
-      list:[],
+      order:"",
       pid:"4",
       showView: true // 用于点击当前页的router时，刷新当前页
     }
   },
+  mounted() {
+    this.pid=(this.$route.query.pid);
+    console.log(this.pid)
+    this.axios.get("http://127.0.0.1:5050/select").then(res=>{
+      console.log(res)
+          var { order } = res.data;
+          this.order =order;
+          console.log(order)
+    })
+  },
   methods:{
+    returnMine(){
+      this.$router.push("/mine")
+    },
     delorder(){
       console.log("删除")
       this.$messagebox.confirm("请确定是否要删除").then(action=>{
@@ -73,5 +79,66 @@ export default {
 </script>
 <style scoped>
 /* 引入基础样式 */
-@import url("../assets/css/allorder.css");
+#allorders{
+  background: #eee;
+  min-height: 618px;
+}
+.nav-top{
+  background: rgba(230, 198, 17, 0.555)
+}
+.nav-top img{
+  position: relative;
+  top: 10px !important;
+  left: -138px !important;
+}
+.nav-top span{
+  position: relative;
+  top: 0;
+  left: -12px;
+}
+ .orders_list{
+     display: flex;
+     justify-content: space-around;
+     padding: 10px 20px 10px 20px; 
+     background: pink;
+     z-index: 1;
+     opacity: .8;
+     margin-top: 50px;
+}
+.order-img{
+   width:80px;
+   height:100px;
+   margin-top:10px; 
+   margin-left: 20px;
+   margin-right: 20px;
+}
+.del-img{
+  width:20px;
+  height:20px;
+  position: absolute;
+  top:70%;
+  left:90%;
+}
+.info{
+  display: flex;
+  position: relative;
+}
+.info-bg{
+  background: #fff;
+  padding: 10px;
+  margin-top:10px; 
+  border-radius:5%;
+  width: 90%; 
+  margin-left:10px;
+  opacity: 1;
+}
+.first-elem{
+  margin-top:10px; 
+}
+.order_font{
+  font-size:13px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:rgba(46, 42, 42, 0.8);
+  margin-bottom: 6px;
+}
 </style>

@@ -15,7 +15,7 @@
         <div class="details font_family">
             <!-- 详情页图片部分 -->
             <div class="details_img">
-                <img :src="`http://127.0.0.1:5050/img/details/${product.img}`" alt="">
+                <img :src="`${img1}`" alt="">
             </div>
             <!-- 店家详情 -->
             <div class="d_title">
@@ -73,9 +73,8 @@
                     <span class="font_span">  餐厅基本信息</span>
                 </div>
                 <!-- 地图部分预留 -->
-                <div class="d_map t_b_padding">地图
+                <div class="d_map t_b_padding">
                     <img src="../../public/img/details/map.jpg" alt="">
-                    
                 </div>
                 <div class="t_b_padding bb">
                     <span class="font_price font_span">详情介绍:</span>
@@ -109,7 +108,7 @@
             </div>
             <!-- 推荐 -->
             <div class="d_recommed">
-                <div class="t_b_padding bt bb">
+                <div class="bt bb t_b_padding">
                     <span class="font_price">|</span>
                     <span class="font_span"> 小伙伴们还喜欢</span>
                 </div>
@@ -123,15 +122,16 @@
             :actions= "data"
             v-model="sheetVisible">
         </mt-actionsheet>
+
         
     </div>
 </template>
 <script>
-import VueEvent from "../model/VueEvent.js"
 export default {
   data() {
     return {
       product: "",
+      img1:"",
       value: 4,
       // 设置一个状态保存是否更换图片
       alive: "true",
@@ -144,10 +144,12 @@ export default {
         {
           name: "从相册中选择",
           method: this.getLibrary // 调用methods中的函数
-        }
+        },
+        
       ],
+     
       // action sheet 默认不显示，为false。操作sheetVisible可以控制显示与隐藏
-      sheetVisible: false,
+      sheetVisible: false
     };
   },
   // 接受父组件传来的id
@@ -159,11 +161,9 @@ export default {
           params: { id: this.id }
         })
         .then(result => {
-          // console.log(result.data)
+          this.img1="http://127.0.0.1:5050/img/details/"+result.data.product.img;
           var { product } = result.data;
           this.product = product;
-         
-        //   console.log(product.d_name)
         });
     }
   },
@@ -188,27 +188,12 @@ export default {
                         this.$router.push("/login")
                         })
                 }else{
-                    // 发送请求保存店名
-                    // this.axios.get("http://127.0.0.1:5050/myindex/goods/").then(res=>{
-                    //     if(res.data.code==200){
-                    //         console.log(res.data)
-                    //         localStorage.setItem("pid",res.data[0].id);
-                    //         localStorage.setItem("store",res.data[0].store)
-                    //         console.log(res.data.store)
-                    //     }
-                        // 获取当前店名称
-                        var names=this.product.d_name
-                        var id=this.id
-                        // console.log(names,id)
-                        // Vuex传参
-                        // this.$store.commit("changeUser",{uid:id,names:names})
-                        // this.$emit("user",{uid:id,names:names})
-                        //  this.obj={uid:id,names:names}
-                       // VueEvent.$emit('to-news',this.msg1)
-                        // 跳转
-                         this.$router.push("/userpreplot/"+id+","+names)
-                    // })
-                   
+                    // 获取当前页面上的id,和用户信息
+                    // id保存在全局中，通过路由传送过去
+                    // 跳转到立即预定页面
+                    var names=this.product.d_name
+                    var id=this.id
+                    this.$router.push("/userpreplot/"+id+","+names)
                 }
             })
         },

@@ -4,7 +4,6 @@
         <div class="imClient-inner">
             <header class="imClient-header">
                 <div class="name-wrapper position-v-mid">
-                    <span class="back" @click="back">返回</span>
                     <span v-if="chatInfoEn.chatState == 'robot'">小秘客服</span> 
                     <span v-else-if="chatInfoEn.chatState == 'agent'">您正在与客服{{serverChatEn.serverChatName}}对话</span>
                 </div>
@@ -128,9 +127,6 @@ export default {
     computed: {},
     watch: {},
     methods: {
-        back(){
-          this.$router.push("/");
-        },
         /**
          * 注册账号信息
          */
@@ -381,7 +377,7 @@ export default {
         position: relative;
         height: 35px;
         box-sizing: border-box;
-        background: #1072b5;
+        background: #26a2ff;
         font-size: 13px;
         color: #ffffff;
         .name-wrapper {

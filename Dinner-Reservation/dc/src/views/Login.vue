@@ -61,9 +61,9 @@ export default {
             localStorage.setItem("uname", this.uname);
             console.log(this.uname)
             this.msgStatus1 = true;
-            this.$toast("登录成功,正跳转至首页")
+            this.$toast("登录成功")
             setTimeout(() => {
-              this.$router.push("/");
+              this.$router.go(-1);
             }, 1000);
           } else {
             this.$toast("用户名或密码错误");
@@ -77,7 +77,7 @@ export default {
     },
     back() {
       // this.$router.push('/Home/Mine');
-      this.$router.push("/mine");
+      this.$router.push("/");
     }
   }
 };
