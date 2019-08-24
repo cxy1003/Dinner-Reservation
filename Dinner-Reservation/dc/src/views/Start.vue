@@ -11,15 +11,15 @@
 </div>
 <div class="startAll">
 <span>口味</span>
-<el-rate v-model="score"></el-rate>
+<el-rate v-model="score" show-text></el-rate>
 </div>
 <div class="startAll">
 <span>环境</span>
-<el-rate v-model="atmosphere"></el-rate>
+<el-rate v-model="atmosphere" show-text></el-rate>
 </div>
 <div class="startAll">
 <span>服务</span>
-<el-rate v-model="serve"></el-rate>
+<el-rate v-model="serve" show-text></el-rate>
 </div>
 <el-input type="textarea" :rows="2" placeholder="请输入内容" v-model="textarea">
 </el-input>
