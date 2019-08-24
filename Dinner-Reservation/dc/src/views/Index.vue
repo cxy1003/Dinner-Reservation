@@ -24,7 +24,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;<img class="perplot-img"  src="../../public/img/index/preplot1.png" alt="">
                         <p class="font">餐厅预订</p>
                     </li>
-                    <li class="perplot-list">
+                    <li class="perplot-list"  @click="kefu">
                         &nbsp;<img  class="perplot-img" src="../../public/img/index/preplot2.png" alt="">
                         <p class="font">电话预定</p>
                     </li>
