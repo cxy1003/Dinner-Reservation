@@ -4,7 +4,7 @@
     height:50px;
     line-height:50px;
     text-align:center;/*文字居中*/
-    background:#fff;
+    background:#26a2ff;
     position: fixed;
     top:0px;
   }
@@ -31,4 +31,7 @@
 }
 #allorders .all-title img{
     vertical-align: middle;
+}
+#allorders .font_style_color{
+  color: #000 !important;
 }

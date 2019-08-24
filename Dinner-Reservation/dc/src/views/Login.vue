@@ -59,11 +59,10 @@ export default {
             console.log(res)
             localStorage.setItem("uid", res.data.uid);
             localStorage.setItem("uname", this.uname);
-            console.log(this.uname)
             this.msgStatus1 = true;
             this.$toast("登录成功")
             setTimeout(() => {
-              this.$router.go(-1);
+              this.$router.push("/");
             }, 1000);
           } else {
             this.$toast("用户名或密码错误");

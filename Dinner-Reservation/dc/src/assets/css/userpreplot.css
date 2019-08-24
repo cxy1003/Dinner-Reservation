@@ -3,9 +3,9 @@
     display:flex;
     justify-content: space-between;
 }
-.u_preplot{
-    height:200px !important;
-}
+/* .u_preplot{
+    height:100%;
+} */
 .num .el-input{
     position:absoult;
     left:50px;
@@ -65,7 +65,7 @@
     position: fixed;
     top:625px;
     z-index: 1;
-    width: 73%;
+    width: 100%;
 }
 .u_end{
     text-align: center;

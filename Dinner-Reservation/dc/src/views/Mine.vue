@@ -182,49 +182,6 @@
         </li>
       </ul>
     </div>
-    <!-- 其他 导航栏 -->
-    <div class="bg">
-      <table></table>
-      <p class="font_family font_title">其他</p>
-      <ul class="nav_other buttom_nav mine_nav">
-        <li>
-          <a href="#">
-            <img class="nav_img" src="../img/mine/wodeshoucang.png" />
-            <p class="font_family font_mine">我的收藏</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img class="nav_img" src="../img/mine/liulanlishi.png" />
-            <p class="font_family font_mine">浏览历史</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img class="nav_img" src="../img/mine/wodetuijian.png" />
-            <p class="font_family font_mine">我的推荐</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img class="nav_img" src="../img/mine/wodedianping.png" />
-            <p class="font_family font_mine">我的点评</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img class="nav_img" src="../img/mine/wodexiangce.png" />
-            <p class="font_family font_mine">我的相册</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img class="nav_img" src="../img/mine/wodetianjia.png" />
-            <p class="font_family font_mine">添加餐厅</p>
-          </a>
-        </li>
-      </ul>
-    </div>
     <buttombar></buttombar>
   </div>
 </template>
