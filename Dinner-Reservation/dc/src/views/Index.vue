@@ -20,7 +20,7 @@
             <carousel style="z-index:0"></carousel>     
         <!--餐厅预订 -->
             <ul class="perplot">
-                <li class="perplot-list">
+                <li class="perplot-list" @click="dcPreplot">
                         &nbsp;&nbsp;&nbsp;&nbsp;<img class="perplot-img"  src="../../public/img/index/preplot1.png" alt="">
                         <p class="font">餐厅预订</p>
                     </li>
@@ -69,9 +69,9 @@ export default {
         }
     },
     methods:{
-        // jumpdetails(){
-        //     this.$router.push("/details")
-        // },
+        dcPreplot(){
+            this.$router.push("/details/"+1) 
+        },
        
         Search(){
             this.$router.push("/search")
