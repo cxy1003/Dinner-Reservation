@@ -36,7 +36,7 @@
             <div class="adress">
                 <img src="../../public/img/details/ad.png" alt="">
                 <span class="font_span mr" v-text="product.address"></span>
-                <img src="../../public/img/details/phone.png" alt="">
+                <img @click="call" src="../../public/img/details/phone.png" alt="">
             </div>
             <!-- 提示信息 -->
             <div class="d_info mb">
@@ -116,14 +116,12 @@
         </div>
         <!-- 立即预定 -->
         <div class="d_ding">
-            <mt-button type="danger" size="large"  @click="reserve">立即预定</mt-button>
+            <button class="btn-proplot" size="large" @click="reserve">立即预定</button>
         </div>
         <mt-actionsheet
             :actions= "data"
             v-model="sheetVisible">
         </mt-actionsheet>
-
-        
     </div>
 </template>
 <script>
@@ -131,7 +129,7 @@ export default {
   data() {
     return {
       product: "",
-      img1:"",
+      img1: "",
       value: 4,
       // 设置一个状态保存是否更换图片
       alive: "true",
@@ -144,10 +142,9 @@ export default {
         {
           name: "从相册中选择",
           method: this.getLibrary // 调用methods中的函数
-        },
-        
+        }
       ],
-     
+
       // action sheet 默认不显示，为false。操作sheetVisible可以控制显示与隐藏
       sheetVisible: false
     };
@@ -161,54 +158,62 @@ export default {
           params: { id: this.id }
         })
         .then(result => {
-          this.img1="http://127.0.0.1:5050/img/details/"+result.data.product.img;
+          this.img1 =
+            "http://127.0.0.1:5050/img/details/" + result.data.product.img;
           var { product } = result.data;
           this.product = product;
         });
     }
   },
   mounted() {
-        var imgst=this.$refs.imgs;
-        imgst.onclick=function(){
-
-           imgst.src=require('../assets/start2.png')
-        }
+    var imgst = this.$refs.imgs;
+    imgst.onclick = function() {
+      imgst.src = require("../assets/start2.png");
+    };
   },
   methods: {
+      // 点击电话，获取页面上的商家手机号
+    call(){
+        var phones=this.product.d_phone
+        // console.log(phones)
+        this.$messagebox(`确定与店家${phones}沟通`).then(result=>{
+            this.$toast("请稍等...")
+        })
+    },
     // 点击按钮跳转事件
     returnIindex: function() {
       this.$router.push("/");
     },
-     //   设置店家预定，判断是否登录，如果登录跳转至立即预定页面，否则跳转到登录页面
-        reserve(){
-            // 发送ajax
-            this.axios.get("http://127.0.0.1:5050/islogin").then(res=>{
-                if(res.data.code==301){
-                    this.$messagebox("请您先登录，再购买商品").then(result=>{
-                        this.$router.push("/login")
-                        })
-                }else{
-                    // 获取当前页面上的id,和用户信息
-                    // id保存在全局中，通过路由传送过去
-                    // 跳转到立即预定页面
-                    var names=this.product.d_name
-                    var id=this.id
-                    this.$router.push("/userpreplot/"+id+","+names)
-                }
-            })
-        },
+    //   设置店家预定，判断是否登录，如果登录跳转至立即预定页面，否则跳转到登录页面
+    reserve() {
+      // 发送ajax
+      this.axios.get("http://127.0.0.1:5050/islogin").then(res => {
+        if (res.data.code == 301) {
+          this.$messagebox("请您先登录，再购买商品").then(result => {
+            this.$router.push("/login");
+          });
+        } else {
+          // 获取当前页面上的id,和用户信息
+          // id保存在全局中，通过路由传送过去
+          // 跳转到立即预定页面
+          var names = this.product.d_name;
+          var id = this.id;
+          this.$router.push("/userpreplot/" + id + "," + names);
+        }
+      });
+    },
     // 点击星星实现取消和收藏的功能
     startstyle() {
-        this.axios.get("http://127.0.0.1:5050/islogin").then(res => {
-            if(res.data.code==301){
-                 this.$messagebox("请先登录,再购买商品").then(result=>{
-              this.$router.push("/login")
-            })
-             }else{
-                this.$toast("添加成功")
-                console.log(res)
-             }
-        });
+      this.axios.get("http://127.0.0.1:5050/islogin").then(res => {
+        if (res.data.code == 301) {
+          this.$messagebox("请先登录,再购买商品").then(result => {
+            this.$router.push("/login");
+          });
+        } else {
+          this.$toast("添加成功");
+          console.log(res);
+        }
+      });
     },
     // 拍照传照片的功能
     actionSheet: function() {

@@ -22,7 +22,7 @@
         </a>
       </li>
       <li @click="jumporderlist">
-        <a >
+        <a>
           <img class="nav_img" src="../img/mine/daizhifu.png" />
           <p class="font_family font_mine">待支付</p>
         </a>
@@ -110,32 +110,32 @@
       <!-- 推荐餐厅列表 -->
       <ul class="mine_nav">
         <li>
-          <a href="#" class="Recommend_img">
+          <router-link :to="`/`" href="#" class="Recommend_img">
             <img src="../img/mine/1.jpg" />
-            <p class="font_family font_mine">江粤轩</p>
-          </a>
-          <input type="button" value="去预定" />
+            <p class="font_family font_mine">江粤轩</p >
+          </router-link>
+          <input @click="goPreplot" type="button" value="去预定" />
         </li>
         <li>
-          <a href="#" class="Recommend_img">
+          <router-link :to="`/`" class="Recommend_img">
             <img src="../img//mine/2.jpg" />
-            <p class="font_family font_mine">海悦荟</p>
-          </a>
-          <input type="button" value="去预定" />
+            <p class="font_family font_mine">海悦荟</p >
+          </router-link>
+          <input type="button" value="去预定" @click="goPreplot"/>
         </li>
         <li>
-          <a href="#" class="Recommend_img">
+          <router-link :to="`/`" class="Recommend_img">
             <img src="../img//mine/3.jpg" />
-            <p class="font_family font_mine">日本料理</p>
-          </a>
-          <input type="button" value="去预定" />
+            <p class="font_family font_mine">日本料理</p >
+          </router-link>
+          <input type="button" value="去预定" @click="goPreplot" />
         </li>
         <li>
-          <a href="#" class="Recommend_img">
+          <router-link :to="`/`" class="Recommend_img">
             <img src="../img//mine/4.jpg" />
-            <p class="font_family font_mine">全民牛排</p>
-          </a>
-          <input type="button" value="去预定" />
+            <p class="font_family font_mine">全民牛排</p >
+          </router-link>
+          <input type="button" value="去预定" @click="goPreplot"/>
         </li>
       </ul>
     </div>
@@ -187,7 +187,7 @@
 </template>
 
 <script>
-import Buttombar from "../views/Buttombar"
+import Buttombar from "../views/Buttombar";
 export default {
   data() {
     return {
@@ -195,47 +195,50 @@ export default {
         uid: localStorage.getItem("uid"),
         uname: localStorage.getItem("uname")
       }
+    };
+  },
+  methods: {
+    // 去预定
+    goPreplot(){
+      this.$router.push("/")
+    },
+    look() {
+      // 发送ajax
+      this.axios.get("http://127.0.0.1:5050/islogin").then(res => {
+        if (res.data.code == 301) {
+          this.$messagebox("请您先登录，再购买商品").then(result => {
+            this.$router.push("/login");
+          });
+        } else {
+          // 获取当前页面上的id,和用户信息
+          // id保存在全局中，通过路由传送过去
+          // 跳转到立即预定页面
+          this.$router.push("/allorder");
+        }
+      });
+    },
+    jumporderlist() {
+      this.$router.push("/allorder");
+    },
+    go() {
+      this.$router.push("/login");
+    },
+    quit() {
+      this.$messagebox
+        .confirm("请确定是否要退出")
+        .then(action => {
+          // this.$store.commit("changeUser", { uid: "", uname: "" });
+          localStorage.clear();
+          // this.$router.push("/mine")
+          window.location.reload();
+        })
+        .catch(err => {});
     }
   },
-    methods:{
-      look(){
-            // 发送ajax
-            this.axios.get("http://127.0.0.1:5050/islogin").then(res=>{
-                if(res.data.code==301){
-                    this.$messagebox("请您先登录，再购买商品").then(result=>{
-                        this.$router.push("/login")
-                        })
-                }else{
-                    // 获取当前页面上的id,和用户信息
-                    // id保存在全局中，通过路由传送过去
-                    // 跳转到立即预定页面
-                    this.$router.push("/allorder")
-                }
-            })
-    
-      },
-        jumporderlist(){
-          this.$router.push('/allorder')
-        },
-        go(){
-            this.$router.push('/login');
-        },
-        quit() {
-          this.$messagebox.confirm("请确定是否要退出").then(action=>{
-            // this.$store.commit("changeUser", { uid: "", uname: "" });
-            localStorage.clear();
-            // this.$router.push("/mine")
-            window.location.reload();
-          }).catch(err=>{
-            
-          })
-          
-        }
-    },
-    components:{
-        "buttombar":Buttombar
-    }
-}
+  components: {
+    buttombar: Buttombar
+  }
+};
 </script>
 
 <style scoped>

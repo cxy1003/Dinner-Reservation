@@ -19,7 +19,6 @@ import Notfound from './views/Notfound'
 import imClient from './components/imClient/imClient'
 import imServer from './components/imServer/imServer'
 
-
 Vue.use(Router)
 
 export default new Router({

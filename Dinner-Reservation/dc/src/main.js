@@ -11,6 +11,14 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 // import 'font-awesome/css/font-awesome.min.css'
 
+
+import Router from 'vue-router'
+const routerPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return routerPush.call(this, location).catch(error=> error)
+}
+
+
 Vue.use(ElementUI);
 
 // 引入第三方组件

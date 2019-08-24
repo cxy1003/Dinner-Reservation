@@ -98,7 +98,7 @@ export default {
   background: #eee;
 }
 .nav-top{
-  background: rgba(230, 198, 17, 0.555)
+  background: rgb(230, 198, 17)
 }
 /* 引入基础样式 */
 #allorders {
