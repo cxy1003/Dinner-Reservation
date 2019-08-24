@@ -3,19 +3,19 @@
   <div class="bottom-tab">
         <div class="tab-item" @click="switchTo('/')">
             <img :src="'/' === $route.path ? tabBarImgArr[0].selected : tabBarImgArr[0].normal" alt="首页">
-            <span :class="{on: '/home' === $route.path}">首页</span>
+            <span :class="'/' === $route.path ? isRed : isGrey">首页</span>
         </div>
         <div class="tab-item" @click="switchTo('/fond')">
             <img :src="'/fond' === $route.path ? tabBarImgArr[1].selected : tabBarImgArr[1].normal" alt="发现">
-            <span :class="{on: '/recommend' === $route.path}">发现</span>
+            <span :class="'/fond' === $route.path ? isRed : isGrey">发现</span>
         </div>
         <div class="tab-item" @click="switchTo('/imClient')">
             <img :src="'/imClient' === $route.path ? tabBarImgArr[2].selected : tabBarImgArr[2].normal" alt="客服">
-            <span :class="{on: '/search' === $route.path}">客服</span>
+            <span :class="'/imClient' === $route.path ? isRed : isGrey">客服</span>
         </div>
         <div class="tab-item" @click="switchTo('/mine')">
             <img :src="'/mine' === $route.path ? tabBarImgArr[3].selected : tabBarImgArr[3].normal" alt="我的">
-            <span :class="{on: '/chat' === $route.path}">我的</span>
+            <span :class="'/mine' === $route.path ? isRed : isGrey">我的</span>
         </div>
   </div>
 </template>
@@ -24,6 +24,8 @@
 export default {
   data() {
     return {
+      isRed:"isRed",
+      isGrey:"isGrey",
      tabBarImgArr:[   //图片切换
         {normal: require('../img/mine/normaldingcan.png'), selected: require('../img/mine/succdingcan.png')},
         {normal: require('../img/mine/normalfaxian.png'), selected: require('../img/mine/succfaxian.png')},
@@ -68,7 +70,13 @@ export default {
     width:35%;
     margin-bottom:2px;
 }
-.bottom-tab .tab-item .on{
+.isRed{
+  color:red;
+}
+.isGrey{
+  color:black;
+}
+.bottom-tab .tab-item .isRed{
     color:red
       }
 </style>

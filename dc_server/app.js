@@ -21,7 +21,9 @@ const bodyParser=require("body-parser")
 // 跨域
 const cors=require("cors");
 // session
-const session=require("express-session")
+const session=require("express-session");
+// 评分
+const startRouter=require("./routes/start.js")
 //创建web服务器
 var app=express();
 //监听端口
@@ -61,3 +63,5 @@ app.use("/islogin",isloginRouter)
 app.use("/select",selectRouter)
 // 使用删除用户的路由
 app.use("/delete",delorderRouter)
+// 评分路由
+app.use("/start",startRouter)

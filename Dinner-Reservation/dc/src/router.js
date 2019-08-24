@@ -19,7 +19,8 @@ import Start from './views/Start'
 import imClient from './components/imClient/imClient'
 import imServer from './components/imServer/imServer'
 import Notfound from './views/Notfound'
-import prepsuccess from './views/prepsuccess'
+
+
 
 Vue.use(Router)
 
@@ -51,7 +52,6 @@ export default new Router({
     { path: '/imServer',  component: imServer },
     { path: '/imClient',  component: imClient },
     {path:'/start',component:Start},
-    {path:'/prepsuccess',component:prepsuccess},
     {path:"*",component:Notfound}
   ]
 })

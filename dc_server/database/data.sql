@@ -91,4 +91,15 @@ insert into goods values(null,"粤珍轩 土门商厦店","60-100","g1.jpg","ind
 (null,"阿瓦山寨","40-70","g5.jpg","index.html"),
 (null,"君乐城堡酒店雅庭西餐厅","80-130","g6.jpg","index.html"),
 (null,"外婆印象","20-40","g7.jpg","index.html"),
-(null,"男友的店","80-130","g8.jpg","index.html")
+(null,"男友的店","80-130","g8.jpg","index.html");
+#评分表starts
+create table starts(
+id int primary key auto_increment,
+uid int,
+alls varchar(10),
+score varchar(10),
+atmosphere varchar(10),
+serves varchar(10),
+textarea varchar(128)
+);
+insert into starts values(null,1,"2","2","2","2","一般");
