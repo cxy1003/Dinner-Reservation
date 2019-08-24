@@ -93,7 +93,7 @@
                         <p class="p_style">&nbsp;拍照</p>
                     </li>
                     <li>
-                        <img src="../../public/img/details/ggb.png" alt="">
+                        <img src="../../public/img/details/ggb.png" @click="jumpstart">
                         <p class="p_style">&nbsp;点评</p>
                     </li>
                     <li>
@@ -172,6 +172,9 @@ export default {
     };
   },
   methods: {
+      jumpstart(){
+          this.$router.push("/start")
+      },
       // 点击电话，获取页面上的商家手机号
     call(){
         var phones=this.product.d_phone

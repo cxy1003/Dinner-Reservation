@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     returnMine() {
-      this.$router.go(-1);
+      this.$router.push("/mine");
     },
     delorder() {
       this.$messagebox
