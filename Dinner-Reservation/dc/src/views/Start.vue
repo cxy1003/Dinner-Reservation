@@ -57,14 +57,14 @@ export default {
           var atmosphere=this.atmosphere
           var obj={alls:alls,serves:serves,score:score,textarea:textarea,atmosphere:atmosphere}
         //   发送请求,将数据插入数据库中
-          this.axios.post("http://127.0.0.1:5050/start",qs.stringify(obj)).then(res=>{
-              if(res.data.code==200){
-                  this.$messagebox("提交成功").then(res=>{
-                    //  跳转到上一页
-                    this.$router.go(-1)
-                  })
-              }
-          })
+        this.axios.post("http://127.0.0.1:5050/start",qs.stringify(obj)).then(res=>{
+            if(res.data.code==200){
+                this.$messagebox("提交成功").then(res=>{
+                //  跳转到上一页
+                this.$router.go(-1)
+                })
+            }
+        })
       }
   },  
 }
