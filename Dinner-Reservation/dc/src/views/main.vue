@@ -331,7 +331,7 @@ methods: {
 }
   }
 </script>
-<style>
+<style scoped>
 #app{
 	position: absolute;
 	height: 100%;

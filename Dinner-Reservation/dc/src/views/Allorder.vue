@@ -6,20 +6,13 @@
       <img @click="returnMine" src="../../public/img/index/jian.png" alt />
       <span>订单列表</span>
     </div>
-    <!-- 订单栏 -->
-    <div class="orders">
-      <!-- 文字部分 -->
-      <ul class="orders_list font_family">
-        <li class="order_font">全部订单</li>
-        <li class="order_font">进行中</li>
-        <li class="order_font">待支付</li>
-        <li class="order_font">待点评</li>
-      </ul>
-    </div>
+    <div style="maigin-top:60px; height:50px;" ></div>
     <!--商品详情 -->
     <div class="info-bg" v-for="(item,i) of order" :key="i">
       <div class="info">
-        <img class="order-img" :src="`http://127.0.0.1:5050/img/index/${item.pimg}`" alt />
+        <div class="divimg">
+          <img class="order-img" :src="`http://127.0.0.1:5050/img/index/${item.pimg}`" alt />
+        </div>
         <div>
           <p class="order_font first-elem">
             店名：
@@ -108,7 +101,7 @@ export default {
 /* 引入基础样式 */
 #allorders {
   background: #eee;
-  min-height: 618px;
+  min-height: 668px;
 }
 .nav-top {
   background: rgb(230, 198, 17);
@@ -134,14 +127,13 @@ export default {
 .order-img {
   width: 130px;
   height: 147px;
-  margin-right: 10px ;
 }
 .del-img {
   width: 20px;
   height: 20px;
   position: absolute;
   top: 83%;
-  left: 95%;
+  left: 89%;
 }
 .info {
   display: flex;
@@ -149,11 +141,9 @@ export default {
 }
 .info-bg {
   background: #fff;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 5%;
-  width: 90%;
-  margin-left: 10px;
+  padding:10px 10px 0;
+  width: 100%;
+  margin-bottom:10px; 
 }
 .first-elem {
   margin-top: 10px;
@@ -163,5 +153,8 @@ export default {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: rgba(46, 42, 42, 0.8);
   margin-bottom: 6px;
+}
+.divimg{
+  margin-right: 10px;
 }
 </style>

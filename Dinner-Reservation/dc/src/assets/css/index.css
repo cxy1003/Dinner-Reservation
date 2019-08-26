@@ -14,13 +14,15 @@
     /* 上栏整体 */
     #i-container #top-img{
         height:50px;
-        line-height:50px;
+        line-height:37px;
         z-index: 1;
     }
     /* 上海字体样式 */
     #i-container #top-img .font_family{
         color:#fff;
         font-size: 18px;
+        position: relative;
+        top:5px;    
     }
     /* 图标的样式V */
    #i-container .icon{  
@@ -61,7 +63,7 @@
        width:20px;height:20px;
        position: relative;
        left:32px;
-       top:8px;
+       top:15px;
        color:#000;
        z-index:1;
    }
