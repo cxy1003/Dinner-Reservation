@@ -34,8 +34,8 @@
             </div>
             <!-- 地址部分 -->
             <div class="adress">
-                <img src="../../public/img/details/ad.png" alt="">
-                <span class="font_span mr" v-text="product.address"></span>
+                <img src="../../public/img/details/ad.png" @click="jumpmap">
+                <span class="font_span mr" v-text="product.address" @click="jumpmap"></span>
                 <img @click="call" src="../../public/img/details/phone.png" alt="">
             </div>
             <!-- 提示信息 -->
@@ -73,7 +73,7 @@
                     <span class="font_span">  餐厅基本信息</span>
                 </div>
                 <!-- 地图部分预留 -->
-                <div class="d_map t_b_padding">
+                <div class="d_map t_b_padding" @click="jumpmap">
                     <img src="../../public/img/details/map.jpg" alt="">
                 </div>
                 <div class="t_b_padding bb">
@@ -172,10 +172,14 @@ export default {
     };
   },
   methods: {
-      jumpstart(){
-          this.$router.push("/start")
-      },
-      // 点击电话，获取页面上的商家手机号
+    jumpmap(){
+      console.log(this.id,this.product.d_name)
+      this.$router.push("/map/" + this.product.d_name)
+    },
+    jumpstart(){
+        this.$router.push("/start")
+    },
+    // 点击电话，获取页面上的商家手机号
     call(){
         var phones=this.product.d_phone
         // console.log(phones)
@@ -232,9 +236,13 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 @import url(../assets/css/details.css);
 .block {
   height: 20px;
+}
+.map {
+  width: 100%;
+  height: 100%;
 }
 </style>

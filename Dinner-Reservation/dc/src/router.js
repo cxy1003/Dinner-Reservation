@@ -16,8 +16,8 @@ import Orderresult from './views/Orderresult'
 import Search from './views/Search'
 import Buttombar from './views/Buttombar'
 import Start from './views/Start'
-import imClient from './components/imClient/imClient'
-import imServer from './components/imServer/imServer'
+import main from './views/main'
+import Map from "./views/Map.vue"
 import Notfound from './views/Notfound'
 
 
@@ -49,9 +49,9 @@ export default new Router({
     {path:"/fond",component:fond},
     {path:"/search",component:Search},
     {path:"/buttombar",component:Buttombar},
-    { path: '/imServer',  component: imServer },
-    { path: '/imClient',  component: imClient },
+    { path: '/main',  component: main},
     {path:'/start',component:Start},
+    {path:"/map/:pname",component:Map},
     {path:"*",component:Notfound}
   ]
 })

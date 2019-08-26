@@ -67,7 +67,8 @@ export default {
       // isselef:false,//是否替他人订餐
       arr: "",
       comment: "",
-      uname: ""
+      uname: "",
+      // img:""
     };
   },
   watch: {},
@@ -99,7 +100,8 @@ export default {
           phone: this.phone,
           pname: this.arr[1],
           ispreplot: this.ispreplot,
-          comment: this.comment
+          comment: this.comment,
+          pimg:`g${this.arr[0]}.jpg`
         };
         console.log(obj);
         this.axios.post(url, qs.stringify(obj)).then(res => {

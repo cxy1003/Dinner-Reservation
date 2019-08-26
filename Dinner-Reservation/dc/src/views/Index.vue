@@ -77,7 +77,7 @@ export default {
             this.$router.push("/search")
         },
         kefu(){
-            this.$router.push("/imClient")
+            this.$router.push("/main")
         }
     },
     components:{

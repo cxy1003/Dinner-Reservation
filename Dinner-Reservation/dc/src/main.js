@@ -1,16 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import { imServerStore } from '../src/store/imServerStore.js';
-import http from '../src/common/http';
-Vue.prototype.$http = http;
-import ak from '../src/common/ak';
-Vue.prototype.$ak = ak;
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 // import 'font-awesome/css/font-awesome.min.css'
-
+// 百度地图模块
+import BaiduMap from "vue-baidu-map"
+Vue.use(BaiduMap,{
+  ak:"MLaZHT79pRiOMG6ARzikRz8LGYdkRxGF"
+})
 
 import Router from 'vue-router'
 const routerPush = Router.prototype.push
@@ -51,8 +50,7 @@ new Vue({
     }
   },
   store: {
-    // store,
-    imServerStore: imServerStore
+    store,
    },
   
   // axios,

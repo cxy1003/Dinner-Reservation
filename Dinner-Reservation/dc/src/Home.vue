@@ -9,9 +9,9 @@
           <mt-tab-container-item id="fond">
            <fond></fond>
          </mt-tab-container-item>
-         <mt-tab-container-item id="im-client">
+         <mt-tab-container-item id="main">
            <!-- <service></service> -->
-           <im-client></im-client>
+           <main></main>
          </mt-tab-container-item>
           <mt-tab-container-item id="mine">
            <mine></mine>
@@ -63,8 +63,6 @@ import Fond from "../src/views/fond"
 import Mine from "../src/views/Mine"
 import Service from "../src/views/Service"
 import Tablebar from "../src/views/Tablebar"
-import imClient from "../src/components/imClient/imClient"
-// import Login from "../src/views/Login"
 export default {
     data(){
      return {
@@ -100,9 +98,6 @@ export default {
     "fond":Fond,
     "mine":Mine,
     "tablebar":Tablebar,
-    // "service":Service
-    "imClient":imClient,
-
   }
 }
 </script>

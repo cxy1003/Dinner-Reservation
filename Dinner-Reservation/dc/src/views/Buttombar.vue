@@ -9,9 +9,9 @@
             <img :src="'/fond' === $route.path ? tabBarImgArr[1].selected : tabBarImgArr[1].normal" alt="发现">
             <span :class="'/fond' === $route.path ? isRed : isGrey">发现</span>
         </div>
-        <div class="tab-item" @click="switchTo('/imClient')">
-            <img :src="'/imClient' === $route.path ? tabBarImgArr[2].selected : tabBarImgArr[2].normal" alt="客服">
-            <span :class="'/imClient' === $route.path ? isRed : isGrey">客服</span>
+        <div class="tab-item" @click="switchTo('/main')">
+            <img :src="'/main' === $route.path ? tabBarImgArr[2].selected : tabBarImgArr[2].normal" alt="客服">
+            <span :class="'/main' === $route.path ? isRed : isGrey">客服</span>
         </div>
         <div class="tab-item" @click="switchTo('/mine')">
             <img :src="'/mine' === $route.path ? tabBarImgArr[3].selected : tabBarImgArr[3].normal" alt="我的">

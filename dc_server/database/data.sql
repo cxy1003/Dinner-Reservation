@@ -38,10 +38,11 @@ create table dc_preplot(
     # 是否预定
     ispreplot varchar(50),
     # 备注框
-    comment varchar(128)
+    comment varchar(128),
+    pimg varchar(128)
 );
-insert into dc_preplot values(null,"lili","13652698536","2","10:30","","1",""),
-(null,"lili","13652698536","2","12:30","","1","");
+insert into dc_preplot values(null,"lili","13652698536","2","10:30","","1","",""),
+(null,"lili","13652698536","2","12:30","","1","","");
 
 # 评分表 dc_marksheet(前端获取)
 create table dc_marksheet(

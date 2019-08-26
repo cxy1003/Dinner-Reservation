@@ -19,26 +19,30 @@
     <!--商品详情 -->
     <div class="info-bg" v-for="(item,i) of order" :key="i">
       <div class="info">
-        <img class="order-img" src="../img/mine/dingdan.png" alt />
+        <img class="order-img" :src="`http://127.0.0.1:5050/img/index/${item.pimg}`" alt />
         <div>
           <p class="order_font first-elem">
-            订餐时间：
+            店名：
+            <span v-text="item.pname"></span>
+          </p>
+          <p class="order_font first-elem">
+            时间：
             <span v-text="item.pdate"></span>
           </p>
           <p class="order_font">
-            顾客姓名：
+            姓名：
             <span v-text="item.uname"></span>
           </p>
           <p class="order_font">
-            订餐人数：
+            人数：
             <span v-text="item.reserpeople"></span>
           </p>
           <p class="order_font">
-            顾客电话：
+            电话：
             <span v-text="item.phone"></span>
           </p>
           <p class="order_font">
-            客户备注：
+            备注：
             <span v-text="item.comment"></span>
           </p>
         </div>
@@ -51,7 +55,8 @@
 export default {
   data() {
     return {
-      order: "",
+      order: [],
+      pimg:"",
       showView: true // 用于点击当前页的router时，刷新当前页
     };
   },
@@ -124,22 +129,19 @@ export default {
   justify-content: space-around;
   padding: 10px 20px 10px 20px;
   background: pink;
-  
   margin-top: 50px;
 }
 .order-img {
-  width: 80px;
-  height: 100px;
-  margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
+  width: 130px;
+  height: 147px;
+  margin-right: 10px ;
 }
 .del-img {
   width: 20px;
   height: 20px;
   position: absolute;
-  top: 70%;
-  left: 90%;
+  top: 83%;
+  left: 95%;
 }
 .info {
   display: flex;
