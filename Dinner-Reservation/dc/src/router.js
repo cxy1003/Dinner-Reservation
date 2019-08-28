@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../src/Home'
 import Index from './views/Index'
 import Details from './views/Details'
 import Login from './views/Login'
@@ -35,7 +34,6 @@ export default new Router({
   },
   routes: [
     {path:"/index",component:Index},
-    {path:"/",component:Home},
     {path:"/details/:id",component:Details,props:true},
     {path:"/login",component:Login},
     {path:"/install",component:Install},
