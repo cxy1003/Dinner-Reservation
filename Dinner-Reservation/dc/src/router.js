@@ -33,7 +33,7 @@ export default new Router({
     }
   },
   routes: [
-    {path:"/index",component:Index},
+    {path:"/",component:Index},
     {path:"/details/:id",component:Details,props:true},
     {path:"/login",component:Login},
     {path:"/install",component:Install},
