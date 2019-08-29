@@ -154,7 +154,7 @@ export default {
   created() {
     if (this.id) {
       this.axios
-        .get("http://127.0.0.1:5050/mydetails/details/", {
+        .get("mydetails/details/", {
           params: { id: this.id }
         })
         .then(result => {
@@ -194,7 +194,7 @@ export default {
     //   设置店家预定，判断是否登录，如果登录跳转至立即预定页面，否则跳转到登录页面
     reserve() {
       // 发送ajax
-      this.axios.get("http://127.0.0.1:5050/islogin").then(res => {
+      this.axios.get("islogin").then(res => {
         if (res.data.code == 301) {
           this.$messagebox("请您先登录，再购买商品").then(result => {
             this.$router.push("/login");
@@ -211,7 +211,7 @@ export default {
     },
     // 点击星星实现取消和收藏的功能
     startstyle() {
-      this.axios.get("http://127.0.0.1:5050/islogin").then(res => {
+      this.axios.get("islogin").then(res => {
         if (res.data.code == 301) {
           this.$messagebox("请先登录,再购买商品").then(result => {
             this.$router.push("/login");

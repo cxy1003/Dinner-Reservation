@@ -3,7 +3,7 @@ import axios from 'axios'
 export function getEmojiData() {
   return axios({
       method: 'get',
-      url: ' http://localhost:8080/json/emojiDB.json',
+      url: 'http://localhost:8080/json/emojiDB.json',
     })
     .then(function(res) {
       return Promise.resolve(res.data);

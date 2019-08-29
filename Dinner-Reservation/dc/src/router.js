@@ -17,7 +17,6 @@ import Buttombar from './views/Buttombar'
 import Start from './views/Start'
 import main from './views/main'
 import Map from "./views/Map.vue"
-import Notfound from './views/Notfound'
 
 
 
@@ -49,7 +48,6 @@ export default new Router({
     {path:"/buttombar",component:Buttombar},
     { path: '/main',  component: main},
     {path:'/start',component:Start},
-    {path:"/map/:pname",component:Map},
-    {path:"*",component:Notfound}
+    {path:"/map/:pname",component:Map}
   ]
 })

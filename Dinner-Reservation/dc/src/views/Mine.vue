@@ -204,7 +204,7 @@ export default {
     },
     look() {
       // 发送ajax
-      this.axios.get("http://127.0.0.1:5050/islogin").then(res => {
+      this.axios.get("islogin").then(res => {
         if (res.data.code == 301) {
           this.$messagebox("请您先登录，再购买商品").then(result => {
             this.$router.push("/login");

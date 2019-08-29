@@ -51,7 +51,7 @@ export default {
         return;
       } else {
         //发送ajax请求 axios
-        var url = "http://127.0.0.1:5050/user/login";
+        var url = "user/login";
         var obj = { uname: uname, upwd: upwd };
         this.axios.post(url, qs.stringify(obj)).then(res => {
           if (res.data.code == 200) {

@@ -54,7 +54,7 @@ export default {
       this.$messagebox("两次输入密码不一致");
       return;
     }else{
-      var url = "http://127.0.0.1:5050/user/reg";
+      var url = "user/reg";
         var obj = {uname:uname,upwd:upwd,phone:phone};
         this.axios.post(url,qs.stringify(obj)).then(res=>{
           console.log(res.data)

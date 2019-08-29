@@ -54,7 +54,7 @@ export default {
     };
   },
   mounted() {
-    this.axios.get("http://127.0.0.1:5050/select").then(res => {
+    this.axios.get("select").then(res => {
       console.log(res);
       var { order } = res.data;
       this.order = order;
@@ -69,7 +69,7 @@ export default {
         .confirm("请确定是否要删除")
         .then(action => {
           this.axios
-            .get("http://127.0.0.1:5050/delete", { params: { pid: this.order[0].pid    } })
+            .get("delete", { params: { pid: this.order[0].pid    } })
             .then(res => {
               console.log(res);
               if (res.data.code == 200) {

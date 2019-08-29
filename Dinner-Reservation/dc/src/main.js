@@ -28,6 +28,8 @@ Vue.use(ElementUI);
   import "./font/iconfont.css"
 
   import axios from "axios"
+  // 配置axios 基础路径
+axios.defaults.baseURL="http://127.0.0.1:5050/"
   axios.defaults.withCredentials=true;
   Vue.prototype.axios=axios
 import { Rate } from 'element-ui';

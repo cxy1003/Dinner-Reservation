@@ -91,7 +91,7 @@ export default {
         return;
       } else {
         //否则发送ajax将数据保存到数据库中/发送到订单表中preplot
-        var url = "http://127.0.0.1:5050/preplot";
+        var url = "preplot";
         //获取参数
         var obj = {
           reserpeople: this.reserpeople,

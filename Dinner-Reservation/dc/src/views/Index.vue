@@ -171,7 +171,7 @@ export default {
         "buttombar":Buttombar
     },
     created() {
-        this.axios.get("http://127.0.0.1:5050/myindex/goods/").then(result=>{
+        this.axios.get("myindex/goods/").then(result=>{
              var arr=result.data;
              this.arr=arr;
              //console.log(arr)
